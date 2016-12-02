@@ -1,0 +1,15 @@
+# Output products list for <ROM_MUL>
+ROM_MUL.asy
+ROM_MUL.gise
+ROM_MUL.ngc
+ROM_MUL.sym
+ROM_MUL.v
+ROM_MUL.veo
+ROM_MUL.xco
+ROM_MUL.xise
+ROM_MUL\doc\floating_point_ds335.pdf
+ROM_MUL\doc\floating_point_v5_0_readme.txt
+ROM_MUL\doc\floating_point_v5_0_vinfo.html
+ROM_MUL_flist.txt
+ROM_MUL_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
