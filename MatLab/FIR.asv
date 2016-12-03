@@ -1,0 +1,11 @@
+function [ newVal ] = FIR( in , coef )
+%FIR Summary of this function goes here
+%   Detailed explanation goes here
+
+
+temp = fir1(32,);
+
+newVal = temp;
+
+end
+
