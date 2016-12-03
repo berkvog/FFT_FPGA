@@ -29,6 +29,10 @@ while counter < 5
     
 end
 
+the_DFT = the_DFT.^2;
+
+the_DFT = abs(the_DFT);
+
 
 DFT = the_DFT;
 
