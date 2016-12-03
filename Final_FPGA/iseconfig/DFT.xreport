@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-12-02T15:55:41</DateModified>
+  <DateModified>2016-12-02T15:58:48</DateModified>
   <ModuleName>DFT</ModuleName>
   <SummaryTimeStamp>2016-11-28T21:58:28</SummaryTimeStamp>
-  <SavedFilePath>C:/Xilinx/ECE111_Project5/iseconfig/DFT.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Xilinx/ECE111_Project5\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/iseconfig/DFT.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA\</ImplementationReportsDirectory>
   <DateInitialized>2016-11-26T15:55:31</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
