@@ -6,7 +6,7 @@ fid=fopen('coefficients.coe','wt');
 fprintf(fid,'memory_initialization_radix=16;\n');
 fprintf(fid,'memory_initialization_vector=\n');
 
-for i=1:201
+for i=1:51
         for j=1:8
             fprintf(fid,'%c',coeff(i,j));
         end
@@ -24,7 +24,7 @@ fid2=fopen('output.coe','wt');
 fprintf(fid,'memory_initialization_radix=16;\n');
 fprintf(fid,'memory_initialization_vector=\n');
 
-for i=1:201
+for i=1:1000
         for j=1:8
             fprintf(fid2,'%c',outputhex(i,j));
         end

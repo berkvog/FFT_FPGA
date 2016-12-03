@@ -7,7 +7,7 @@ counter = 1;
 
 %window boundries
 start = 1;
-theEnd = 64;
+theEnd = 65;
 
 
 %output array
@@ -15,7 +15,7 @@ the_DFT = zeros(1000,1);
 %the_tempI = zeros(64,1);
 %the_tempO = zeros(64,1);
 
-while counter < 30
+while counter <  
   the_tempI = coefficient(start:theEnd);
         
   the_tempO = fft(the_tempI);

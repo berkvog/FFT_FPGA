@@ -29,7 +29,7 @@ title('Input Signal with Added Noise','FontSize',32,'FontWeight','Bold');
 Fstop1 = 14;    % First Stopband Frequency
 Fpass1 = 35;    % First Passband Frequency
 Fpass2 = 200;   % Second Passband Frequency
-Fstop2 = 221;   % Second Stopband Frequency
+Fstop2 = 220;   % Second Stopband Frequency
 Astop1 = 60;    % First Stopband Attenuation (dB)
 Apass  = 1;     % Passband Ripple (dB)
 Astop2 = 60;    % Second Stopband Attenuation (dB)
