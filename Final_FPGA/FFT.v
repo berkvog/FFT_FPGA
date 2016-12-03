@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:05:49 12/02/2016 
+// Create Date:    16:28:23 12/02/2016 
 // Design Name: 
-// Module Name:    Main_Module 
+// Module Name:    FFT 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,62 +18,20 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Main_Module(
+module FFT(
     input clk,
     input rst,
-    output Magnitude
+    input window,
+    output magnitude
     );
 
-//state
-wire[15:0] state;
 
 
-//delay counters
-reg [9:0] dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
-
-//output wires
-wire[31:0] mul1, mul2, addr1, addr2, sin, cos, inVal;
-
-//MUL INPUT
-reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
-wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B;
-assign wMul1A = RegMul1A;
-assign wMul1B = RegMul1B;
-assign wMul2A = RegMul2A;
-assign wMul2B = RegMul2B;
-
-//ADDER INPUT
-reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B;
-wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B;
-assign wAd1A = RegAd1A;
-assign wAd1B = RegAd1B;
-assign wAd2A = RegAd2A;
-assign wAd2B = RegAd2B;
-
-
-///////////////////////////////////////////////State Machine///////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////CORES//////////////////////////////////////////
-
-
-FFT FFT (
-	.clk(clk),
-	.rst(FFT_RESET),
-	.window(FFT_Input),
-	.magnitude(theMag)
+/////////////////////////////////IP Cores////////////////////////////
+N2_FFT N2_FFT(
+    .even(EvenIn),
+    .odd(OddIn),
+    .theOutput(N2Out)
 );
 
 
@@ -127,8 +85,6 @@ ROM_COS cosT (
   .addra(addressX), // input [7 : 0] addra
   .douta(cos) // output [31 : 0] douta
 );
-
-
 
 
 
