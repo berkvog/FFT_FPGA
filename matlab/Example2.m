@@ -4,7 +4,7 @@ Fs = 500;                               % Sampling frequency
 T = 1/Fs;                                 % Sample time
 L = 10*Fs;                               % Length of signal
 t = (0:L)*T;                              % Time vector
-fo = 0; f1 = 210;   % Start at 1Hz, go up to 60Hz
+fo = 0; f1 = 60;   % Start at 1Hz, go up to 60Hz
 data = 10*chirp(t,fo,10,f1) + 2*randn(size(t));
 local_len = floor(length(t)/8)+1;
 local_data = zeros(local_len,1);
@@ -13,8 +13,8 @@ local_data2 = zeros(local_len,2);
 %% Bandpass filter the input signal using symmetric FIR with min zeros
 Fstop1 = 5;    % First Stopband Frequency
 Fpass1 = 10;    % First Passband Frequency
-Fpass2 = 200;   % Second Passband Frequency
-Fstop2 = 205;   % Second Stopband Frequency
+Fpass2 = 50;   % Second Passband Frequency
+Fstop2 = 55;   % Second Stopband Frequency
 Astop1 = 80;    % First Stopband Attenuation (dB)
 Apass  = 3;     % Passband Ripple (dB)
 Astop2 = 80;    % Second Stopband Attenuation (dB)
@@ -30,7 +30,7 @@ window_len = 0.30*local_len;
 
 for i = 1 : 2
     
-    for k = 1 : 10 : numel(data) - local_len  + 1
+    for k = 1 : 10 : numel(data) - local_len  + 1;
                 
         % Get next section of the input signals
         if (dir)
