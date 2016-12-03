@@ -38,6 +38,8 @@ filt_design = fdesign.bandpass('fst1,fp1,fp2,fst2,ast1,ap,ast2', Fstop1, Fpass1,
 filt_mdl = design(filt_design, 'equiripple', 'FilterStructure', 'dfsymfir','MinOrder', 'any');
 filt_x = filt_mdl.filter(y);
 
+coefficients = filt_mdl.Numerator;
+
 %% Window the filtered data using blackman window
 win_mdl = window(@rectwin,L);
 win_x = win_mdl.*filt_x';
