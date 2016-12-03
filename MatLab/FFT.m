@@ -3,11 +3,11 @@ function [ DFT ] = FFT( coefficient )
 %   Detailed explanation goes here
 
 %counter
-counter = 0;
+counter = 1;
 
 %window boundries
-int start = 0;
-int theEnd = 64;
+start = 1;
+theEnd = 65;
 
 
 %output array
@@ -15,7 +15,7 @@ the_DFT = zeros(201,1);
 %the_tempI = zeros(64,1);
 %the_tempO = zeros(64,1);
 
-while counter < 5 
+while counter < 6 
   the_tempI = coefficient(start:theEnd);
         
   the_tempO = fft(the_tempI);
