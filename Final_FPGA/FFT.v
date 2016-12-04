@@ -21,7 +21,6 @@
 module FFT(
     input clk,
     input rst,
-    input window,
     output magnitude
     );
 
