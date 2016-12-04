@@ -183,4 +183,12 @@ W_RAM W_RAM (
   .douta(W_out) // output [31 : 0] douta
 );
 
+O_RAM your_instance_name (
+  .clka(clk), // input clka
+  .wea(F_wea), // input [0 : 0] wea
+  .addra(O_addr), // input [5 : 0] addra
+  .dina(O_in), // input [31 : 0] dina
+  .douta(O_RAM_output) // output [31 : 0] douta
+);
+
 endmodule
