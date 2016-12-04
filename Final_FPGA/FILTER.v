@@ -57,6 +57,15 @@ y_coe ynoisy (
   .douta(xj) // output [31 : 0] douta
 );
 
+F_RAM your_instance_name (
+  .clka(clka), // input clka
+  .wea(wea), // input [0 : 0] wea
+  .addra(addra), // input [9 : 0] addra
+  .dina(dina), // input [31 : 0] dina
+  .douta(douta) // output [31 : 0] douta
+);
+
+
 assign runningtotal=total;
 always @(posedge clk) begin
 	
