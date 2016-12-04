@@ -92,7 +92,7 @@ always @(posedge clk) begin
 				state<=5;
 				end
 			5: begin
-				state<=(kcount<51)? 6:17;
+				state<=(kcount<50)? 6:17;
 				end
 			6: begin
 				k<=kcount;
@@ -119,8 +119,6 @@ always @(posedge clk) begin
 				counter<=0;
 				end
 			12:begin
-				/*counter<=counter+1;
-				state<=(counter<8)? 12:13;*/
 				state<=13;
 				end
 			13:begin
@@ -130,8 +128,6 @@ always @(posedge clk) begin
 				counter<=0;
 				end
 			14:begin
-				/*counter<=counter+1;
-				state<=(counter<13)? 14:15;*/
 				state<=15;
 				end
 			15:begin

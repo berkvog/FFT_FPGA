@@ -8,12 +8,12 @@ fid=fopen('coefficients.coe','wt');
 fprintf(fid,'memory_initialization_radix=16;\n');
 fprintf(fid,'memory_initialization_vector=\n');
 
-for i=1:51
+for i=1:50
         for j=1:8
             fprintf(fid,'%c',coeff(i,j));
         end
         
-        if(i==201)
+        if(i==50)
             fprintf(fid,';\n');
         else
             fprintf(fid, ',\n');

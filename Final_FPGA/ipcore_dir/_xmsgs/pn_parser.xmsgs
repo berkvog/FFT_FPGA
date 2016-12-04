@@ -8,11 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<<<<<<< HEAD
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/y_coe.v&quot; into library work</arg>
-=======
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v&quot; into library work</arg>
->>>>>>> 194f826d70e3551998efa86c0b2fe416ccd177d3
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/y_coe.v&quot; into library work</arg>
 </msg>
 
 </messages>
