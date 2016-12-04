@@ -1,0 +1,62 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/evan/Documents/FIR filter/FIR/tb_filter_isim_beh.exe -prj C:/Users/evan/Documents/FIR filter/FIR/tb_filter_beh.prj work.tb_filter work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/ipcore_dir/mult.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/ipcore_dir/add.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/evan/Documents/FIR filter/FIR/ipcore_dir/add.v" Line 12286: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/ipcore_dir/y_coe.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/ipcore_dir/coef_coe.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/FILTER.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FIR filter/FIR/tb_filter.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+WARNING:HDLCompiler:687 - "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
+Starting static elaboration
+Completed static elaboration
+Compiling module GND
+Compiling module VCC
+Compiling module FDE
+Compiling module MUXCY
+Compiling module XORCY
+Compiling module FD
+Compiling module MUXF7
+Compiling module MUXF6
+Compiling module MUXF5
+Compiling module LUT2(INIT=4'b1001)
+Compiling module FDRS
+Compiling module LUT3(INIT=8'b01)
+Compiling module LUT4(INIT=16'b01)
+Compiling module FDR
+Compiling module FDS(INIT=1'b0)
+Compiling module LUT1(INIT=2'b10)
+Compiling module INV
+Compiling module LUT4_L(INIT=16'b1000100010000000...
+Compiling module LUT3_D(INIT=8'b01011101)
+Compiling module LUT3_L(INIT=8'b011011)
+Compiling module LUT2_L(INIT=4'b01)
+Compiling module SRL16E
+Compiling module SRL16
+Compiling module add
+Compiling module MULT_AND
+Compiling module FDRE
+Compiling module mult
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module coef_coe
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
+Compiling module y_coe
+Compiling module FILTER
+Compiling module tb_filter
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 101 Verilog Units
+Built simulation executable C:/Users/evan/Documents/FIR filter/FIR/tb_filter_isim_beh.exe
+Fuse Memory Usage: 42416 KB
+Fuse CPU Usage: 796 ms
