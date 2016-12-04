@@ -1,0 +1,2 @@
+ISim log file
+Running: C:\Users\evan\Documents\FFT_FPGA\FFT_FPGA\Final_FPGA\tb_filter_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/waveConfig.wcfg -wdb C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/tb_filter_isim_beh.wdb 
