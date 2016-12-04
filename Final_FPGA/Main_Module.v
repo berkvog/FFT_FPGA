@@ -21,7 +21,7 @@
 module Main_Module(
     input clk,
     input rst,
-    output Magnitude
+    output reg [31:0] Magnitude
     );
 
 
@@ -34,6 +34,8 @@ always @(posedge clk) begin
 
 if(rst)begin
 	state <= 0;
+	FFT_RESET <= 1;
+	BPF_RESET <= 1;
 	end
 	
 else
@@ -41,22 +43,73 @@ else
 	case(state) 
 		0:begin //set values 
 		     state <= 1;
-		end
+			  FFT_RESET <= 1;
+			  BPF_RESET <= 1;
+			  dC1 <= 0;
+			  dC2 <= 0;
+			  //dC3 <= 0;
+			  //dC4 <= 0;
+			  W_address = 0;
+			  F_address = 0;
+			  end
 		
-		1: begin //run filter
-			
-			
-			
-			state <= 2;
-			
+		1: begin //delay until filter complete
+			BPF_RESET <= 0;
+			if(dC1 > 550000)begin
+				state <= 2;
+				BPF_RESET <= 1;
+			end	
+			else begin	
+				state <= 1;
+				dC1 = dC1 + 1;
+			end
 		end
-		2: begin //run FFT
-			state <= 3;
+		2: begin //window values
+			if(W_address < 64)begin
+					RAMIO <= F_RAM_output;
+					W_enable <= 1;
+					W_address <= W_address + 1;
+					F_address <= F_address + 1;
+			end
+			else begin
+					W_enable <= 0;
+					W_address <= 0;
+					state <= 4;
+			end
+		end
+		4: begin //run FFT
+			FFT_RESET <= 0;
+			if(dC2 > 100000000)begin //number of cycles for each FFT to compute
+					state <= 5;
+					FFT_RESET <= 1;
+			end
+			else begin
+				dC2 <= dC2 + 1;
+				state <= 4;
+			end
+		end
+		5: begin //read outRAM
+			if(O_address > 63)begin
+				state <= 6;
+			end
+			else begin
+				O_address = O_address + 1;
+				state <= 5;
+				Magnitude <= O_RAM_output;
+			end	
 		
-		end 
-		3: begin //output and end
-			
-			state <= 3;
+		end
+		6:begin //check for end of window
+			if(F_address > 900) begin
+				state <= 7; //go to end;
+			end
+			else begin
+				F_address <= F_address - 32;
+				state <=2;
+			end	
+		end
+		7: begin //			
+			state <= 7;
 		end
 	
 	endcase
@@ -67,25 +120,35 @@ end
 
 
 
-
-
-
-
 /////////////////////////////////Reg and wire assignments//////////////////////
 //state
 reg[4:0] state;
 
 
+
 //delay counters
-reg [9:0] dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
+reg [31:0] dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
 
 //resets
 reg FFT_RESET, BPF_RESET;
+wire FFT_R, BPF_R;
+
+//RAM wires
+wire [31:0] O_RAM_output,F_RAM_output, W_RAM_input;
+reg [31:0] RAMIO;
+assign W_RAM_input = RAMIO; 
 
 
-wire [31:0] F_RAM_output, W_RAM_input; 
+reg [31:0] W_address, F_address,W_enable,O_address;
+wire [31:0] W_addr, F_addr,O_addr; 
 
 
+//dead wires
+wire [31:0] F_in, W_out,O_in;
+
+wire F_wea,W_wea;
+assign F_wea = 0;
+assign W_wea = W_enable;
 
 
 
@@ -94,30 +157,30 @@ wire [31:0] F_RAM_output, W_RAM_input;
 
 FFT FFT (
 	.clk(clk),
-	.rst(FFT_RESET),
+	.rst(FFT_R),
 	.magnitude(theMag)
 );
 
 FILTER FILTER(
 	.clk(clk),
-	.rst(BPF_RESET),
+	.rst(BPF_R),
 	.y(BPF_output)
 );
 
-F_RAM your_instance_name (
-  .clka(clka), // input clka
-  .wea(wea), // input [0 : 0] wea
-  .addra(addra), // input [9 : 0] addra
-  .dina(dina), // input [31 : 0] dina
-  .douta(douta) // output [31 : 0] douta
+F_RAM F_RAM (
+  .clka(clk), // input clka
+  .wea(F_wea), // input [0 : 0] wea
+  .addra(F_addr), // input [9 : 0] addra
+  .dina(F_in), // input [31 : 0] dina
+  .douta(F_RAM_output) // output [31 : 0] douta
 );
 
-W_RAM your_instance_name (
-  .clka(clka), // input clka
-  .wea(wea), // input [0 : 0] wea
-  .addra(addra), // input [5 : 0] addra
-  .dina(dina), // input [31 : 0] dina
-  .douta(douta) // output [31 : 0] douta
+W_RAM W_RAM (
+  .clka(clk), // input clka
+  .wea(W_wea), // input [0 : 0] wea
+  .addra(W_addr), // input [5 : 0] addra
+  .dina(W_RAM_input), // input [31 : 0] dina
+  .douta(W_out) // output [31 : 0] douta
 );
 
 endmodule

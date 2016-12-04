@@ -31,6 +31,17 @@ reg[9:0] j,n;
 reg[4:0] counter,state;
 
 
+////for F_RAM
+reg F_enable;
+wire F_wea;
+assign F_wea = F_enable;
+reg[31:0] F_data;
+wire[31:0] F_din;
+assign F_din = F_data;
+
+wire[31:0] dataO;
+
+
 FPAdder adder_1 (
   .a(a1), // input [31 : 0] a
   .b(a2), // input [31 : 0] b
@@ -58,11 +69,11 @@ y_coe ynoisy (
 );
 
 F_RAM your_instance_name (
-  .clka(clka), // input clka
-  .wea(wea), // input [0 : 0] wea
-  .addra(addra), // input [9 : 0] addra
-  .dina(dina), // input [31 : 0] dina
-  .douta(douta) // output [31 : 0] douta
+  .clka(clk), // input clka
+  .wea(F_wea), // input [0 : 0] wea
+  .addra(n), // input [9 : 0] addra
+  .dina(F_din), // input [31 : 0] dina
+  .douta(dataO) // output [31 : 0] douta
 );
 
 
@@ -86,12 +97,14 @@ always @(posedge clk) begin
 				ncount<=0;
 				j<=0;
 				counter<=0;
+				F_enable <=0;
 				end
 			1: begin
 				state<=2;
 				end
 			2: begin
 				state<=(ncount<1000)? 3:19;
+				F_enable <= 0;				
 				end
 			3: begin
 				n<=ncount;
@@ -150,11 +163,15 @@ always @(posedge clk) begin
 				end
 			17:begin
 				y<=runningtotal;
+				F_data <= runningtotal;
 				total<=32'b0;
 				ncount<=ncount+1;
 				kcount<=0;
 				state<=18;
-				counter<=0;
+				counter<=0;	
+				//setting F_RAM
+				F_enable <= 1;
+
 				end
 			18:begin
 				state<=2;
