@@ -31,6 +31,8 @@ wire[15:0] state;
 //delay counters
 reg [9:0] dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
 
+
+/*
 //output wires
 wire[31:0] mul1, mul2, addr1, addr2, sin, cos, inVal;
 
@@ -49,14 +51,44 @@ assign wAd1A = RegAd1A;
 assign wAd1B = RegAd1B;
 assign wAd2A = RegAd2A;
 assign wAd2B = RegAd2B;
-
+*/
 
 ///////////////////////////////////////////////State Machine///////////////////////////////////
 
 
 
 
+always @(posedge clk) begin
 
+if(rst)begin
+	state <= 0;
+	end
+	
+else
+
+	case(state) 
+		0:begin //set values 
+		     state <= 1;
+		end
+		
+		1: begin //run filter
+			state <= 2;
+			
+		end
+		2: begin //run FFT
+			state <= 3;
+		
+		end 
+		3: begin //output and end
+			
+			state <= 3;
+		end
+	
+	endcase
+
+
+
+end
 
 
 
@@ -76,8 +108,14 @@ FFT FFT (
 	.magnitude(theMag)
 );
 
+FILTER FILTER(
+	.clk(clk),
+	.rst(FILTER_RESET),
+	.y(filterd_output)
+);
 
 
+/*
 ROM_MUL mul_1 (
   .a(wMul1A), // input [31 : 0] a
   .b(wMul1B), // input [31 : 0] b
@@ -127,7 +165,7 @@ ROM_COS cosT (
   .addra(addressX), // input [7 : 0] addra
   .douta(cos) // output [31 : 0] douta
 );
-
+*/
 
 
 
