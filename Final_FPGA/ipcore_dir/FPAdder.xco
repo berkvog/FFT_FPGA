@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Sun Oct 23 21:29:55 2016
+# Date: Sun Dec 04 01:29:06 2016
 #
 ##############################################################
 #
@@ -53,7 +53,7 @@ CSET c_has_overflow=false
 CSET c_has_rdy=false
 CSET c_has_sclr=false
 CSET c_has_underflow=false
-CSET c_latency=13
+CSET c_latency=1
 CSET c_mult_usage=No_Usage
 CSET c_optimization=Speed_Optimized
 CSET c_rate=1
@@ -61,7 +61,7 @@ CSET c_result_exponent_width=8
 CSET c_result_fraction_width=24
 CSET c_speed=Maximum_speed
 CSET component_name=FPAdder
-CSET maximum_latency=true
+CSET maximum_latency=false
 CSET operation_type=Add_Subtract
 CSET result_precision_type=Single
 # END Parameters
@@ -69,4 +69,4 @@ CSET result_precision_type=Single
 MISC pkg_timestamp=2012-07-02T11:22:24Z
 # END Extra information
 GENERATE
-# CRC: b93c1a4c
+# CRC:  8be97ad

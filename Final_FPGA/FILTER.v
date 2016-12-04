@@ -119,8 +119,9 @@ always @(posedge clk) begin
 				counter<=0;
 				end
 			12:begin
-				counter<=counter+1;
-				state<=(counter<8)? 12:13;
+				/*counter<=counter+1;
+				state<=(counter<8)? 12:13;*/
+				state<=13;
 				end
 			13:begin
 				a1<=product;
@@ -129,8 +130,9 @@ always @(posedge clk) begin
 				counter<=0;
 				end
 			14:begin
-				counter<=counter+1;
-				state<=(counter<13)? 14:15;
+				/*counter<=counter+1;
+				state<=(counter<13)? 14:15;*/
+				state<=15;
 				end
 			15:begin
 				total<=sum;
