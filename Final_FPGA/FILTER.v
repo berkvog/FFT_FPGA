@@ -68,7 +68,7 @@ y_coe ynoisy (
   .douta(xj) // output [31 : 0] douta
 );
 
-F_RAM your_instance_name (
+F_RAM F_RAM (
   .clka(clk), // input clka
   .wea(F_wea), // input [0 : 0] wea
   .addra(n), // input [9 : 0] addra

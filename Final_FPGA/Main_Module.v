@@ -28,8 +28,6 @@ module Main_Module(
 ///////////////////////////////////////////////State Machine///////////////////////////////////
 
 
-
-
 always @(posedge clk) begin
 
 if(rst)begin
@@ -41,8 +39,8 @@ if(rst)begin
 else
 
 	case(state) 
-		0:begin //set values 
-		     state <= 1;
+		0:begin //set values
+		     state <= 3;
 			  FFT_RESET <= 1;
 			  BPF_RESET <= 1;
 			  dC1 <= 0;
@@ -51,7 +49,28 @@ else
 			  //dC4 <= 0;
 			  W_address = 0;
 			  F_address = 0;
+			  addressX = 0;
+			  SINCOS_en <= 0;
+			  COS_en <= 0;
 			  end
+		
+		3: begin //SET sin and cosine rams, ****could be run parallel to optimize
+			SINCOS_en <= 1;
+			if(addressX < 33) begin
+					state <= 8;
+			end
+			else begin
+				state <= 1;
+				SINCOS_en <=0;
+			end		
+		end
+		
+		8: begin
+				SIN_in <= sin;
+				COS_in <= cos;
+				addressX = addressX + 1;
+				state <= 3;
+		end
 		
 		1: begin //delay until filter complete
 			BPF_RESET <= 0;
@@ -124,6 +143,15 @@ end
 //state
 reg[4:0] state;
 
+//SIN and COS 
+reg [31:0] COS_in, SIN_in, SINCOS_en,addressX;
+wire[31:0] COS_dina,SIN_dina,COS_wea, SIN_wea,COS_addra,SIN_addra;
+assign COS_dina = COS_in;
+assign SIN_dina = SIN_in;
+assign COS_wea = SINCOS_en;
+assign SIN_wea = SINCOS_en;
+assign COS_addra = addressX;
+assign SIN_addra = addressX;
 
 
 //delay counters
@@ -144,7 +172,7 @@ wire [31:0] W_addr, F_addr,O_addr;
 
 
 //dead wires
-wire [31:0] F_in, W_out,O_in;
+wire [31:0] F_in, W_out,O_in,SIN_douta,COS_douta;
 
 wire F_wea,W_wea;
 assign F_wea = 0;
@@ -183,12 +211,42 @@ W_RAM W_RAM (
   .douta(W_out) // output [31 : 0] douta
 );
 
-O_RAM your_instance_name (
+O_RAM O_ROM (
   .clka(clk), // input clka
   .wea(F_wea), // input [0 : 0] wea
   .addra(O_addr), // input [5 : 0] addra
   .dina(O_in), // input [31 : 0] dina
   .douta(O_RAM_output) // output [31 : 0] douta
 );
+
+SIN_RAM SIN_RAM (
+  .clka(clk), // input clka
+  .wea(SIN_wea), // input [0 : 0] wea
+  .addra(SIN_addra), // input [4 : 0] addra
+  .dina(SIN_dina), // input [31 : 0] dina
+  .douta(SIN_douta) // output [31 : 0] douta
+);
+
+COS_RAM COS_RAM (
+  .clka(clk), // input clka
+  .wea(COS_wea), // input [0 : 0] wea
+  .addra(COS_addra), // input [4 : 0] addra
+  .dina(COS_dina), // input [31 : 0] dina
+  .douta(COS_douta) // output [31 : 0] douta
+);
+
+
+ROM_SIN sinT (
+  .clka(clk), // input clka
+  .addra(SIN_addra), // input [7 : 0] addra
+  .douta(sin) // output [31 : 0] douta
+);
+
+ROM_COS cosT (
+  .clka(clk), // input clka
+  .addra(COS_addra), // input [7 : 0] addra
+  .douta(cos) // output [31 : 0] douta
+);
+
 
 endmodule

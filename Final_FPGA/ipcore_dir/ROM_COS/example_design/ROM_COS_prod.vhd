@@ -101,9 +101,9 @@
 --    C_WRITE_MODE_A              :  WRITE_FIRST 
 --    C_WRITE_WIDTH_A             :  32 
 --    C_READ_WIDTH_A              :  32 
---    C_WRITE_DEPTH_A             :  256 
---    C_READ_DEPTH_A              :  256 
---    C_ADDRA_WIDTH               :  8 
+--    C_WRITE_DEPTH_A             :  32 
+--    C_READ_DEPTH_A              :  32 
+--    C_ADDRA_WIDTH               :  5 
 --    C_HAS_RSTB                  :  0 
 --    C_RST_PRIORITY_B            :  CE 
 --    C_RSTRAM_B                  :  0 
@@ -115,9 +115,9 @@
 --    C_WRITE_MODE_B              :  WRITE_FIRST 
 --    C_WRITE_WIDTH_B             :  32 
 --    C_READ_WIDTH_B              :  32 
---    C_WRITE_DEPTH_B             :  256 
---    C_READ_DEPTH_B              :  256 
---    C_ADDRB_WIDTH               :  8 
+--    C_WRITE_DEPTH_B             :  32 
+--    C_READ_DEPTH_B              :  32 
+--    C_ADDRB_WIDTH               :  5 
 --    C_HAS_MEM_OUTPUT_REGS_A     :  0 
 --    C_HAS_MEM_OUTPUT_REGS_B     :  0 
 --    C_HAS_MUX_OUTPUT_REGS_A     :  0 
@@ -156,7 +156,7 @@ ENTITY ROM_COS_prod IS
     ENA        : IN STD_LOGIC;  --optional port
     REGCEA     : IN STD_LOGIC;  --optional port
     WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRA      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     DINA       : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     DOUTA      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 
@@ -166,7 +166,7 @@ ENTITY ROM_COS_prod IS
     ENB        : IN STD_LOGIC;  --optional port
     REGCEB     : IN STD_LOGIC;  --optional port
     WEB        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    ADDRB      : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRB      : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     DINB       : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     DOUTB      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 
@@ -175,7 +175,7 @@ ENTITY ROM_COS_prod IS
     INJECTDBITERR  : IN STD_LOGIC; --optional port
     SBITERR        : OUT STD_LOGIC; --optional port
     DBITERR        : OUT STD_LOGIC; --optional port
-    RDADDRECC      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0); --optional port
+    RDADDRECC      : OUT STD_LOGIC_VECTOR(4 DOWNTO 0); --optional port
  -- AXI BMG Input and Output Port Declarations
 
     -- AXI Global Signals
@@ -217,7 +217,7 @@ ENTITY ROM_COS_prod IS
     S_AXI_INJECTDBITERR            : IN  STD_LOGIC;
     S_AXI_SBITERR                  : OUT STD_LOGIC;
     S_AXI_DBITERR                  : OUT STD_LOGIC;
-    S_AXI_RDADDRECC                : OUT STD_LOGIC_VECTOR(7  DOWNTO 0);
+    S_AXI_RDADDRECC                : OUT STD_LOGIC_VECTOR(4  DOWNTO 0);
     S_ARESETN                      : IN  STD_LOGIC
 
 
@@ -231,7 +231,7 @@ ARCHITECTURE xilinx OF ROM_COS_prod IS
   COMPONENT ROM_COS_exdes IS
   PORT (
       --Port A
-    ADDRA          : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
   
     DOUTA          : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 
