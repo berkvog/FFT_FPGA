@@ -144,8 +144,10 @@ end
 reg[4:0] state;
 
 //SIN and COS 
-reg [31:0] COS_in, SIN_in, SINCOS_en,addressX;
-wire[31:0] COS_dina,SIN_dina,COS_wea, SIN_wea,COS_addra,SIN_addra;
+reg [31:0] COS_in, SIN_in,addressX;
+reg  SINCOS_en;
+wire[31:0] COS_dina,SIN_dina,COS_addra,SIN_addra;
+wire SIN_wea, COS_wea;
 assign COS_dina = COS_in;
 assign SIN_dina = SIN_in;
 assign COS_wea = SINCOS_en;
@@ -169,7 +171,9 @@ assign W_RAM_input = RAMIO;
 
 reg [31:0] W_address, F_address,W_enable,O_address;
 wire [31:0] W_addr, F_addr,O_addr; 
-
+assign W_addr = W_address;
+assign F_addr = F_address;
+assign O_addr = O_address;
 
 //dead wires
 wire [31:0] F_in, W_out,O_in,SIN_douta,COS_douta;
