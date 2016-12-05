@@ -27,12 +27,13 @@ module FFT(
 
 
 /////////////////////////////////IP Cores////////////////////////////
-N2_FFT N2_FFT(
-    .even(EvenIn),
-    .odd(OddIn),
-    .theOutput(N2Out)
-);
-
+N2_FFT N2_FFT (
+    .n(n),
+    .p(p),
+	 .counter(counter),
+	 .clk(clk),
+	 .rst(rst)
+    );
 
 
 ROM_MUL mul_1 (
@@ -66,24 +67,23 @@ FPAdder addr_2 (
 );
 
 //////////////////////ROM////////////////////////
-ROM_I ROM_I (
+
+W_RAM W_RAM (
   .clka(clk), // input clka
-  .addra(addressI), // input [7 : 0] addra
-  .douta(inVal) // output [31 : 0] douta
+  .wea(W_wea), // input [0 : 0] wea
+  .addra(W_addr), // input [5 : 0] addra
+  .dina(W_RAM_input), // input [31 : 0] dina
+  .douta(W_out) // output [31 : 0] douta
 );
 
-
-ROM_SIN sinT (
+I_RAM I_RAM (
   .clka(clk), // input clka
-  .addra(addressX), // input [7 : 0] addra
-  .douta(sin) // output [31 : 0] douta
+  .wea(W_wea), // input [0 : 0] wea
+  .addra(W_addr), // input [5 : 0] addra
+  .dina(I_RAM_input), // input [31 : 0] dina
+  .douta(I_out) // output [31 : 0] douta
 );
 
-ROM_COS cosT (
-  .clka(clk), // input clka
-  .addra(addressX), // input [7 : 0] addra
-  .douta(cos) // output [31 : 0] douta
-);
 
 
 

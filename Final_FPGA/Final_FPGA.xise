@@ -87,6 +87,10 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="100"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="100"/>
     </file>
+    <file xil_pn:name="ipcore_dir/SUB.xco" xil_pn:type="FILE_COREGEN">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="107"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="107"/>
+    </file>
     <file xil_pn:name="ipcore_dir/FPAdder.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
@@ -125,6 +129,9 @@
     </file>
     <file xil_pn:name="ipcore_dir/I_RAM.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="101"/>
+    </file>
+    <file xil_pn:name="ipcore_dir/SUB.xise" xil_pn:type="FILE_COREGENISE">
+      <association xil_pn:name="Implementation" xil_pn:seqID="108"/>
     </file>
   </files>
 

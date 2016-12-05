@@ -155,6 +155,10 @@ assign SIN_wea = SINCOS_en;
 assign COS_addra = addressX;
 assign SIN_addra = addressX;
 
+wire[31:0] I_addr;
+assign I_addr = addressX;
+wire[31:0] zeros;
+assign zeros = 8'h00000000;
 
 //delay counters
 reg [31:0] dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
@@ -214,6 +218,16 @@ W_RAM W_RAM (
   .dina(W_RAM_input), // input [31 : 0] dina
   .douta(W_out) // output [31 : 0] douta
 );
+
+
+I_RAM I_RAM (
+  .clka(clk), // input clka
+  .wea(1), // input [0 : 0] wea
+  .addra(I_addr), // input [5 : 0] addra
+  .dina(zeros), // input [31 : 0] dina
+  .douta(I_douta) // output [31 : 0] douta
+);
+
 
 O_RAM O_ROM (
   .clka(clk), // input clka

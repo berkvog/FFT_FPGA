@@ -37,8 +37,10 @@ else begin
 		
 		0:begin //set values
 			state <= 1;
-			x1 <= 0;
-			x2 <= 0;
+			rx1 <= 0;
+			rx2 <= 0;
+			ix1 <= 0;
+			ix2 <= 0;
 			end
 		1: begin //get 1st value from wRAM and get sin and cos values
 			W_address <= N1;
@@ -47,17 +49,129 @@ else begin
 			theCOS <= COS_douta;
 		end
 		2: begin
-			x1 <= W_out;
+			rx1 <= W_out;
+			ix1 <= I_out;
 			W_address <= N2;
 			state <= 3;
 		end // get 2nd value from wRAM
 		3: begin
-			x2 <= W_out;
+			rx2 <= W_out;
+			ix2 <= I_out;
 			state <= 4;
 		end
-		4: begin //computation
-			Ix2 <= wX2 ^ flip;
+		4: begin //computation for reC imS going towards REAL
+			RegMul1A <= rx2;
+			RegMul1B <= theCOS;
+			RegMul2A <= ix2;
+			RegMul2B <= theSIN;
+			W_address <= N1;
 			
+			state <= 5;
+		end
+		5: begin//delay 7 cycles
+			if(dC1 > 7)begin
+				state <= 6;
+				dC1 <= 0;
+			end
+			else
+				dC1 = dC1 + 1;	
+		end
+		6: begin //set reC and imS, and set into subtractor, also set multiplier going towards IMAG
+			reC <= mul1;
+			imS <= mul2;
+			
+			RegSub1A <= reC;
+			RegSub1B <= imS;
+			
+			
+			RegMul1A <= rx2;
+			RegMul1B <= theSIN;
+			RegMul2A <= ix2;
+			RegMul2B <= theCOS;
+			state <= 7;
+		
+		end
+		
+		7:begin // delay state for subtractor
+		 if(dC2 > 12)begin
+				state <= 8;
+				dC2 <= 0;
+			end
+			else
+				dC2 = dC2 + 1;	
+		end
+		
+		8:begin // set REAL from sub output, set addr1 for IMAG
+			REAL <= sub;
+			
+			reS <= mul1;
+			imC <= mul2;
+			
+			RegAd1A <= reS;
+			RegAd1B <= imC;
+			state <= 9;
+		end
+	  9:begin // delay state for subtractor
+		 if(dC3 > 12)begin
+				state <= 10;
+				dC3 <= 0;
+			end
+			else
+				dC3 = dC3 + 1;	
+		end
+		10: begin //set IMAG from addr1, load addr1 and addr2 for Fo and set subtractors for F1
+			IMAG <= addr1;
+			
+			RegAd1A <= REAL;
+			RegAd1B <= rx1;
+			RegAd2A <= IMAG;
+			RegAd2B <= ix1;
+			
+			RegSub1A <= rx1;
+			RegSub1B <= REAL;
+			RegSub2A <= ix1;
+			RegSub2B <= IMAG;
+			state <= 11;
+			
+		end
+	  11:begin // delay state for subtractor
+		 if(dC4 > 12)begin
+				state <= 12;
+				dC4 <= 0;
+			end
+			else
+				dC4 = dC4 + 1;	
+		end		
+		12:begin //set F0R,F0I,F1R,F1I. write F0I and F0R to RAM
+			F0R <= addr1;
+			F0I <= addr2;
+			
+			F1R <= sub1;
+			F1I <= sub2;
+			
+			W_enable <= 1;
+			
+			W_input <= F0R;
+			I_input <= F0I;
+			
+			W_address <= N2;
+			
+			W_enable <= 0;
+			state <= 13;
+			
+		end
+		13: begin //write F1R and F1I to RAM
+			W_input <= F1R;
+			I_input <= F1I;
+			
+			W_enable <= 1;
+			
+			state <= 14;
+		end
+		
+		14: begin //end state
+			W_enable <= 0;
+			state <= 14;
 		end
 	endcase
 
@@ -73,15 +187,22 @@ end
 /////////////Register and wire declarations////////////////
 
 
-///Home registers
-reg[31:0] x1,x2,Ix2,theSIN, theCOS;
-wire[31:0] wX1, wX2;
-assign wX1 = x1;
-assign wX2 = x2;
+//temporary registers for holding variables
+reg[31:0] reC,imS,reS,imC,REAL,IMAG,F0I, F0R, F1I, F1R;
 
-wire[31:0] flip;
-assign flip = 8'h80000000;
 
+
+
+///Real registers
+reg[31:0] rx1,rx2,theSIN, theCOS;
+wire[31:0] wrX1, wrX2;
+assign wrX1 = rx1;
+assign wrX2 = rx2;
+//imag registers
+reg[31:0] ix1,ix2;
+wire[31:0] wiX1, wiX2;
+assign wiX1 = ix1;
+assign wiX2 = ix2;
 
 wire[5:0] N1, N2,temp1,temp2,SINCOSaddress;	
 
@@ -117,13 +238,17 @@ assign wMul1B = RegMul1B;
 assign wMul2A = RegMul2A;
 assign wMul2B = RegMul2B;
 
-//ADDER INPUT
-reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B;
-wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B;
+//ADDER/SUB INPUT
+reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B,RegSub1A, RegSub1B,RegSub2A, RegSub2B;
+wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B,wSub1A,wSub1B,wSub2A,wSub2B;
 assign wAd1A = RegAd1A;
 assign wAd1B = RegAd1B;
 assign wAd2A = RegAd2A;
 assign wAd2B = RegAd2B;
+assign wSub1A = RegSub1A;
+assign wSub1B = RegSub1B;
+assign wSub2A = RegSub2A;
+assign wSub2B = RegSub2B;
 
 
 
@@ -134,15 +259,19 @@ assign W_RAM_input = W_input;
 assign I_RAM_input = I_input; 
 
 
-reg [31:0] W_address,W_enable;
+reg [31:0] W_address;
 wire [31:0] W_addr; 
 assign W_addr = W_address;
 
-wire [31:0] W_out;
+wire [31:0] W_out, I_out;
 
+reg W_enable;
 wire W_wea;
 assign W_wea = W_enable;
 
+
+
+reg [31:0] state, dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
 
 
 
@@ -154,6 +283,13 @@ ROM_MUL mul_1 (
   .b(wMul1B), // input [31 : 0] b
   .clk(clk), // input clk
   .result(mul1) // output [31 : 0] result
+);
+
+ROM_MUL mul_2 (
+  .a(wMul2A), // input [31 : 0] a
+  .b(wMul2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(mul2) // output [31 : 0] result
 );
 
 
@@ -171,6 +307,22 @@ FPAdder addr_2 (
   .result(addr2) // output [31 : 0] result
 );
 
+SUB SUB_1 (
+  .a(wSub1A), // input [31 : 0] a
+  .b(wSub1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(sub1) // output [31 : 0] result
+);
+
+
+SUB SUB_2 (
+  .a(wSub2A), // input [31 : 0] a
+  .b(wSub2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(sub2) // output [31 : 0] result
+);
+
+
 
 W_RAM W_RAM (
   .clka(clk), // input clka
@@ -185,7 +337,7 @@ I_RAM I_RAM (
   .wea(W_wea), // input [0 : 0] wea
   .addra(W_addr), // input [5 : 0] addra
   .dina(I_RAM_input), // input [31 : 0] dina
-  .douta(I_douta) // output [31 : 0] douta
+  .douta(I_out) // output [31 : 0] douta
 );
 
 
@@ -204,6 +356,8 @@ COS_RAM COS_RAM (
   .dina(COS_dina), // input [31 : 0] dina
   .douta(COS_douta) // output [31 : 0] douta
 );
+
+
 
 
 endmodule
