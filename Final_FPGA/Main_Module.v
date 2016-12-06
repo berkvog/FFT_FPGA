@@ -60,7 +60,7 @@ else
 					state <= 8;
 			end
 			else begin
-				state <= 1;
+				state <= 100;
 				SINCOS_en <=0;
 			end		
 		end
@@ -72,17 +72,102 @@ else
 				state <= 3;
 		end
 		
-		1: begin //delay until filter complete
-			BPF_RESET <= 0;
-			if(dC1 > 550000)begin
-				state <= 2;
-				BPF_RESET <= 1;
-			end	
-			else begin	
-				state <= 1;
-				dC1 = dC1 + 1;
-			end
-		end
+/////////////////fir filter//////////////////////////		
+		
+		100: begin
+				state<=101;
+				total<=0;
+				k<=0;
+				F_addr<=0;
+				kcount<=0;
+				ncount<=0;
+				j<=0;
+				counter<=0;
+				F_enable <=0;
+				end
+			101: begin
+				state<=102;
+				end
+			102: begin
+				state<=(ncount<1000)? 103:119;
+				F_enable <= 0;				
+				end
+			103: begin
+				F_addr<=ncount;
+				state<=104;
+				end
+			104: begin
+				state<=105;
+				end
+			105: begin
+				state<=(kcount<50)? 106:117;
+				end
+			106: begin
+				k<=kcount;
+				state<=107;
+				end
+			107: begin
+				state<=108;
+				end
+			108: begin
+				state<=(F_addr>=k)? 109:117;
+				end
+			109: begin
+				j<=F_addr-k;
+				state<=110;
+				counter<=0;
+				end
+			110:begin
+				state<=111;
+				end
+			111:begin
+				m1<=bk;
+				m2<=xj;
+				state<=112;
+				counter<=0;
+				end
+			112:begin
+				state<=113;
+				end
+			113:begin
+				a1<=product;
+				a2<=runningtotal;
+				state<=114;
+				counter<=0;
+				end
+			114:begin
+				state<=115;
+				end
+			115:begin
+				total<=sum;
+				state<=116;
+				kcount<=kcount+1;
+				counter<=0;
+				end
+			116:begin
+				state<=105;
+				end
+			117:begin
+				y<=runningtotal;
+				F_data <= runningtotal;
+				total<=32'b0;
+				ncount<=ncount+1;
+				kcount<=0;
+				state<=118;
+				counter<=0;	
+				//setting F_RAM
+				F_enable <= 1;
+				end
+			118:begin
+				state<=102;
+				end
+			119:begin
+				state<=2;
+				end
+		
+///////////////////////////////////////////////////////		
+		
+		
 		2: begin //window values
 			if(W_address < 64)begin
 					RAMIO <= F_RAM_output;
@@ -182,10 +267,11 @@ wire FFT_R, BPF_R;
 //RAM wires
 wire [31:0] O_RAM_output,F_RAM_output, W_RAM_input;
 reg [31:0] RAMIO;
-assign W_RAM_input = RAMIO; 
+assign W_RAM_input = RAMIO;
+assign F_in=F_data;
 
 
-reg [31:0] W_address, F_address,W_enable,O_address;
+reg [31:0] W_address, F_address,W_enable,O_address,F_data;
 wire [31:0] W_addr, F_addr,O_addr; 
 assign W_addr = W_address;
 assign F_addr = F_address;
@@ -198,8 +284,11 @@ wire F_wea,W_wea;
 assign F_wea = 0;
 assign W_wea = W_enable;
 
-
-
+assign runningtotal=total;
+wire [31:0] runningtotal,bk,xj
+reg [31:0] total,ncount,kcount
+reg[5:0] k;
+reg[9:0] j
 /////////////////////////////////////////////CORES//////////////////////////////////////////
 
 
@@ -281,9 +370,16 @@ ROM_COS cosT (
   .douta(cos) // output [31 : 0] douta
 );
 
+coef_coe coefficients (
+  .clka(clk), // input clka
+  .addra(k), // input [5 : 0] addra
+  .douta(bk) // output [31 : 0] douta
+);
 
-
-
-
+y_coe ynoisy (
+  .clka(clk), // input clka
+  .addra(j), // input [9 : 0] addra
+  .douta(xj) // output [31 : 0] douta
+);
 
 endmodule

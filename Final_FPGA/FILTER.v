@@ -88,7 +88,7 @@ always @(posedge clk) begin
 		
 		case(state)
 	
-			0: begin
+			100: begin
 				state<=1;
 				total<=0;
 				k<=0;
@@ -99,69 +99,69 @@ always @(posedge clk) begin
 				counter<=0;
 				F_enable <=0;
 				end
-			1: begin
+			101: begin
 				state<=2;
 				end
-			2: begin
+			102: begin
 				state<=(ncount<1000)? 3:19;
 				F_enable <= 0;				
 				end
-			3: begin
+			103: begin
 				n<=ncount;
 				state<=4;
 				end
-			4: begin
+			104: begin
 				state<=5;
 				end
-			5: begin
+			105: begin
 				state<=(kcount<50)? 6:17;
 				end
-			6: begin
+			106: begin
 				k<=kcount;
 				state<=7;
 				end
-			7: begin
+			107: begin
 				state<=8;
 				end
-			8: begin
+			108: begin
 				state<=(n>=k)? 9:17;
 				end
-			9: begin
+			109: begin
 				j<=n-k;
 				state<=10;
 				counter<=0;
 				end
-			10:begin
+			110:begin
 				state<=11;
 				end
-			11:begin
+			111:begin
 				m1<=bk;
 				m2<=xj;
 				state<=12;
 				counter<=0;
 				end
-			12:begin
+			112:begin
 				state<=13;
 				end
-			13:begin
+			113:begin
 				a1<=product;
 				a2<=runningtotal;
 				state<=14;
 				counter<=0;
 				end
-			14:begin
+			114:begin
 				state<=15;
 				end
-			15:begin
+			115:begin
 				total<=sum;
 				state<=16;
 				kcount<=kcount+1;
 				counter<=0;
 				end
-			16:begin
+			116:begin
 				state<=5;
 				end
-			17:begin
+			117:begin
 				y<=runningtotal;
 				F_data <= runningtotal;
 				total<=32'b0;
@@ -173,10 +173,10 @@ always @(posedge clk) begin
 				F_enable <= 1;
 
 				end
-			18:begin
+			118:begin
 				state<=2;
 				end
-			19:begin
+			119:begin
 				state<=19;
 				end
 			endcase
