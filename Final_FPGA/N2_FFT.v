@@ -19,11 +19,18 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module N2_FFT #(parameter SIZE = 64)(
-    input [31:0] n,
-    input [31:0] p,
-	 input [31:0] counter,
+    input [31:0] r1,
+    input [31:0] r2,
+	 input [31:0] i1,
+	 input [31:0] i2,
+	 input [31:0] SIN,
+	 input [31:0] COS,
 	 input clk,
-	 input rst
+	 input rst,
+	 output [31:0] F0I,
+	 output [31:0] F0R,
+	 output [31:0] F1I,
+	 output [31:0] F1I
     );
 
 
@@ -37,18 +44,17 @@ else begin
 		
 		0:begin //set values
 			state <= 1;
-			rx1 <= 0;
-			rx2 <= 0;
-			ix1 <= 0;
-			ix2 <= 0;
 			end
-		1: begin //get 1st value from wRAM and get sin and cos values
-			W_address <= N1;
-			state <= 2;
-			theSIN <= SIN_douta;
-			theCOS <= COS_douta;
+		1: begin //set values from input
+			rx1 <= r1;
+			rx2 <= r2;
+			ix1 <= i1;
+			ix2 <= i2;
+			theCos <= COS;
+			theSin <= SIN;
+			state <= 4;
 		end
-		2: begin
+		/*2: begin
 			rx1 <= W_out;
 			ix1 <= I_out;
 			W_address <= N2;
@@ -58,15 +64,13 @@ else begin
 			rx2 <= W_out;
 			ix2 <= I_out;
 			state <= 4;
-		end
+		end*/
 		4: begin //computation for reC imS going towards REAL
 			RegMul1A <= rx2;
 			RegMul1B <= theCOS;
 			RegMul2A <= ix2;
-			RegMul2B <= theSIN;
-			W_address <= N1;
-			
-			state <= 5;
+			RegMul2B <= theSIN;			
+		   state <= 5;
 		end
 		5: begin//delay 7 cycles
 			if(dC1 > 7)begin
@@ -148,7 +152,7 @@ else begin
 			
 			F1R <= sub1;
 			F1I <= sub2;
-			
+			/*
 			W_enable <= 1;
 			
 			W_input <= F0R;
@@ -156,21 +160,12 @@ else begin
 			
 			W_address <= N2;
 			
-			W_enable <= 0;
-			state <= 13;
-			
-		end
-		13: begin //write F1R and F1I to RAM
-			W_input <= F1R;
-			I_input <= F1I;
-			
-			W_enable <= 1;
-			
+			W_enable <= 0;*/
 			state <= 14;
+			
 		end
-		
+
 		14: begin //end state
-			W_enable <= 0;
 			state <= 14;
 		end
 	endcase
@@ -188,9 +183,7 @@ end
 
 
 //temporary registers for holding variables
-reg[31:0] reC,imS,reS,imC,REAL,IMAG,F0I, F0R, F1I, F1R;
-
-
+reg[31:0] reC,imS,reS,imC,REAL,IMAG;
 
 
 ///Real registers
@@ -203,30 +196,6 @@ reg[31:0] ix1,ix2;
 wire[31:0] wiX1, wiX2;
 assign wiX1 = ix1;
 assign wiX2 = ix2;
-
-wire[5:0] N1, N2,temp1,temp2,SINCOSaddress;	
-
-assign N1 = n;
-
-assign temp1 = 6'b000001;
-assign temp2 = temp1 << p;
-assign N2 = (SIZE/temp2) + n;
-assign SINCOSaddress = counter * temp2/2; 
-
-
-
-//SIN and COS 
-reg [31:0] COS_in, SIN_in;//, addressX;
-reg SINCOS_en;
-wire[31:0] COS_dina,SIN_dina;//,COS_addra,SIN_addra;
-wire SIN_wea, COS_wea;
-assign COS_dina = COS_in;
-assign SIN_dina = SIN_in;
-assign COS_wea = SINCOS_en;
-assign SIN_wea = SINCOS_en;
-//assign COS_addra = addressX;
-//assign SIN_addra = addressX;
-
 
 
 
@@ -251,6 +220,34 @@ assign wSub2A = RegSub2A;
 assign wSub2B = RegSub2B;
 
 
+/*
+wire[5:0] N1, N2,temp1,temp2,SINCOSaddress;	
+
+assign N1 = n;
+
+assign temp1 = 6'b000001;
+assign temp2 = temp1 << p;
+assign N2 = (SIZE/temp2) + n;
+assign SINCOSaddress = counter * temp2/2; 
+*/
+
+/*
+//SIN and COS 
+reg [31:0] COS_in, SIN_in;//, addressX;
+reg SINCOS_en;
+wire[31:0] COS_dina,SIN_dina;//,COS_addra,SIN_addra;
+wire SIN_wea, COS_wea;
+assign COS_dina = COS_in;
+assign SIN_dina = SIN_in;
+assign COS_wea = SINCOS_en;
+assign SIN_wea = SINCOS_en;
+//assign COS_addra = addressX;
+//assign SIN_addra = addressX;
+*/
+
+
+
+/*
 
 //RAM wires
 wire [31:0] W_RAM_input, I_RAM_input,I_douta;
@@ -268,10 +265,10 @@ wire [31:0] W_out, I_out;
 reg W_enable;
 wire W_wea;
 assign W_wea = W_enable;
+*/
 
 
-
-reg [31:0] state, dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
+reg [31:0] state, dC1, dC2, dC3, dC4;
 
 
 
@@ -322,7 +319,7 @@ SUB SUB_2 (
   .result(sub2) // output [31 : 0] result
 );
 
-
+/*
 
 W_RAM W_RAM (
   .clka(clk), // input clka
@@ -357,7 +354,7 @@ COS_RAM COS_RAM (
   .douta(COS_douta) // output [31 : 0] douta
 );
 
-
+*/
 
 
 endmodule

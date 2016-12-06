@@ -96,16 +96,28 @@ else
 					state <= 4;
 			end
 		end
-		4: begin //run FFT
-			FFT_RESET <= 0;
-			if(dC2 > 100000000)begin //number of cycles for each FFT to compute
-					state <= 5;
-					FFT_RESET <= 1;
-			end
-			else begin
-				dC2 <= dC2 + 1;
-				state <= 4;
-			end
+		4: begin //run FFT // CHANGED, NOW CHARGED WITH RUNNING FFT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		end
 		5: begin //read outRAM
 			if(O_address > 63)begin
@@ -191,11 +203,14 @@ assign W_wea = W_enable;
 /////////////////////////////////////////////CORES//////////////////////////////////////////
 
 
-FFT FFT (
-	.clk(clk),
-	.rst(FFT_R),
-	.magnitude(theMag)
-);
+N2_FFT N2_FFT (
+    .n(n),
+    .p(p),
+	 .counter(counter),
+	 .clk(clk),
+	 .rst(rst)
+    );
+
 
 FILTER FILTER(
 	.clk(clk),
@@ -265,6 +280,10 @@ ROM_COS cosT (
   .addra(COS_addra), // input [7 : 0] addra
   .douta(cos) // output [31 : 0] douta
 );
+
+
+
+
 
 
 endmodule
