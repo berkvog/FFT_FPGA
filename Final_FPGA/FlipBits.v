@@ -22,11 +22,14 @@ module FlipBits(
     input[5:0] in,
 	 input clk,
 	 input rst,
-    output [5:0] out
+    output [5:0] wout
     );
 reg [5:0] n,state,temp_o;
 wire [5:0] w_o;
 assign w_o = temp_o;
+
+reg[5:0] out;
+assign wout = out;
 
 
 always @(posedge clk) begin

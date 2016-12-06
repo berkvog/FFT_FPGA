@@ -27,10 +27,10 @@ module N2_FFT #(parameter SIZE = 64)(
 	 input [31:0] COS,
 	 input clk,
 	 input rst,
-	 output [31:0] F0I,
-	 output [31:0] F0R,
-	 output [31:0] F1I,
-	 output [31:0] F1I
+	 output [31:0] wF0I,
+	 output [31:0] wF0R,
+	 output [31:0] wF1I,
+	 output [31:0] wF1R
     );
 
 
@@ -50,8 +50,8 @@ else begin
 			rx2 <= r2;
 			ix1 <= i1;
 			ix2 <= i2;
-			theCos <= COS;
-			theSin <= SIN;
+			theCOS <= COS;
+			theSIN <= SIN;
 			state <= 4;
 		end
 		/*2: begin
@@ -106,7 +106,7 @@ else begin
 		end
 		
 		8:begin // set REAL from sub output, set addr1 for IMAG
-			REAL <= sub;
+			REAL <= sub1;
 			
 			reS <= mul1;
 			imC <= mul2;
@@ -198,6 +198,17 @@ assign wiX1 = ix1;
 assign wiX2 = ix2;
 
 
+reg[31:0] F0I;
+reg[31:0] F0R;
+reg[31:0] F1I;
+reg[31:0] F1R;
+
+assign wF0R = F0R;
+assign wF0I = F0I;
+assign wF1R = F1R;
+assign wF1I = F1I;
+
+
 
 //MUL INPUT
 reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
@@ -219,53 +230,8 @@ assign wSub1B = RegSub1B;
 assign wSub2A = RegSub2A;
 assign wSub2B = RegSub2B;
 
+wire[31:0] sub1,sub2,mul1,mul2,addr1,addr2;
 
-/*
-wire[5:0] N1, N2,temp1,temp2,SINCOSaddress;	
-
-assign N1 = n;
-
-assign temp1 = 6'b000001;
-assign temp2 = temp1 << p;
-assign N2 = (SIZE/temp2) + n;
-assign SINCOSaddress = counter * temp2/2; 
-*/
-
-/*
-//SIN and COS 
-reg [31:0] COS_in, SIN_in;//, addressX;
-reg SINCOS_en;
-wire[31:0] COS_dina,SIN_dina;//,COS_addra,SIN_addra;
-wire SIN_wea, COS_wea;
-assign COS_dina = COS_in;
-assign SIN_dina = SIN_in;
-assign COS_wea = SINCOS_en;
-assign SIN_wea = SINCOS_en;
-//assign COS_addra = addressX;
-//assign SIN_addra = addressX;
-*/
-
-
-
-/*
-
-//RAM wires
-wire [31:0] W_RAM_input, I_RAM_input,I_douta;
-reg [31:0] W_input,I_input;
-assign W_RAM_input = W_input;
-assign I_RAM_input = I_input; 
-
-
-reg [31:0] W_address;
-wire [31:0] W_addr; 
-assign W_addr = W_address;
-
-wire [31:0] W_out, I_out;
-
-reg W_enable;
-wire W_wea;
-assign W_wea = W_enable;
-*/
 
 
 reg [31:0] state, dC1, dC2, dC3, dC4;
@@ -318,43 +284,6 @@ SUB SUB_2 (
   .clk(clk), // input clk
   .result(sub2) // output [31 : 0] result
 );
-
-/*
-
-W_RAM W_RAM (
-  .clka(clk), // input clka
-  .wea(W_wea), // input [0 : 0] wea
-  .addra(W_addr), // input [5 : 0] addra
-  .dina(W_RAM_input), // input [31 : 0] dina
-  .douta(W_out) // output [31 : 0] douta
-);
-
-I_RAM I_RAM (
-  .clka(clk), // input clka
-  .wea(W_wea), // input [0 : 0] wea
-  .addra(W_addr), // input [5 : 0] addra
-  .dina(I_RAM_input), // input [31 : 0] dina
-  .douta(I_out) // output [31 : 0] douta
-);
-
-
-SIN_RAM SIN_RAM (
-  .clka(clk), // input clka
-  .wea(SIN_wea), // input [0 : 0] wea
-  .addra(SINCOSaddress), // input [4 : 0] addra
-  .dina(SIN_dina), // input [31 : 0] dina
-  .douta(SIN_douta) // output [31 : 0] douta
-);
-
-COS_RAM COS_RAM (
-  .clka(clk), // input clka
-  .wea(COS_wea), // input [0 : 0] wea
-  .addra(SINCOSaddress), // input [4 : 0] addra
-  .dina(COS_dina), // input [31 : 0] dina
-  .douta(COS_douta) // output [31 : 0] douta
-);
-
-*/
 
 
 endmodule

@@ -5,10 +5,79 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="687" delta="unknown" >"C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module &lt;<arg fmt="%s" index="1">glbl</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 591: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wF0I</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 592: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wF0R</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 593: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wF1I</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 594: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wF1R</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 607: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 608: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 615: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 616: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 625: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 626: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 634: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">wea</arg>&gt;. Formal port size is <arg fmt="%d" index="2">1</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 635: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 645: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 653: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 661: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 662: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">douta</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 667: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">addra</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 668: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">douta</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 690: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">result</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 697: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">result</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 705: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">result</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 712: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">result</arg>&gt;. Formal port size is <arg fmt="%d" index="2">32</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
 </msg>
 
 </messages>

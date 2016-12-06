@@ -32,8 +32,10 @@ always @(posedge clk) begin
 
 if(rst)begin
 	state <= 0;
-	FFT_RESET <= 1;
-	BPF_RESET <= 1;
+   F_enable <= 0;
+	W_enable <= 0;
+	I_enable <= 0;
+	O_enable <= 0;
 	end
 	
 else
@@ -90,7 +92,7 @@ else
 				else begin
 				I_address <= 0;
 				I_enable <= 0;
-				state <= 4;
+				state <= 100;
 			 end
 		end
 		
@@ -100,7 +102,7 @@ else
 				state<=101;
 				total<=0;
 				k<=0;
-				F_addr<=0;
+				F_address<=0;
 				kcount<=0;
 				ncount<=0;
 				j<=0;
@@ -115,7 +117,7 @@ else
 				F_enable <= 0;				
 				end
 			103: begin
-				F_addr<=ncount;
+				F_address<=ncount;
 				state<=104;
 				end
 			104: begin
@@ -143,25 +145,27 @@ else
 				state<=111;
 				end
 			111:begin
-				m1<=bk;
-				m2<=xj;
+				RegMul1A<=bk;
+				RegMul1B<=xj;
 				state<=112;
 				counter<=0;
 				end
 			112:begin
-				state<=113;
+				counter<=counter+1;
+				state<=(counter<8)? 112:113;
 				end
 			113:begin
-				a1<=product;
-				a2<=runningtotal;
+				RegAd1A<=mul1;
+				RegAd1B<=runningtotal;
 				state<=114;
 				counter<=0;
 				end
 			114:begin
-				state<=115;
+				counter<=counter+1;
+				state<=(counter<13)? 114:115;
 				end
 			115:begin
-				total<=sum;
+				total<=addr1;
 				state<=116;
 				kcount<=kcount+1;
 				counter<=0;
@@ -170,8 +174,7 @@ else
 				state<=105;
 				end
 			117:begin
-				y<=runningtotal;
-				F_data <= runningtotal;
+				F_datain <= runningtotal;
 				total<=32'b0;
 				ncount<=ncount+1;
 				kcount<=0;
@@ -192,7 +195,7 @@ else
 		
 		2: begin //window values
 			if(W_address < 64)begin
-					RAMIO <= F_RAM_output;
+					W_datain <= F_RAM_output;
 					W_enable <= 1;
 					W_address <= W_address + 1;
 					F_address <= F_address + 1;
@@ -448,7 +451,7 @@ reg[31:0] p, counter, count;
 reg[5:0] n;
 
 //Variables for 2NFFT input in MAIN
-reg[31:0] re1,im1,re2,im2,tempSIN,tempCos;
+reg[31:0] re1,im1,re2,im2,tempSIN,tempCOS;
 
 //Variables for 2NFFT output in MAIN
 reg[31:0] F0I,F0R,F1I,F1R;
@@ -456,8 +459,8 @@ wire[31:0] wF0I,wF0R,wF1I,wF1R;
 
 
 //N2 reset
-reg[31:0] N2_reset;
-wire[31:0] N2_rst;
+reg N2_reset;
+wire N2_rst;
 assign N2_rst = N2_reset;
 
 //wires for 2NFFT input
@@ -467,7 +470,7 @@ assign wN2_I1 = im1;
 assign wN2_R2 = re2;
 assign wN2_I2 = im2;
 assign N2_Sin = tempSIN;
-assign N2_Cos = tempCos;
+assign N2_Cos = tempCOS;
 
 
 
@@ -478,8 +481,8 @@ assign temp1 = 6'b000001;
 assign temp2 = temp1 << p;
 assign N2 = (SIZE/temp2) + n;
 assign SINCOS_address = counter * temp2/2;
-assign countcomp = (size/temp2) - 1;
-assign ninc = 1 + (size/temp2);
+assign countcomp = (SIZE/temp2) - 1;
+assign ninc = 1 + (SIZE/temp2);
 
 
 //////////////////SIN and COS RAM valuies
@@ -503,7 +506,7 @@ reg [31:0] state, dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
 
 
 //////////////////////////Filter and output RAM variables
-reg[31:0] F_address, O_address, F_datain, O_datain, F_enable, O_enable;
+reg[31:0] F_address, O_address, F_datain, O_datain;
 
 wire[31:0] F_addr, O_addr, F_RAM_input,O_RAM_input,F_RAM_output, O_RAM_output, F_wea, O_wea;
 assign F_addr = F_address;
@@ -514,9 +517,8 @@ assign F_wea = F_enable;
 assign O_wea = O_enable;
 
 
-
 ///////////////////////////////// Window/REAL and Imaginary RAM variables
-reg [31:0] W_address, I_address, W_datain, I_datain, W_enable, I_enable;
+reg [31:0] W_address, I_address, W_datain, I_datain;
 
 wire[31:0] W_addr, I_addr, W_RAM_input,I_RAM_input,W_RAM_output, I_RAM_output, W_wea, I_wea;
 assign W_addr = W_address;
@@ -528,9 +530,19 @@ assign I_wea = I_enable;
 
 
 
+//All enable values for all RAMS
+reg W_enable,I_enable,O_enable,F_enable;
+
+
+
+
+
+
+
+
 ///////////FILTER VARIABLES
-assign runningtotal=total;
 wire [31:0] runningtotal,bk,xj;
+assign runningtotal=total;
 reg [31:0] total,ncount,kcount;
 reg[5:0] k;
 reg[9:0] j;
@@ -556,7 +568,8 @@ assign wAd2B = RegAd2B;
 
 
 ///For flip
-reg[5:0] toFlip,flipReset;
+reg[5:0] toFlip;
+reg flipReset;
 wire[5:0] Flipped;
 
 
@@ -575,17 +588,17 @@ N2_FFT N2_FFT(
 	 .COS(N2_Cos),
 	 .clk(clk),
 	 .rst(N2_rst),
-	 .F0I(N2_F0I),
-	 .F0R(N2_F0R),
-	 .F1I(N2_F1I),
-	 .F1I(N2_F1R)
+	 .wF0I(N2_F0I),
+	 .wF0R(N2_F0R),
+	 .wF1I(N2_F1I),
+	 .wF1R(N2_F1R)
     );
 	 
 FlipBits Flip(
     .in(toFlip),
 	 .clk(clk),
 	 .rst(flipReset),
-    .out(Flipped)
+    .wout(Flipped)
     );
 
 ///////////////////RAMS
