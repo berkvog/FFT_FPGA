@@ -374,12 +374,12 @@ else
 				end
 
 				else begin
-					flip <= n;
+					toFlip <= n;
 				   state <= 251;
 				end
 		end		
 		251: begin //set W_address to flipped, enable write to W
-			  W_address <= flipped;
+			  W_address <= Flipped;
 			  W_datain <= O_RAM_output;
 			  W_enable <= 1;
 			  state <= 252;
@@ -433,7 +433,7 @@ end
 
 ////////Variables for FFT
 reg[31:0] p, counter, count;
-reg[4:0] n;
+reg[5:0] n;
 
 //Variables for 2NFFT input in MAIN
 reg[31:0] re1,im1,re2,im2,tempSIN,tempCos;
@@ -544,8 +544,8 @@ assign wAd2B = RegAd2B;
 
 
 ///For flip
-reg[4:0] flip;
-wire[4:0] Flipped;
+reg[5:0] toFlip;
+wire[5:0] Flipped;
 
 
 
