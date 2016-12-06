@@ -41,10 +41,12 @@ else
 	case(state) 
 		0:begin //set values
 		     state <= 1;
-			  dC1 <= 0;
-			  dC2 <= 0;
-			  dC3 <= 0;
+			  dC1 <= 0; //used
+			  dC2 <= 0; //used
+			  dC3 <= 0; //used
 			  dC4 <= 0;
+			  dC5 <= 0;
+			  dC6 <= 0;
 			  W_address <= 0;
 			  F_address <= 0;
 			  addressX <= 0;
@@ -204,8 +206,10 @@ else
 		
 		////////////////////////////////////////////// FFT PROCESS  /////////////////////////////////////////
 		
-		200:begin // start of outer loop
+		200: begin // start of outer loop
 			n <= 0;
+			counter <= 0;
+			count <= 0;
 			N2_reset <= 1;
 			if(p < 6)
 				state <= 220; //CHANGE TO END OF FFT
@@ -240,31 +244,164 @@ else
 		end
 		
 		204: begin //delay state for 2NFFT
-		
+			if(dC1 < 50)begin
+				dC1 = dC1 + 1;
+				state <= 204;
+			end	
+			else
+				state <= 205;
+		end
+		205: begin //setting outputs of 2NFFT, and set reset of 2NFFT, and write to N2 location in W and I rams
+			F0I <= N2_F0I;
+			F0R <= N2_F0R;
+			F1I <= N2_F1I;
+			F1R <= N2_F1R;
+			
+			N2_reset <= 1;
+			
+			W_datain <= N2_F0I;
+			I_datain <= N2_F1I;
+			
+			W_enable <= 1;
+			I_enable <= 1;
+			state <= 206;
+		end
+		206: begin //set addresses to N1
+			W_address <= N1;
+			I_address <= N1;
+
+			state <= 207;
+		end
+		207: begin //write to RAM
+			W_datain <= F0R;
+			I_datain <= F0I;
+			state <= 208;
+		end	
+		 208: begin //disable RAM writing
+			W_enable <= 0;
+			I_enable <= 0;
+			state <= 209;			
+		 end
+		209: begin //check for inner loop end//////////////////
+			if(counter == countcomp)begin
+				n <= n + ninc;
+				counter <= 0;
+			end
+			else begin
+				n <= n + 1;
+				counter <= counter + 1;
+			end
+
+			if(count > 31)begin
+				p <= p + 1;
+				state <= 200;
+			end
+			else begin
+				count <= count + 1;
+				state <= 201;
+			end
+		end
+		////////////////////////////////////////////////END OUTER LOOP///////////////////////////////////////////
+		220: begin //end of FFT for window, need to get magnitude of values and send them to O_RAM
+			  I_address <= 0;
+			  W_address <= 0;
+			  O_address <= 0;
+			  n <= 0; // n used for counter here
+			  state <= 321;
+		end
+		321: begin  //loop here
+				I_address <= I_address + 1;
+				W_address <= W_address + 1;
+				O_address <= O_address + 1;
+				
+				if(n > 63)begin
+					state <= 250;
+					n <= 0;
+					O_address <= 0;
+					W_address <= 0;//end of magnitude loop
+					end
+				else
+					state <= 221;
 		end
 		
+		221: begin //send RAM outputs into Multiplier 
+			RegMul1A <= I_RAM_output;
+			RegMul1B <= I_RAM_output;
+			RegMul2A <= W_RAM_output;
+			RegMul2B <= W_RAM_output;
+			state <= 222;
+		end
+		222: begin //delay state for muls
+		  if(dC1 > 7)begin
+				state <= 223;
+				dC1 <= 0;
+			end
+			else
+				dC1 = dC1 + 1;	
+		end
+		223: begin //set adder to sum up mul outputs
+			  RegAd1A <= mul1;
+			  RegAd1B <= mul2;
+			  state <= 224;
+		end
+		224: begin //delay state for adder
+			if(dC2 > 13)begin
+				state <= 225;
+				dC2 <= 0;
+			end
+			else
+				dC2 = dC2 + 1;			
+		end
+		225: begin //set adder output towards storage in O_RAM
+			  O_enable <= 1;
+			  O_datain <= addr1;
+			  state <= 226;
+		end		
+		226: begin //increment and return to loop head
+			  O_enable <= 0;
+			  n <= n + 1;
+			  
+			  state <= 321;
+		
+		end
+		250: begin //now begin swapping values back into W_RAM;		
+			  n <= O_address;
+			  
+			  if(O_address < 63)begin
+					state <= 5;
+					O_address <= 0;
+					W_address <= 0;
+				end
+
+				else begin
+					flip <= n;
+				   state <= 251;
+				end
+		end		
+		251: begin //set W_address to flipped, enable write to W
+			  W_address <= flipped;
+			  W_datain <= O_RAM_output;
+			  W_enable <= 1;
+			  state <= 252;
+		end
+		252: begin //increment O_address, disable write to W, go back to loop start
+			  O_address <= O_address + 1;
+			  W_enable <= 0; 
+			  state <= 250;
+		end
+				
+		
+		//write output to W_RAM values
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		5: begin //read outRAM
-			if(O_address > 63)begin
+		5: begin //read W_RAM
+			if(W_address > 63)begin
 				state <= 6;
 			end
 			else begin
-				O_address = O_address + 1;
+				W_address = W_address + 1;
 				state <= 5;
-				Magnitude <= O_RAM_output;
+				Magnitude <= W_RAM_output;
 			end	
 		
 		end
@@ -280,6 +417,8 @@ else
 		7: begin //			
 			state <= 7;
 		end
+
+
 	
 	endcase
 
@@ -293,7 +432,8 @@ end
 
 
 ////////Variables for FFT
-reg[31:0] n, p, counter;
+reg[31:0] p, counter, count;
+reg[4:0] n;
 
 //Variables for 2NFFT input in MAIN
 reg[31:0] re1,im1,re2,im2,tempSIN,tempCos;
@@ -319,16 +459,15 @@ assign N2_Cos = tempCos;
 
 
 
-
-
 //for calculating addressing
-wire[5:0] N1, N2,temp1,temp2,SINCOS_address;	
+wire[5:0] N1, N2,temp1,temp2,SINCOS_address,countcomp,ninc;	
 assign N1 = n;
 assign temp1 = 6'b000001;
 assign temp2 = temp1 << p;
 assign N2 = (SIZE/temp2) + n;
 assign SINCOS_address = counter * temp2/2;
-
+assign countcomp = (size/temp2) - 1;
+assign ninc = 1 + (size/temp2);
 
 
 //////////////////SIN and COS RAM valuies
@@ -383,9 +522,38 @@ wire [31:0] runningtotal,bk,xj;
 reg [31:0] total,ncount,kcount;
 reg[5:0] k;
 reg[9:0] j;
+
+
+
+//For arithmatic
+//MUL INPUT
+reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
+wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B;
+assign wMul1A = RegMul1A;
+assign wMul1B = RegMul1B;
+assign wMul2A = RegMul2A;
+assign wMul2B = RegMul2B;
+
+//ADDER/SUB INPUT
+reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B;
+wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B;
+assign wAd1A = RegAd1A;
+assign wAd1B = RegAd1B;
+assign wAd2A = RegAd2A;
+assign wAd2B = RegAd2B;
+
+
+///For flip
+reg[4:0] flip;
+wire[4:0] Flipped;
+
+
+
 /////////////////////////////////////////////CORES//////////////////////////////////////////
 
 
+
+////////////////Submodules
 N2_FFT N2_FFT(
     .r1(wN2_R1),
     .r2(wN2_R2),
@@ -400,13 +568,13 @@ N2_FFT N2_FFT(
 	 .F1I(N2_F1I),
 	 .F1I(N2_F1R)
     );
+	 
+FlipBits Flip(
+    .in(toFlip),
+    .out(Flipped)
+    );
 
-FILTER FILTER(
-	.clk(clk),
-	.rst(BPF_R),
-	.y(BPF_output)
-);
-
+///////////////////RAMS
 F_RAM F_RAM (
   .clka(clk), // input clka
   .wea(F_wea), // input [0 : 0] wea
@@ -460,7 +628,7 @@ COS_RAM COS_RAM (
   .douta(COS_dout) // output [31 : 0] douta
 );
 
-
+////////////////ROMS
 ROM_SIN sinT (
   .clka(clk), // input clka
   .addra(SIN_addra), // input [7 : 0] addra
@@ -484,5 +652,43 @@ y_coe ynoisy (
   .addra(j), // input [9 : 0] addra
   .douta(xj) // output [31 : 0] douta
 );
+
+//////////////////Arithmatic
+
+
+ROM_MUL mul_1 (
+  .a(wMul1A), // input [31 : 0] a
+  .b(wMul1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(mul1) // output [31 : 0] result
+);
+
+ROM_MUL mul_2 (
+  .a(wMul2A), // input [31 : 0] a
+  .b(wMul2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(mul2) // output [31 : 0] result
+);
+
+
+FPAdder addr_1 (
+  .a(wAd1A), // input [31 : 0] a
+  .b(wAd1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(addr1) // output [31 : 0] result
+);
+
+FPAdder addr_2 (
+  .a(wAd2A), // input [31 : 0] a
+  .b(wAd2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(addr2) // output [31 : 0] result
+);
+
+
+
+
+
+
 
 endmodule
