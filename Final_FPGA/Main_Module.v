@@ -366,6 +366,7 @@ else
 		end
 		250: begin //now begin swapping values back into W_RAM;		
 			  n <= O_address;
+			  flipReset <= 1;
 			  
 			  if(O_address < 63)begin
 					state <= 5;
@@ -375,14 +376,25 @@ else
 
 				else begin
 					toFlip <= n;
-				   state <= 251;
+					flipReset <= 0;
+				   state <= 255;
 				end
 		end		
+		255: begin //delay for bit flip
+		  if(dC4 > 25)begin
+				state <= 251;
+				dC4 <= 0;
+			end
+			else
+				dC4 = dC4 + 1;				  
+		end
+		
 		251: begin //set W_address to flipped, enable write to W
 			  W_address <= Flipped;
 			  W_datain <= O_RAM_output;
 			  W_enable <= 1;
 			  state <= 252;
+			  flipReset <= 1;
 		end
 		252: begin //increment O_address, disable write to W, go back to loop start
 			  O_address <= O_address + 1;
@@ -544,7 +556,7 @@ assign wAd2B = RegAd2B;
 
 
 ///For flip
-reg[5:0] toFlip;
+reg[5:0] toFlip,flipReset;
 wire[5:0] Flipped;
 
 
@@ -571,6 +583,8 @@ N2_FFT N2_FFT(
 	 
 FlipBits Flip(
     .in(toFlip),
+	 .clk(clk),
+	 .rst(flipReset),
     .out(Flipped)
     );
 
