@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe" -prj "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_beh.prj" "Main_Test" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe" -prj "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_beh.prj" "work.Main_Test" "work.glbl" 

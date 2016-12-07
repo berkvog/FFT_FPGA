@@ -30,12 +30,14 @@ module Main_Test;
 
 	// Outputs
 	wire [31:0] Magnitude;
+	wire [31:0] test;
 
 	// Instantiate the Unit Under Test (UUT)
 	Main_Module uut (
 		.clk(clk), 
 		.rst(rst), 
-		.Magnitude(Magnitude)
+		.Magnitude(Magnitude),
+		.test(test)
 	);
 
 	initial begin
@@ -52,7 +54,7 @@ module Main_Test;
 		rst = 0;
 		
 		
-		$monitor("Magnitude:%x", Magnitude);
+		$monitor("Magnitude:%x", Magnitude, "			test:%x", test);
 
 
 	end

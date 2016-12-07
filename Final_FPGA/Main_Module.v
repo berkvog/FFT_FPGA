@@ -21,7 +21,8 @@
 module Main_Module #(parameter SIZE = 64)(
     input clk,
     input rst,
-    output reg [31:0] Magnitude
+    output reg [31:0] Magnitude,
+	 output reg [31:0] test
     );
 
 
@@ -113,8 +114,8 @@ else
 				state<=102;
 				end
 			102: begin
-				state<=(ncount<1000)? 103:119;
-				F_enable <= 0;				
+				state<=(ncount<64)? 103:119;
+				F_enable <= 1;				
 				end
 			103: begin
 				F_address<=ncount;
@@ -174,27 +175,55 @@ else
 				state<=105;
 				end
 			117:begin
+				test<= runningtotal;
 				F_datain <= runningtotal;
 				total<=32'b0;
 				ncount<=ncount+1;
 				kcount<=0;
 				state<=118;
 				counter<=0;	
-				//setting F_RAM
-				F_enable <= 1;
 				end
 			118:begin
 				state<=102;
 				end
 			119:begin
-				state<=2;
+				state<=50;
+				F_enable<=0;
 				end
 		
 ///////////////////////////////////////////////////////		
+			50:begin
+				ncount<=0;
+				F_enable<=0;
+				I_enable<=1;
+				W_enable<=1;
+				state<=51;
+				wicount<=0;
+				end
+			51:begin
+				state<=(ncount<64)? 52:54;
+				F_address<=ncount;
+				W_address<=wicount;
+				I_address<=wicount;
+				end
+			52:begin
+				state<=53;
+				end
+			53:begin
+				W_datain<=F_RAM_output;
+				I_datain<=0;
+				state<=51;
+				ncount<=ncount+1;
+				wicount<=wicount+1;
+				end
+			54:begin
+				W_enable<=0;
+				I_enable<=0;
+				state<=200;
+				end
 		
-		
-		2: begin //window values
-			if(W_address < 64)begin
+			
+			/*if(W_address < 64)begin
 					W_datain <= F_RAM_output;
 					W_enable <= 1;
 					W_address <= W_address + 1;
@@ -204,8 +233,8 @@ else
 					W_enable <= 0;
 					W_address <= 0;
 					state <= 200;
-			end
-		end
+			end*/
+		
 		
 		////////////////////////////////////////////// FFT PROCESS  /////////////////////////////////////////
 		
@@ -543,7 +572,7 @@ reg W_enable,I_enable,O_enable,F_enable;
 ///////////FILTER VARIABLES
 wire [31:0] runningtotal,bk,xj;
 assign runningtotal=total;
-reg [31:0] total,ncount,kcount;
+reg [31:0] total,ncount,kcount,wicount;
 reg[5:0] k;
 reg[9:0] j;
 
@@ -552,7 +581,7 @@ reg[9:0] j;
 //For arithmatic
 //MUL INPUT
 reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
-wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B;
+wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B, mul1,mul2;
 assign wMul1A = RegMul1A;
 assign wMul1B = RegMul1B;
 assign wMul2A = RegMul2A;
@@ -560,7 +589,7 @@ assign wMul2B = RegMul2B;
 
 //ADDER/SUB INPUT
 reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B;
-wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B;
+wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B, addr1,addr2;
 assign wAd1A = RegAd1A;
 assign wAd1B = RegAd1B;
 assign wAd2A = RegAd2A;

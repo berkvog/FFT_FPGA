@@ -1,52 +1,48 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe -prj C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_beh.prj Main_Test work.glbl 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe -prj C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_beh.prj work.Main_Test work.glbl 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/FPAdder.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" into library work
-WARNING:HDLCompiler:687 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module <glbl>.
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SUB.v" into library work
-WARNING:HDLCompiler:687 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module <glbl>.
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/N2_FFT.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/y_coe.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/W_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SIN_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_SIN.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_COS.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/O_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/I_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/F_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/COS_RAM.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/coef_coe.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/FlipBits.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" into library work
-Analyzing Verilog file "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/FPAdder.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SUB.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/N2_FFT.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/y_coe.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/W_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/SIN_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_SIN.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/ROM_COS.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/O_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/I_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/F_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/COS_RAM.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/coef_coe.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/FlipBits.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" into library work
+Analyzing Verilog file "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 WARNING:HDLCompiler:687 - "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
 Starting static elaboration
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 591: Size mismatch in connection of port <wF0I>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 592: Size mismatch in connection of port <wF0R>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 593: Size mismatch in connection of port <wF1I>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 594: Size mismatch in connection of port <wF1R>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 607: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 608: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 615: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 616: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 625: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 626: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 634: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 635: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 645: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 653: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 661: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 662: Size mismatch in connection of port <douta>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 667: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 668: Size mismatch in connection of port <douta>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 690: Size mismatch in connection of port <result>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 697: Size mismatch in connection of port <result>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 705: Size mismatch in connection of port <result>. Formal port size is 32-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:189 - "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 712: Size mismatch in connection of port <result>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 593: Size mismatch in connection of port <wF0I>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 594: Size mismatch in connection of port <wF0R>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 595: Size mismatch in connection of port <wF1I>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 596: Size mismatch in connection of port <wF1R>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 609: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 610: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 617: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 618: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 627: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 628: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 636: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 637: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 647: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 655: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 663: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 664: Size mismatch in connection of port <douta>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 669: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 670: Size mismatch in connection of port <douta>. Formal port size is 32-bit while actual signal size is 1-bit.
 Completed static elaboration
 Compiling module GND
 Compiling module VCC
@@ -113,6 +109,6 @@ Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 192 Verilog Units
-Built simulation executable C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe
-Fuse Memory Usage: 50284 KB
-Fuse CPU Usage: 1624 ms
+Built simulation executable C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.exe
+Fuse Memory Usage: 50816 KB
+Fuse CPU Usage: 1546 ms
