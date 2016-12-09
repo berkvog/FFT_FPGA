@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Main_Test" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="16" />
+   <wave_markers>
+      <marker time="6604641668000" label="" />
+      <marker time="30050000000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/Main_Test/uut/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">state[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/p" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">p[31:0]</obj_property>
+      <obj_property name="ObjectShortName">p[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/addr1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/mul1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mul1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mul1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/mul2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mul2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mul2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group5" type="group">
+      <obj_property name="label">W_RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/W_RAM_output" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">W_RAM_output[31:0]</obj_property>
+         <obj_property name="ObjectShortName">W_RAM_output[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/W_wea" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">W_wea[31:0]</obj_property>
+         <obj_property name="ObjectShortName">W_wea[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/W_datain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">W_datain[31:0]</obj_property>
+         <obj_property name="ObjectShortName">W_datain[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/W_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">W_address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">W_address[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group7" type="group">
+      <obj_property name="label">I_RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/I_RAM_output" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">I_RAM_output[31:0]</obj_property>
+         <obj_property name="ObjectShortName">I_RAM_output[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/I_wea" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">I_wea[31:0]</obj_property>
+         <obj_property name="ObjectShortName">I_wea[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/I_datain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">I_datain[31:0]</obj_property>
+         <obj_property name="ObjectShortName">I_datain[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/I_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">I_address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">I_address[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group6" type="group">
+      <obj_property name="label">O_RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/O_RAM_output" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">O_RAM_output[31:0]</obj_property>
+         <obj_property name="ObjectShortName">O_RAM_output[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/O_wea" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">O_wea[31:0]</obj_property>
+         <obj_property name="ObjectShortName">O_wea[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/O_datain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">O_datain[31:0]</obj_property>
+         <obj_property name="ObjectShortName">O_datain[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/O_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">O_address[5:0]</obj_property>
+         <obj_property name="ObjectShortName">O_address[5:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group15" type="group">
+      <obj_property name="label">F_RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/F_wea" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F_wea[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F_wea[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F_datain" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F_datain[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F_datain[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F_address" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F_address[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F_address[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F_RAM_output" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F_RAM_output[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F_RAM_output[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group31" type="group">
+      <obj_property name="label">N2Output</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/F0I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F0I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F0I[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/wF0I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wF0I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wF0I[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F0R" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F0R[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F0R[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/wF0R" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wF0R[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wF0R[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F1I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F1I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F1I[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/wF1I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wF1I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wF1I[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/F1R" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">F1R[31:0]</obj_property>
+         <obj_property name="ObjectShortName">F1R[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/wF1R" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wF1R[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wF1R[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/n" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">n[5:0]</obj_property>
+      <obj_property name="ObjectShortName">n[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/temp2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">temp2[6:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group39" type="group">
+      <obj_property name="label">N2Input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/N1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">N1[5:0]</obj_property>
+         <obj_property name="ObjectShortName">N1[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/N2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">N2[5:0]</obj_property>
+         <obj_property name="ObjectShortName">N2[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/tempSIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tempSIN[31:0]</obj_property>
+         <obj_property name="ObjectShortName">tempSIN[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/tempCOS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tempCOS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">tempCOS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/re2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">re2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">re2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/re1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">re1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">re1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/im2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">im2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">im2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/im1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">im1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">im1[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/addressX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addressX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addressX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group32" type="group">
+      <obj_property name="label">N2FFT_Inside</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/N2_FFT/state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/N2_FFT/dC1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dC1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dC1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/N2_FFT/dC2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dC2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dC2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/N2_FFT/dC3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dC3[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dC3[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/N2_FFT/rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="group79" type="group">
+         <obj_property name="label">N2FFT Arithmatic</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="group78" type="group">
+            <obj_property name="label">Muls</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegMul1A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegMul1A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegMul1A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegMul1B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegMul1B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegMul1B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegMul2A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegMul2A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegMul2A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegMul2B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegMul2B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegMul2B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/mul1" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">mul1[31:0]</obj_property>
+               <obj_property name="ObjectShortName">mul1[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/mul2" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">mul2[31:0]</obj_property>
+               <obj_property name="ObjectShortName">mul2[31:0]</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group93" type="group">
+            <obj_property name="label">Subs</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegSub1A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegSub1A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegSub1A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegSub1B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegSub1B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegSub1B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegSub2A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegSub2A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegSub2A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegSub2B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegSub2B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegSub2B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/sub1" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">sub1[31:0]</obj_property>
+               <obj_property name="ObjectShortName">sub1[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/sub2" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">sub2[31:0]</obj_property>
+               <obj_property name="ObjectShortName">sub2[31:0]</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group86" type="group">
+            <obj_property name="label">Adders</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegAd1A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegAd1A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegAd1A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegAd1B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegAd1B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegAd1B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegAd2A" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegAd2A[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegAd2A[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/RegAd2B" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">RegAd2B[31:0]</obj_property>
+               <obj_property name="ObjectShortName">RegAd2B[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/addr1" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">addr1[31:0]</obj_property>
+               <obj_property name="ObjectShortName">addr1[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/Main_Test/uut/N2_FFT/addr2" type="array" db_ref_id="1">
+               <obj_property name="ElementShortName">addr2[31:0]</obj_property>
+               <obj_property name="ObjectShortName">addr2[31:0]</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group66" type="group">
+         <obj_property name="label">N2FFT Registers</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/F0I" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">F0I[31:0]</obj_property>
+            <obj_property name="ObjectShortName">F0I[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/F0R" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">F0R[31:0]</obj_property>
+            <obj_property name="ObjectShortName">F0R[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/F1I" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">F1I[31:0]</obj_property>
+            <obj_property name="ObjectShortName">F1I[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/F1R" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">F1R[31:0]</obj_property>
+            <obj_property name="ObjectShortName">F1R[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/REAL" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">REAL[31:0]</obj_property>
+            <obj_property name="ObjectShortName">REAL[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/IMAG" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">IMAG[31:0]</obj_property>
+            <obj_property name="ObjectShortName">IMAG[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/reC" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">reC[31:0]</obj_property>
+            <obj_property name="ObjectShortName">reC[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/imS" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">imS[31:0]</obj_property>
+            <obj_property name="ObjectShortName">imS[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/reS" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">reS[31:0]</obj_property>
+            <obj_property name="ObjectShortName">reS[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/imC" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">imC[31:0]</obj_property>
+            <obj_property name="ObjectShortName">imC[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group60" type="group">
+         <obj_property name="label">N2FFT_Out</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/wF0I" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">wF0I[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wF0I[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/wF0R" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">wF0R[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wF0R[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/wF1I" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">wF1I[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wF1I[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/wF1R" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">wF1R[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wF1R[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group59" type="group">
+         <obj_property name="label">N2FFT_I_O</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/COS" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">COS[31:0]</obj_property>
+            <obj_property name="ObjectShortName">COS[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/SIN" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">SIN[31:0]</obj_property>
+            <obj_property name="ObjectShortName">SIN[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/i2" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">i2[31:0]</obj_property>
+            <obj_property name="ObjectShortName">i2[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/i1" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">i1[31:0]</obj_property>
+            <obj_property name="ObjectShortName">i1[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/r2" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">r2[31:0]</obj_property>
+            <obj_property name="ObjectShortName">r2[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Main_Test/uut/N2_FFT/r1" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">r1[31:0]</obj_property>
+            <obj_property name="ObjectShortName">r1[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group129" type="group">
+      <obj_property name="label">Flip(If it breaks its evan</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Main_Test/uut/Flip/in" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">in[5:0]</obj_property>
+         <obj_property name="ObjectShortName">in[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Main_Test/uut/Flip/wout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wout[5:0]</obj_property>
+         <obj_property name="ObjectShortName">wout[5:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

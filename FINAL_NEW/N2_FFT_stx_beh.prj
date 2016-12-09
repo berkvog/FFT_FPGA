@@ -1,0 +1,5 @@
+verilog isim_temp "ipcore_dir/FPAdder.v"
+verilog isim_temp "ipcore_dir/ROM_MUL.v"
+verilog isim_temp "ipcore_dir/SUB.v"
+verilog isim_temp "N2_FFT.v"
+verilog isim_temp "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"
