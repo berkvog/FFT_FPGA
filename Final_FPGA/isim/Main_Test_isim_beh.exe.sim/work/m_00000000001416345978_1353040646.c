@@ -23,7 +23,7 @@
 #endif
 static const char *ng0 = "Magnitude:%x";
 static const char *ng1 = "\t\t\ttest:%x";
-static const char *ng2 = "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v";
+static const char *ng2 = "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v";
 static int ng3[] = {1, 0};
 static int ng4[] = {0, 0};
 

@@ -1,28 +1,27 @@
 ISim log file
-Running: C:\Users\evan\Documents\FFT_FPGA\FFT_FPGA\Final_FPGA\Main_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/waveConfig.wcfg -wdb C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.wdb 
+Running: C:\Xilinx\FFT_FPGA\FFT_FPGA\Final_FPGA\Main_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/waveConfig.wcfg -wdb C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 593.  For instance uut/N2_FFT/, width 32 of formal port wF0I is not equal to width 1 of actual signal N2_F0I.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 594.  For instance uut/N2_FFT/, width 32 of formal port wF0R is not equal to width 1 of actual signal N2_F0R.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 595.  For instance uut/N2_FFT/, width 32 of formal port wF1I is not equal to width 1 of actual signal N2_F1I.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 596.  For instance uut/N2_FFT/, width 32 of formal port wF1R is not equal to width 1 of actual signal N2_F1R.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 513.  For instance uut/F_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal F_wea.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 513.  For instance uut/F_RAM/, width 10 of formal port addra is not equal to width 32 of actual signal F_addr.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 513.  For instance uut/O_ROM/, width 1 of formal port wea is not equal to width 32 of actual signal O_wea.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 513.  For instance uut/O_ROM/, width 6 of formal port addra is not equal to width 32 of actual signal O_addr.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 525.  For instance uut/W_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal W_wea.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 525.  For instance uut/W_RAM/, width 6 of formal port addra is not equal to width 32 of actual signal W_addr.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 525.  For instance uut/I_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal I_wea.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 525.  For instance uut/I_RAM/, width 6 of formal port addra is not equal to width 32 of actual signal I_addr.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 493.  For instance uut/SIN_RAM/, width 5 of formal port addra is not equal to width 32 of actual signal SIN_addra.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 493.  For instance uut/COS_RAM/, width 5 of formal port addra is not equal to width 32 of actual signal COS_addra.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 493.  For instance uut/sinT/, width 5 of formal port addra is not equal to width 32 of actual signal SIN_addra.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 664.  For instance uut/sinT/, width 32 of formal port douta is not equal to width 1 of actual signal sin.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 493.  For instance uut/cosT/, width 5 of formal port addra is not equal to width 32 of actual signal COS_addra.
-WARNING: File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 670.  For instance uut/cosT/, width 32 of formal port douta is not equal to width 1 of actual signal cos.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 619.  For instance uut/N2_FFT/, width 32 of formal port wF0I is not equal to width 1 of actual signal N2_F0I.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 620.  For instance uut/N2_FFT/, width 32 of formal port wF0R is not equal to width 1 of actual signal N2_F0R.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 621.  For instance uut/N2_FFT/, width 32 of formal port wF1I is not equal to width 1 of actual signal N2_F1I.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 622.  For instance uut/N2_FFT/, width 32 of formal port wF1R is not equal to width 1 of actual signal N2_F1R.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 539.  For instance uut/F_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal F_wea.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 538.  For instance uut/F_RAM/, width 10 of formal port addra is not equal to width 6 of actual signal F_addr.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 539.  For instance uut/O_ROM/, width 1 of formal port wea is not equal to width 32 of actual signal O_wea.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 551.  For instance uut/W_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal W_wea.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 551.  For instance uut/W_RAM/, width 6 of formal port addra is not equal to width 32 of actual signal W_addr.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 551.  For instance uut/I_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal I_wea.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 551.  For instance uut/I_RAM/, width 6 of formal port addra is not equal to width 32 of actual signal I_addr.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 517.  For instance uut/SIN_RAM/, width 5 of formal port addra is not equal to width 32 of actual signal SIN_addra.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 517.  For instance uut/COS_RAM/, width 5 of formal port addra is not equal to width 32 of actual signal COS_addra.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 517.  For instance uut/sinT/, width 5 of formal port addra is not equal to width 32 of actual signal SIN_addra.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 690.  For instance uut/sinT/, width 32 of formal port douta is not equal to width 1 of actual signal sin.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 517.  For instance uut/cosT/, width 5 of formal port addra is not equal to width 32 of actual signal COS_addra.
+WARNING: File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Module.v" Line 696.  For instance uut/cosT/, width 32 of formal port douta is not equal to width 1 of actual signal cos.
 Time resolution is 1 ps
 # onerror resume
 # run 5 s
@@ -55,4 +54,10 @@ Magnitude:xxxxxxxx			test:bd13b3d5
 Magnitude:xxxxxxxx			test:be7bfb0e
 Magnitude:xxxxxxxx			test:bd615334
 Magnitude:xxxxxxxx			test:3db5c37a
-Stopped at time : 111850 ns : File "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v" Line 64
+Magnitude:xxxxxxxx			test:be9634af
+Magnitude:xxxxxxxx			test:bebb056c
+Magnitude:xxxxxxxx			test:3e06ea5e
+Magnitude:xxxxxxxx			test:3e2f1444
+Magnitude:xxxxxxxx			test:3cc23233
+Magnitude:xxxxxxxx			test:3ec15ac5
+Stopped at time : 336500 ns : File "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/Main_Test.v" Line 64

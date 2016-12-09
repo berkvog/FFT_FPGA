@@ -54,9 +54,11 @@ else
 			  F_address <= 0;
 			  addressX <= 0;
 			  I_address <= 0;
+			  flipReset <= 1;
 			  SINCOS_en <= 0;
+			  windowCounter <= 0;
 			  n <= 0;
-			  p <= 0;
+			  p <= 1;
 			  counter <= 0;
 			  end
 		
@@ -202,7 +204,7 @@ else
 				end
 			51:begin
 				state<=(ncount<64)? 52:54;
-				F_address<=ncount;
+				F_address<=windowCounter;
 				W_address<=wicount;
 				I_address<=wicount;
 				end
@@ -215,25 +217,13 @@ else
 				state<=51;
 				ncount<=ncount+1;
 				wicount<=wicount+1;
+				windowCounter <= windowCounter + 1;
 				end
 			54:begin
 				W_enable<=0;
 				I_enable<=0;
 				state<=200;
 				end
-		
-			
-			/*if(W_address < 64)begin
-					W_datain <= F_RAM_output;
-					W_enable <= 1;
-					W_address <= W_address + 1;
-					F_address <= F_address + 1;
-			end
-			else begin
-					W_enable <= 0;
-					W_address <= 0;
-					state <= 200;
-			end*/
 		
 		
 		////////////////////////////////////////////// FFT PROCESS  /////////////////////////////////////////
@@ -244,9 +234,9 @@ else
 			count <= 0;
 			N2_reset <= 1;
 			if(p < 6)
-				state <= 220; //CHANGE TO END OF FFT
+				state <= 201; //CHANGE TO END OF FFT
 			else
-				state <= 201;
+				state <= 220;
 		end
 		
 		201: begin // pulling first values from SIN, COS, I_RAM, and W_RAM for N1 // BEGINNING OF INNER LOOP
@@ -291,22 +281,27 @@ else
 			
 			N2_reset <= 1;
 			
-			W_datain <= N2_F0I;
-			I_datain <= N2_F1I;
-			
+
 			W_enable <= 1;
 			I_enable <= 1;
+			state <= 307;
+		end
+		307: begin
+			W_datain <= N2_F1R;
+			I_datain <= N2_F1I;
+					
 			state <= 206;
 		end
 		206: begin //set addresses to N1
 			W_address <= N1;
 			I_address <= N1;
-
+		
 			state <= 207;
 		end
 		207: begin //write to RAM
 			W_datain <= F0R;
 			I_datain <= F0I;
+		
 			state <= 208;
 		end	
 		 208: begin //disable RAM writing
@@ -338,18 +333,17 @@ else
 			  I_address <= 0;
 			  W_address <= 0;
 			  O_address <= 0;
-			  n <= 0; // n used for counter here
+			  O_enable <= 1;
+			  theMagCount <= 0; // n used for counter here
 			  state <= 321;
 		end
 		321: begin  //loop here
-				I_address <= I_address + 1;
-				W_address <= W_address + 1;
-				O_address <= O_address + 1;
 				
-				if(n > 63)begin
+				if(theMagCount > 63)begin
 					state <= 250;
-					n <= 0;
+					theMagCount <= 0;
 					O_address <= 0;
+					O_enable <= 1;
 					W_address <= 0;//end of magnitude loop
 					end
 				else
@@ -385,30 +379,31 @@ else
 				dC2 = dC2 + 1;			
 		end
 		225: begin //set adder output towards storage in O_RAM
-			  O_enable <= 1;
 			  O_datain <= addr1;
 			  state <= 226;
 		end		
 		226: begin //increment and return to loop head
-			  O_enable <= 0;
-			  n <= n + 1;
+			   theMagCount <= theMagCount + 1;		  
+			  	I_address <= I_address + 1;
+				W_address <= W_address + 1;
+				O_address <= O_address + 1;
 			  
 			  state <= 321;
 		
 		end
+		//////////////////////////////////////////////////Refix ordering of output
 		250: begin //now begin swapping values back into W_RAM;		
-			  n <= O_address;
-			  flipReset <= 1;
+			  flipReset <= 0;
+			  W_enable <= 1;
 			  
-			  if(O_address < 63)begin
-					state <= 5;
+			  if(O_address > 63)begin
+					state <= 253;
 					O_address <= 0;
 					W_address <= 0;
 				end
 
 				else begin
-					toFlip <= n;
-					flipReset <= 0;
+					toFlip <= O_address;
 				   state <= 255;
 				end
 		end		
@@ -423,47 +418,49 @@ else
 		
 		251: begin //set W_address to flipped, enable write to W
 			  W_address <= Flipped;
-			  W_datain <= O_RAM_output;
-			  W_enable <= 1;
-			  state <= 252;
-			  flipReset <= 1;
+			  state <= 352;
 		end
+		352: begin
+			 W_datain <= O_RAM_output;
+		end			  
 		252: begin //increment O_address, disable write to W, go back to loop start
 			  O_address <= O_address + 1;
-			  W_enable <= 0; 
 			  state <= 250;
-		end
+		end			
 				
+		253: begin
+				W_enable <= 0;
+				flipReset <= 1;
+				state <= 5;
+			end
 		
 		//write output to W_RAM values
-		
+		   
 		
 		5: begin //read W_RAM
 			if(W_address > 63)begin
 				state <= 6;
 			end
 			else begin
-				W_address = W_address + 1;
+				W_address <= W_address + 1;
 				state <= 5;
 				Magnitude <= W_RAM_output;
 			end	
 		
 		end
 		6:begin //check for end of window
-			if(F_address > 900) begin
+			if(windowCounter > 900) begin
 				state <= 7; //go to end;
 			end
 			else begin
-				F_address <= F_address - 32;
-				state <=2;
+				windowCounter <= windowCounter - 32;
+				state <=50;
 			end	
 		end
 		7: begin //			
 			state <= 7;
 		end
 
-
-	
 	endcase
 
 
@@ -476,7 +473,7 @@ end
 
 
 ////////Variables for FFT
-reg[31:0] p, counter, count;
+reg[31:0] p, counter, count, theMagCount,windowCounter;
 reg[5:0] n;
 
 //Variables for 2NFFT input in MAIN
@@ -535,9 +532,11 @@ reg [31:0] state, dC1, dC2, dC3, dC4, dC5, dC6, dC7, dC8, dC9;
 
 
 //////////////////////////Filter and output RAM variables
-reg[31:0] F_address, O_address, F_datain, O_datain;
+reg[31:0]  F_datain, O_datain;
+reg[5:0] F_address, O_address;
 
-wire[31:0] F_addr, O_addr, F_RAM_input,O_RAM_input,F_RAM_output, O_RAM_output, F_wea, O_wea;
+wire[5:0] F_addr, O_addr;
+wire[31:0]  F_RAM_input,O_RAM_input,F_RAM_output, O_RAM_output, F_wea, O_wea;
 assign F_addr = F_address;
 assign O_addr = O_address;
 assign F_RAM_input = F_datain;

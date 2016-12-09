@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/evan/Documents/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/FPAdder.v";
+static const char *ng0 = "C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/FPAdder.v";
 
 
 
