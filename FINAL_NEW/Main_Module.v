@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Main_Module #(parameter SIZE = 128)(
+module Main_Module #(parameter SIZE = 256)(
     input clk,
     input rst,
     output reg [31:0] Magnitude,
@@ -32,7 +32,7 @@ module Main_Module #(parameter SIZE = 128)(
 
 ////////Variables for FFT
 reg[31:0] p, counter, count, theMagCount,windowCounter;
-reg[6:0] n;
+reg[7:0] n;
 
 //Variables for 2NFFT input in MAIN
 reg[31:0] re1,im1,re2,im2,tempSIN,tempCOS;
@@ -59,15 +59,15 @@ assign N2_Cos = tempCOS;
 
 
 //for calculating addressing
-wire[6:0] N1, N2,temp1,SINCOS_address,countcomp,ninc;	
-wire[7:0] temp2;
+wire[7:0] N1, N2,temp1,SINCOS_address,countcomp,ninc;	
+wire[8:0] temp2;
 assign N1 = n;
 //assign temp1 = 6'b000010;
 assign temp2 = 2**p;
-assign N2 = (SIZE/temp2) + n;
-assign SINCOS_address = counter * temp2/2;
-assign countcomp = (SIZE/temp2);
-assign ninc = 1 + (SIZE/temp2);
+assign N2 = (SIZE >> p) + n;
+assign SINCOS_address = counter * (temp2 >> 1);
+assign countcomp = (SIZE >> p);
+assign ninc = 1 + (SIZE >> p);
 
 
 //////////////////SIN and COS RAM valuies
@@ -100,9 +100,9 @@ reg W_enable,I_enable,O_enable,F_enable;
 
 //////////////////////////Filter and output RAM variables
 reg[31:0]  F_address, F_datain, O_datain;
-reg[6:0] O_address;
+reg[7:0] O_address;
 
-wire[6:0] O_addr;
+wire[7:0] O_addr;
 wire[31:0]  F_addr, F_RAM_input,O_RAM_input,F_RAM_output, O_RAM_output, F_wea, O_wea;
 assign F_addr = F_address;
 assign O_addr = O_address;
@@ -137,12 +137,10 @@ reg[9:0] j;
 
 //For arithmatic
 //MUL INPUT/Div
-reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B,RegDivA,RegDivB;
+reg[31:0] RegMul1A, RegMul1B,RegDivA,RegDivB;
 wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B, wDivA, wDivB, mul1,mul2,div;
 assign wMul1A = RegMul1A;
 assign wMul1B = RegMul1B;
-assign wMul2A = RegMul2A;
-assign wMul2B = RegMul2B;
 assign wDivA = RegDivA;
 assign wDivB = RegDivB;
 
@@ -162,9 +160,9 @@ assign wCompA = RegCompA;
 assign wCompB = RegCompB;
 
 ///For flip
-reg[6:0] toFlip;
+reg[7:0] toFlip;
 reg flipReset;
-wire[6:0] Flipped;
+wire[7:0] Flipped;
 
 
 
@@ -211,7 +209,6 @@ O_RAM O_ROM (
   .dina(O_RAM_input), // input [31 : 0] dina
   .douta(O_RAM_output) // output [31 : 0] douta
 );
-
 
 
 W_RAM W_RAM (
@@ -284,13 +281,6 @@ ROM_MUL mul_1 (
   .result(mul1) // output [31 : 0] result
 );
 
-ROM_MUL mul_2 (
-  .a(wMul2A), // input [31 : 0] a
-  .b(wMul2B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(mul2) // output [31 : 0] result
-);
-
 
 FPAdder addr_1 (
   .a(wAd1A), // input [31 : 0] a
@@ -361,7 +351,7 @@ else
 		1: begin ////////////SET sin and cosine rams from SIN_ROM and COS_ROM, also set initial I ram values to 0;
 			SINCOS_en <= 1;
 			dC5<=0;
-			if(dC3 < 64) begin
+			if(dC3 < 128) begin
 					state <= 402;
 			end
 			else begin
@@ -405,7 +395,7 @@ else
 				state<=102;
 				end
 			102: begin
-				state<=(ncount<130)? 103:119;
+				state<=(ncount<1000)? 103:119;
 				F_enable <= 1;				
 				end
 			103: begin
@@ -505,7 +495,7 @@ else
 				p <= 1;
 				end
 			51:begin
-				state<=(ncount<128)? 52:54;
+				state<=(ncount<256)? 52:54;
 				F_address<=windowCounter;
 				W_address<=wicount;
 				I_address<=wicount;
@@ -547,12 +537,15 @@ else
 			W_enable <= 0;
 			I_enable <= 0;
 			dC5 <= 0;
-			if(p > 7)
+			if(p > 8)
 				state <= 220; //CHANGE TO END OF FFT
 			else
-				state <= 201;
+				state <= 350;
 		end
-		
+		350: begin
+			state<=(dC5<3)? 350:201;
+			dC5<=dC5+1;
+			end
 		201: begin // pulling first values from SIN, COS, I_RAM, and W_RAM for N1 // BEGINNING OF INNER LOOP
 			W_address <= N1;
 			I_address <= N1;
@@ -563,7 +556,7 @@ else
 		end
 		302: begin
 			state<=(dC5<3)? 302:202;
-			state<=202;
+			dC5<=dC5+1;
 			end
 		202: begin //setting values for N1 RAMs, setting addresses for N2	
 			re1 <= W_RAM_output;
@@ -595,7 +588,7 @@ else
 		end
 		
 		204: begin //delay state for 2NFFT
-			if(dC1 < 5000)begin
+			if(dC1 < 500)begin
 				dC1 <= dC1 + 1;
 				state <= 204;
 			end	
@@ -658,7 +651,7 @@ else
 				state<=(dC5<7)? 454:209;
 				end
 		209: begin //check for inner loop end//////////////////
-			if(count > 63)begin
+			if(count > 127)begin
 				p <= p + 1;
 				state <= 200;
 			end
@@ -703,7 +696,7 @@ else
 		end
 		321: begin  //loop here
 				
-				if(theMagCount > 127)begin
+				if(theMagCount > 256)begin
 					state <= 250;
 					theMagCount <= 0;
 					O_address <= 0;
@@ -714,28 +707,6 @@ else
 					state <= 221;
 		end
 		
-		/*221: begin //send RAM outputs into Multiplier 
-			RegMul1A <= I_RAM_output;
-			RegMul1B <= I_RAM_output;
-			RegMul2A <= W_RAM_output;
-			RegMul2B <= W_RAM_output;
-			//test <= W_RAM_output;
-			//Magnitude <= I_RAM_output;
-			state <= 222;
-		end
-		222: begin //delay state for muls
-		  if(dC1 > 7)begin
-				state <= 223;
-				dC1 <= 0;
-			end
-			else
-				dC1 <= dC1 + 1;	
-		end
-		223: begin //set adder to sum up mul outputs
-			  RegAd1A <= mul1;
-			  RegAd1B <= mul2;
-			  state <= 224;
-		end*/
 		221: begin
 			I_temp<=I_RAM_output;
 			W_temp<=W_RAM_output;
@@ -755,7 +726,7 @@ else
 			end
 		152: begin
 			dC1<=dC1+1;
-			state<=(dC1<3)? 152:153;
+			state<=(dC1<13)? 152:153;
 			end
 		153: begin
 			if(compout==1)begin
@@ -839,7 +810,7 @@ else
 			  
 			  
 			  
-			  if(dC5 > 127)begin
+			  if(dC5 > 255)begin
 					state <= 253;
 					O_address <= 0;
 					W_address <= 0;
@@ -869,7 +840,7 @@ else
 		253: begin
 				W_enable <= 0;
 				//flipReset <= 1;
-				state <= 5;
+				state <= 8;
 				W_address <= 0;
 			end
 /////////////////////////////////////////////////CONCLUSION OF REORDERING/////////////////////////		
@@ -878,8 +849,12 @@ else
 /////////////////////////////////////////////////OUTPUT/////////////////////////////
 		/* Cycle through W_RAM (reordered magnitudes) outputting values */
 		
+		8: begin
+			 state <= 5;		
+		end
+		
 		5: begin //read W_RAM
-			if(W_address > 128)begin
+			if(W_address > 256)begin
 				state <= 6;
 			end
 			else begin
@@ -890,11 +865,11 @@ else
 		
 		end
 		6:begin //check for end of window
-			if(windowCounter > 1) begin
+			if(windowCounter > 1000) begin
 				state <= 7; //go to end;
 			end
 			else begin
-				windowCounter <= windowCounter - 64;
+				windowCounter <= windowCounter - 128;
 				Magnitude <= zeros;
 				state <=50;
 			end	

@@ -1,6 +1,5 @@
 verilog work "ipcore_dir/FPAdder.v"
 verilog work "ipcore_dir/ROM_MUL.v"
-verilog work "ipcore_dir/SUB.v"
 verilog work "ipcore_dir/FPDiv.v"
 verilog work "ipcore_dir/Compare.v"
 verilog work "N2_FFT.v"

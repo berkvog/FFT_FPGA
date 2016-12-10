@@ -1,2 +1,298 @@
 ISim log file
 Running: C:\Users\bvogelhe\Desktop\FFT_FPGA\FINAL_NEW\Main_Test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/waveConfig.wcfg -wdb C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_isim_beh.wdb 
+ISim P.68d (signature 0x7708f090)
+This is a Full version of ISim.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 106.  For instance uut/F_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal F_wea.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 106.  For instance uut/F_RAM/, width 10 of formal port addra is not equal to width 32 of actual signal F_addr.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 106.  For instance uut/O_ROM/, width 1 of formal port wea is not equal to width 32 of actual signal O_wea.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 118.  For instance uut/W_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal W_wea.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 118.  For instance uut/W_RAM/, width 8 of formal port addra is not equal to width 32 of actual signal W_addr.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 118.  For instance uut/I_RAM/, width 1 of formal port wea is not equal to width 32 of actual signal I_wea.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 118.  For instance uut/I_RAM/, width 8 of formal port addra is not equal to width 32 of actual signal I_addr.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 76.  For instance uut/SIN_RAM/, width 7 of formal port addra is not equal to width 32 of actual signal SIN_addra.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 76.  For instance uut/COS_RAM/, width 6 of formal port addra is not equal to width 32 of actual signal COS_addra.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 76.  For instance uut/sinT/, width 6 of formal port addra is not equal to width 32 of actual signal SIN_addra.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 76.  For instance uut/cosT/, width 6 of formal port addra is not equal to width 32 of actual signal COS_addra.
+WARNING: File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 158.  For instance uut/Compare/, width 1 of formal port result is not equal to width 32 of actual signal compout.
+Time resolution is 1 ps
+# onerror resume
+# run 2s
+Simulator is doing circuit initialization process.
+Block Memory Generator CORE Generator module Main_Test.uut.F_RAM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module Main_Test.uut.O_ROM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module Main_Test.uut.W_RAM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module Main_Test.uut.I_RAM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module Main_Test.uut.SIN_RAM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator CORE Generator module Main_Test.uut.COS_RAM.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Main_Test.uut.sinT.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Main_Test.uut.cosT.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Main_Test.uut.coefficients.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator CORE Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator CORE Generator module Main_Test.uut.ynoisy.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Finished circuit initialization process.
+xxxxxxxx
+41bcf2b0
+440574df
+440fceb5
+4398b6c4
+43c0a6c0
+43efd707
+43d688eb
+4347a862
+43e8bd6e
+4354b5d0
+43cec90f
+43269352
+4313237d
+43f6b1da
+43fd03a1
+408c2c4c
+43e5ecaa
+43d5db30
+4383e35b
+431c699a
+43cf47bd
+43b1095e
+43d4e577
+42961a86
+43d2982c
+442d82a2
+443e1bb7
+430ce3a0
+4410ab68
+4417b706
+4390a0ab
+428b76c6
+4397120c
+44240df8
+4418225c
+433564f0
+438cf296
+4434dac5
+43b417cc
+41cdc362
+43fa296b
+43ba1186
+43ac8d2e
+42eec79a
+44032e05
+4393b15b
+44056ebd
+40e8d2d0
+43955d73
+439d1ef2
+43243555
+4366173a
+4413386c
+43d2005e
+43aa04ad
+41c5535b
+440d9316
+43700623
+440ffc50
+4347a862
+43a841f2
+442b748c
+43da184a
+418e8534
+437cc67a
+4408a4db
+43dc2b06
+42d7c198
+43cae4eb
+43d98ce1
+442ecae7
+41d4a71f
+439f1a94
+440c13a6
+43c03a66
+4237a0a4
+43b62538
+4448ab4c
+43ebbf15
+418b6ed9
+43a798c4
+433c091c
+43ef88f4
+4366173a
+43a50806
+43f62b44
+43fdb07e
+42559a9c
+43f5e2a2
+440d5a03
+43049f64
+42cbf790
+43d4b592
+43db2ac9
+4407cf73
+419d69fc
+438f5986
+4492ef06
+4414e70e
+433564f0
+43de5159
+43cf9a56
+43931c34
+43056232
+43720c4e
+43c49e20
+440c03d8
+42eec79a
+43691819
+441b0f9e
+43f4d023
+42691066
+43e527b6
+441f1299
+437352e4
+43269352
+43806d4f
+43af4600
+440fabd6
+42691066
+436be55c
+43b8c44a
+43f3142d
+42cbf790
+44103920
+43c91562
+438c0d02
+41f8d37c
+42385f4c
+43bf7c41
+440fceb5
+4398b6c4
+43a45b5f
+43efd707
+442ecae7
+4301e1e7
+43e8bd6e
+440c13a6
+4391b4f7
+4349f754
+43b62538
+43eaa067
+43fd03a1
+4150315c
+4212c726
+43d5db30
+43ef88f4
+42cf6021
+43cf47bd
+43f62b44
+439fac35
+4270adf2
+43f5e2a2
+43dd98b6
+443e1bb7
+421401ae
+439e687d
+4417b706
+4407cf73
+41ef1ca8
+4397120c
+4492ef06
+43d7647a
+43592abb
+43de5159
+43821489
+43b417cc
+4301e1e7
+4382d480
+43ba1186
+440c03d8
+4341ace6
+44032e05
+441b0f9e
+4394b6af
+40ed4cae
+43e527b6
+43e234cc
+43243555
+4316d938
+42caa448
+43d2005e
+440fabd6
+4286ee55
+440d9316
+43b8c44a
+43b34e2c
+42693566
+44103920
+434c9e06
+43da184a
+4187559a
+436377bc
+4408a4db
+4418225c
+43397d05
+43cae4eb
+4434dac5
+43149c5c
+429e17fa
+43fa296b
+439c4d40
+43c03a66
+4341ace6
+43cc166a
+4448ab4c
+44056ebd
+41373a42
+43a798c4
+439d1ef2
+42b0d7eb
+42cf6021
+4413386c
+438585fe
+43fdb07e
+4204ff5c
+43a6f75e
+440d5a03
+440ffc50
+3ed39c6c
+43d4b592
+442b748c
+43bf688d
+41b6ed1c
+43e5ecaa
+42b812be
+4414e70e
+43592abb
+43a44b04
+43cf9a56
+43d4e577
+429e17fa
+438ca2d8
+442d82a2
+43f08cad
+430e8ec8
+4410ab68
+43d614cb
+43f4d023
+42911892
+439a3706
+441f1299
+43cec90f
+4349f754
+43806d4f
+43f6b1da
+43de884a
+42911892
+43c0a6c0
+43a14540
+43f3142d
+412c737b
+43b8a9ac
+43c91562
+440574df
+41bcf2b0
+00000000
+Stopped at time : 98809800 ns : File "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test.v" Line 64

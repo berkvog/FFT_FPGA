@@ -1,7 +1,7 @@
-theWindow = char(Window1);
+theWindowX = char(WindowX);
 
-theWindow = typecast(uint32(hex2dec(theWindow)),'single');
+theWindowX = typecast(uint32(hex2dec(theWindowX)),'single');
 
-plot (theWindow);
+plot (theWindowX);
 hold on;
 plot (theOUTPUT);

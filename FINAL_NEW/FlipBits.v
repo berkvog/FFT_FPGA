@@ -19,22 +19,22 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module FlipBits(
-    input[6:0] in,
+    input[7:0] in,
 	 //input clk,
 	 //input rst,
-    output [6:0] wout
+    output [7:0] wout
     );
 
 
-wire[6:0] temp;
-
-assign temp[6] = in[0];
-assign temp[5] = in[1];
-assign temp[4] = in[2];
-assign temp[3] = in[3];
-assign temp[2] = in[4];
-assign temp[1] = in[5];
-assign temp[0] = in[6];
+wire[7:0] temp;
+assign temp[7] = in[0];
+assign temp[6] = in[1];
+assign temp[5] = in[2];
+assign temp[4] = in[3];
+assign temp[3] = in[4];
+assign temp[2] = in[5];
+assign temp[1] = in[6];
+assign temp[0] = in[7];
 
 assign wout = temp;
 

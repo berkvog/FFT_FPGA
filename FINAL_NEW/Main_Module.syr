@@ -130,10 +130,14 @@ Compiling verilog file "ipcore_dir/I_RAM.v" in library work
 Module <O_RAM> compiled
 Compiling verilog file "ipcore_dir/F_RAM.v" in library work
 Module <I_RAM> compiled
-Compiling verilog file "ipcore_dir/COS_RAM.v" in library work
+Compiling verilog file "ipcore_dir/FPDiv.v" in library work
 Module <F_RAM> compiled
-Compiling verilog file "ipcore_dir/coef_coe.v" in library work
+Compiling verilog file "ipcore_dir/COS_RAM.v" in library work
+Module <FPDiv> compiled
+Compiling verilog file "ipcore_dir/Compare.v" in library work
 Module <COS_RAM> compiled
+Compiling verilog file "ipcore_dir/coef_coe.v" in library work
+Module <Compare> compiled
 Compiling verilog file "FlipBits.v" in library work
 Module <coef_coe> compiled
 Compiling verilog file "Main_Module.v" in library work
@@ -147,7 +151,7 @@ Analysis of file <"Main_Module.prj"> succeeded.
 *                     Design Hierarchy Analysis                         *
 =========================================================================
 Analyzing hierarchy for module <Main_Module> in library <work> with parameters.
-	SIZE = "00000000000000000000000010000000"
+	SIZE = "00000000000000000000000100000000"
 
 Analyzing hierarchy for module <N2_FFT> in library <work> with parameters.
 	SIZE = "00000000000000000000000001000000"
@@ -159,39 +163,42 @@ Analyzing hierarchy for module <FlipBits> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <Main_Module>.
-	SIZE = 32'sb00000000000000000000000010000000
-WARNING:Xst:2211 - "ipcore_dir/F_RAM.v" line 190: Instantiating black box module <F_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/O_RAM.v" line 198: Instantiating black box module <O_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/W_RAM.v" line 208: Instantiating black box module <W_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/I_RAM.v" line 217: Instantiating black box module <I_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/SIN_RAM.v" line 227: Instantiating black box module <SIN_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/COS_RAM.v" line 235: Instantiating black box module <COS_RAM>.
-WARNING:Xst:2211 - "ipcore_dir/ROM_SIN.v" line 244: Instantiating black box module <ROM_SIN>.
-WARNING:Xst:2211 - "ipcore_dir/ROM_COS.v" line 250: Instantiating black box module <ROM_COS>.
-WARNING:Xst:2211 - "ipcore_dir/coef_coe.v" line 256: Instantiating black box module <coef_coe>.
-WARNING:Xst:2211 - "ipcore_dir/y_coe.v" line 262: Instantiating black box module <y_coe>.
-WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 271: Instantiating black box module <ROM_MUL>.
-WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 278: Instantiating black box module <ROM_MUL>.
-WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 286: Instantiating black box module <FPAdder>.
-WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 293: Instantiating black box module <FPAdder>.
+	SIZE = 32'sb00000000000000000000000100000000
+WARNING:Xst:2211 - "ipcore_dir/F_RAM.v" line 197: Instantiating black box module <F_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/O_RAM.v" line 205: Instantiating black box module <O_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/W_RAM.v" line 214: Instantiating black box module <W_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/I_RAM.v" line 223: Instantiating black box module <I_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/SIN_RAM.v" line 233: Instantiating black box module <SIN_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/COS_RAM.v" line 241: Instantiating black box module <COS_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_SIN.v" line 250: Instantiating black box module <ROM_SIN>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_COS.v" line 256: Instantiating black box module <ROM_COS>.
+WARNING:Xst:2211 - "ipcore_dir/coef_coe.v" line 262: Instantiating black box module <coef_coe>.
+WARNING:Xst:2211 - "ipcore_dir/y_coe.v" line 268: Instantiating black box module <y_coe>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 277: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 285: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 292: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/FPDiv.v" line 299: Instantiating black box module <FPDiv>.
+WARNING:Xst:2211 - "ipcore_dir/Compare.v" line 306: Instantiating black box module <Compare>.
 Module <Main_Module> is correct for synthesis.
  
     Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_1> in unit <Main_Module>.
     Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_1> in unit <Main_Module>.
-    Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_2> in unit <Main_Module>.
-    Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_2> in unit <Main_Module>.
     Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_1> in unit <Main_Module>.
     Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_1> in unit <Main_Module>.
     Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_2> in unit <Main_Module>.
     Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_2> in unit <Main_Module>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <div_1> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <div_1> in unit <Main_Module>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <Compare> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <Compare> in unit <Main_Module>.
 Analyzing module <N2_FFT> in library <work>.
 	SIZE = 32'sb00000000000000000000000001000000
-WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 99: Instantiating black box module <ROM_MUL>.
-WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 106: Instantiating black box module <ROM_MUL>.
-WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 114: Instantiating black box module <FPAdder>.
-WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 121: Instantiating black box module <FPAdder>.
-WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 128: Instantiating black box module <SUB>.
-WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 136: Instantiating black box module <SUB>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 98: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 105: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 113: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 120: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 127: Instantiating black box module <SUB>.
+WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 135: Instantiating black box module <SUB>.
 Module <N2_FFT> is correct for synthesis.
  
     Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_1> in unit <N2_FFT>.
@@ -214,11 +221,12 @@ Module <FlipBits> is correct for synthesis.
     Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
     Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
     Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
-    Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
     Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
     Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
     Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
     Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
+    Set property "SYN_NOPRUNE = 1" for unit <FPDiv>.
+    Set property "SYN_NOPRUNE = 1" for unit <Compare>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -261,13 +269,13 @@ WARNING:Xst:646 - Signal <IMAG> is assigned but never used. This unconnected sig
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 32-bit register for signal <dC1>.
-    Found 32-bit adder for signal <dC1$addsub0000> created at line 193.
+    Found 32-bit adder for signal <dC1$addsub0000> created at line 195.
     Found 32-bit register for signal <dC2>.
-    Found 32-bit adder for signal <dC2$addsub0000> created at line 217.
+    Found 32-bit adder for signal <dC2$addsub0000> created at line 219.
     Found 32-bit register for signal <dC3>.
-    Found 32-bit adder for signal <dC3$addsub0000> created at line 236.
+    Found 32-bit adder for signal <dC3$addsub0000> created at line 238.
     Found 32-bit register for signal <dC4>.
-    Found 32-bit adder for signal <dC4$addsub0000> created at line 259.
+    Found 32-bit adder for signal <dC4$addsub0000> created at line 261.
     Found 32-bit register for signal <F0I>.
     Found 32-bit register for signal <F0R>.
     Found 32-bit register for signal <F1I>.
@@ -287,10 +295,10 @@ WARNING:Xst:646 - Signal <IMAG> is assigned but never used. This unconnected sig
     Found 32-bit register for signal <RegSub1B>.
     Found 32-bit register for signal <rx1>.
     Found 32-bit register for signal <rx2>.
-    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 188.
-    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 212.
-    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 231.
-    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 254.
+    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 190.
+    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 214.
+    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 233.
+    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 256.
     Found 32-bit register for signal <theCOS>.
     Found 32-bit register for signal <theSIN>.
     Summary:
@@ -303,7 +311,12 @@ Unit <N2_FFT> synthesized.
 
 Synthesizing Unit <Main_Module>.
     Related source file is "Main_Module.v".
+WARNING:Xst:1306 - Output <test> is never assigned.
+WARNING:Xst:1780 - Signal <wMul2B> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <wMul2A> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <tempMin> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <temp1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mul2> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <flipReset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <dC9> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <dC8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -312,25 +325,23 @@ WARNING:Xst:646 - Signal <dC6> is assigned but never used. This unconnected sign
 WARNING:Xst:646 - Signal <dC4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <addr2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <W_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <W_addr<31:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <SIN_addra<31:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <W_addr<31:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <SIN_addra<31:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <RegAd2B> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:653 - Signal <RegAd2A> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
 WARNING:Xst:646 - Signal <O_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <I_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <I_addr<31:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <I_addr<31:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <F_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <F1R> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <F1I> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <COS_addra<31:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Register <test> equivalent to <F_datain> has been removed
-    Register <RegMul2B> equivalent to <RegMul2A> has been removed
     Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 66                                             |
-    | Transitions        | 90                                             |
-    | Inputs             | 20                                             |
-    | Outputs            | 62                                             |
+    | States             | 74                                             |
+    | Transitions        | 102                                            |
+    | Inputs             | 22                                             |
+    | Outputs            | 71                                             |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (positive)           |
     | Reset type         | synchronous                                    |
@@ -338,105 +349,112 @@ WARNING:Xst:646 - Signal <COS_addra<31:6>> is assigned but never used. This unco
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-WARNING:Xst:643 - "Main_Module.v" line 68: The result of a 32x8-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "Main_Module.v" line 68: The result of a 32x32-bit multiplication is partially used. Only the 8 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 32-bit register for signal <Magnitude>.
     Found 32-bit register for signal <addressX>.
-    Found 32-bit adder for signal <addressX$addsub0000> created at line 363.
+    Found 32-bit adder for signal <addressX$addsub0000> created at line 373.
     Found 32-bit register for signal <COS_in>.
     Found 32-bit register for signal <count>.
-    Found 32-bit adder for signal <count$addsub0000> created at line 645.
+    Found 32-bit adder for signal <count$addsub0000> created at line 659.
     Found 32-bit register for signal <counter>.
-    Found 32-bit comparator equal for signal <counter$cmp_eq0000> created at line 651.
-    Found 32-bit adder for signal <counter$share0000> created at line 320.
+    Found 32-bit comparator equal for signal <counter$cmp_eq0000> created at line 665.
+    Found 32-bit adder for signal <counter$share0000> created at line 330.
     Found 32-bit register for signal <dC1>.
-    Found 32-bit adder for signal <dC1$share0000> created at line 320.
+    Found 32-bit adder for signal <dC1$share0000> created at line 330.
     Found 32-bit register for signal <dC2>.
-    Found 32-bit adder for signal <dC2$share0000> created at line 320.
+    Found 32-bit adder for signal <dC2$share0000> created at line 330.
     Found 32-bit register for signal <dC3>.
-    Found 32-bit adder for signal <dC3$addsub0000> created at line 364.
+    Found 32-bit adder for signal <dC3$addsub0000> created at line 374.
     Found 32-bit register for signal <dC5>.
-    Found 32-bit adder for signal <dC5$share0000> created at line 320.
+    Found 32-bit adder for signal <dC5$share0000> created at line 330.
     Found 32-bit register for signal <F0I>.
     Found 32-bit register for signal <F0R>.
     Found 32-bit register for signal <F_address>.
     Found 32-bit register for signal <F_datain>.
     Found 1-bit register for signal <F_enable>.
     Found 32-bit register for signal <I_address>.
-    Found 32-bit adder for signal <I_address$addsub0000> created at line 744.
+    Found 32-bit adder for signal <I_address$addsub0000> created at line 791.
     Found 32-bit register for signal <I_datain>.
     Found 1-bit register for signal <I_enable>.
+    Found 32-bit register for signal <I_temp>.
     Found 32-bit register for signal <im1>.
     Found 32-bit register for signal <im2>.
     Found 10-bit register for signal <j>.
-    Found 10-bit subtractor for signal <j$addsub0000> created at line 412.
+    Found 10-bit subtractor for signal <j$addsub0000> created at line 422.
     Found 6-bit register for signal <k>.
     Found 32-bit register for signal <kcount>.
-    Found 32-bit adder for signal <kcount$addsub0000> created at line 442.
-    Found 7-bit register for signal <n>.
-    Found 7-bit adder for signal <n$addsub0000>.
-    Found 7-bit adder for signal <N2>.
+    Found 32-bit adder for signal <kcount$addsub0000> created at line 452.
+    Found 8-bit register for signal <n>.
+    Found 8-bit adder for signal <n$addsub0000>.
+    Found 8-bit adder for signal <N2>.
     Found 32-bit shifter logical right for signal <N2$shift0001> created at line 67.
     Found 1-bit register for signal <N2_reset>.
     Found 32-bit register for signal <ncount>.
     Found 32-bit adder for signal <ncount$addsub0000>.
-    Found 7-bit adder for signal <ninc>.
-    Found 7-bit register for signal <O_address>.
-    Found 7-bit adder for signal <O_address$addsub0000>.
+    Found 8-bit adder for signal <ninc>.
+    Found 8-bit register for signal <O_address>.
+    Found 8-bit adder for signal <O_address$addsub0000>.
     Found 32-bit register for signal <O_datain>.
     Found 1-bit register for signal <O_enable>.
     Found 32-bit register for signal <p>.
-    Found 32-bit adder for signal <p$addsub0000> created at line 641.
+    Found 32-bit adder for signal <p$addsub0000> created at line 655.
     Found 32-bit register for signal <re1>.
     Found 32-bit register for signal <re2>.
     Found 32-bit register for signal <RegAd1A>.
     Found 32-bit register for signal <RegAd1B>.
+    Found 32-bit register for signal <RegCompA>.
+    Found 32-bit register for signal <RegCompB>.
+    Found 32-bit register for signal <RegDivA>.
+    Found 32-bit register for signal <RegDivB>.
     Found 32-bit register for signal <RegMul1A>.
     Found 32-bit register for signal <RegMul1B>.
-    Found 32-bit register for signal <RegMul2A>.
     Found 32-bit register for signal <SIN_in>.
-    Found 32x8-bit multiplier for signal <SINCOS_address$mult0001> created at line 68.
+    Found 32x32-bit multiplier for signal <SINCOS_address$mult0001> created at line 68.
     Found 1-bit register for signal <SINCOS_en>.
-    Found 32-bit comparator greatequal for signal <state$cmp_ge0000> created at line 409.
-    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 531.
-    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 640.
-    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 685.
-    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 704.
-    Found 32-bit comparator greater for signal <state$cmp_gt0004> created at line 718.
-    Found 32-bit comparator greater for signal <state$cmp_gt0005> created at line 732.
-    Found 32-bit comparator greater for signal <state$cmp_gt0006> created at line 766.
-    Found 32-bit comparator greater for signal <state$cmp_gt0007> created at line 805.
-    Found 32-bit comparator greater for signal <state$cmp_gt0008> created at line 816.
-    Found 32-bit comparator less for signal <state$cmp_lt0000> created at line 344.
-    Found 32-bit comparator less for signal <state$cmp_lt0001> created at line 353.
-    Found 32-bit comparator less for signal <state$cmp_lt0002> created at line 388.
-    Found 32-bit comparator less for signal <state$cmp_lt0003> created at line 399.
-    Found 32-bit comparator less for signal <state$cmp_lt0004> created at line 427.
-    Found 32-bit comparator less for signal <state$cmp_lt0005> created at line 437.
-    Found 32-bit comparator less for signal <state$cmp_lt0006> created at line 489.
-    Found 32-bit comparator less for signal <state$cmp_lt0007> created at line 566.
-    Found 32-bit comparator less for signal <state$cmp_lt0008> created at line 577.
-    Found 32-bit comparator less for signal <state$cmp_lt0009> created at line 597.
+    Found 32-bit comparator greatequal for signal <state$cmp_ge0000> created at line 419.
+    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 540.
+    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 654.
+    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 699.
+    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 765.
+    Found 32-bit comparator greater for signal <state$cmp_gt0004> created at line 779.
+    Found 32-bit comparator greater for signal <state$cmp_gt0005> created at line 813.
+    Found 32-bit comparator greater for signal <state$cmp_gt0006> created at line 857.
+    Found 32-bit comparator greater for signal <state$cmp_gt0007> created at line 868.
+    Found 32-bit comparator less for signal <state$cmp_lt0000> created at line 354.
+    Found 32-bit comparator less for signal <state$cmp_lt0001> created at line 363.
+    Found 32-bit comparator less for signal <state$cmp_lt0002> created at line 398.
+    Found 32-bit comparator less for signal <state$cmp_lt0003> created at line 409.
+    Found 32-bit comparator less for signal <state$cmp_lt0004> created at line 437.
+    Found 32-bit comparator less for signal <state$cmp_lt0005> created at line 447.
+    Found 32-bit comparator less for signal <state$cmp_lt0006> created at line 498.
+    Found 32-bit comparator less for signal <state$cmp_lt0007> created at line 546.
+    Found 32-bit comparator less for signal <state$cmp_lt0008> created at line 591.
+    Found 32-bit comparator less for signal <state$cmp_lt0009> created at line 611.
+    Found 32-bit comparator less for signal <state$cmp_lt0010> created at line 729.
+    Found 32-bit comparator less for signal <state$cmp_lt0011> created at line 754.
     Found 32-bit shifter logical left for signal <temp2$shift0001> created at line 66.
     Found 32-bit register for signal <tempCOS>.
+    Found 32-bit register for signal <tempMax>.
     Found 32-bit register for signal <tempSIN>.
     Found 32-bit register for signal <theMagCount>.
-    Found 32-bit adder for signal <theMagCount$addsub0000> created at line 743.
-    Found 7-bit register for signal <toFlip>.
+    Found 32-bit adder for signal <theMagCount$addsub0000> created at line 790.
+    Found 8-bit register for signal <toFlip>.
     Found 32-bit register for signal <total>.
     Found 32-bit register for signal <W_address>.
-    Found 32-bit adder for signal <W_address$share0000> created at line 320.
+    Found 32-bit adder for signal <W_address$share0000> created at line 330.
     Found 32-bit register for signal <W_datain>.
     Found 1-bit register for signal <W_enable>.
+    Found 32-bit register for signal <W_temp>.
     Found 32-bit register for signal <wicount>.
-    Found 32-bit adder for signal <wicount$addsub0000> created at line 502.
+    Found 32-bit adder for signal <wicount$addsub0000> created at line 511.
     Found 32-bit register for signal <windowCounter>.
-    Found 32-bit addsub for signal <windowCounter$share0000> created at line 320.
+    Found 32-bit addsub for signal <windowCounter$share0000> created at line 330.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred 1227 D-type flip-flop(s).
+	inferred 1422 D-type flip-flop(s).
 	inferred  20 Adder/Subtractor(s).
 	inferred   1 Multiplier(s).
-	inferred  21 Comparator(s).
+	inferred  22 Comparator(s).
 	inferred   2 Combinational logic shifter(s).
 Unit <Main_Module> synthesized.
 
@@ -447,23 +465,23 @@ HDL Synthesis Report
 
 Macro Statistics
 # Multipliers                                          : 1
- 32x8-bit multiplier                                   : 1
+ 32x32-bit multiplier                                  : 1
 # Adders/Subtractors                                   : 24
  10-bit subtractor                                     : 1
  32-bit adder                                          : 18
  32-bit addsub                                         : 1
- 7-bit adder                                           : 4
-# Registers                                            : 73
- 1-bit register                                        : 6
+ 8-bit adder                                           : 4
+# Registers                                            : 141
+ 1-bit register                                        : 70
  10-bit register                                       : 1
- 32-bit register                                       : 62
+ 32-bit register                                       : 66
  6-bit register                                        : 1
- 7-bit register                                        : 3
-# Comparators                                          : 25
+ 8-bit register                                        : 3
+# Comparators                                          : 26
  32-bit comparator equal                               : 1
  32-bit comparator greatequal                          : 1
- 32-bit comparator greater                             : 13
- 32-bit comparator less                                : 10
+ 32-bit comparator greater                             : 12
+ 32-bit comparator less                                : 12
 # Logic shifters                                       : 2
  32-bit shifter logical left                           : 1
  32-bit shifter logical right                          : 1
@@ -475,77 +493,85 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_1> for best encoding.
-Optimizing FSM <state/FSM> on signal <state[1:66]> with one-hot encoding.
---------------------------------------------------------------------------------------------------------
+Optimizing FSM <state/FSM> on signal <state[1:74]> with one-hot encoding.
+----------------------------------------------------------------------------------------------------------------
  State                            | Encoding
---------------------------------------------------------------------------------------------------------
- 00000000000000000000000000000000 | 000000000000000000000000000000000000000000000000000000000000000001
- 00000000000000000000000000000001 | 000000000000000000000000000000000000000000000000000000000000000010
- 00000000000000000000000000000010 | 000000000000000000000000000000000000000000000000000000000000010000
- 00000000000000000000000000000101 | 001000000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000000000110 | 010000000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000000000111 | 100000000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000000110010 | 000000000000000000000000000000000000000001000000000000000000000000
- 00000000000000000000000000110011 | 000000000000000000000000000000000000000010000000000000000000000000
- 00000000000000000000000000110100 | 000000000000000000000000000000000000000100000000000000000000000000
- 00000000000000000000000000110101 | 000000000000000000000000000000000000010000000000000000000000000000
- 00000000000000000000000000110110 | 000000000000000000000000000000000000001000000000000000000000000000
- 00000000000000000000000001100100 | 000000000000000000000000000000000000000000000000000000000000001000
- 00000000000000000000000001100101 | 000000000000000000000000000000000000000000000000000000000000100000
- 00000000000000000000000001100110 | 000000000000000000000000000000000000000000000000000000000001000000
- 00000000000000000000000001100111 | 000000000000000000000000000000000000000000000000000000000010000000
- 00000000000000000000000001101000 | 000000000000000000000000000000000000000000000000000000001000000000
- 00000000000000000000000001101001 | 000000000000000000000000000000000000000000000000000000010000000000
- 00000000000000000000000001101010 | 000000000000000000000000000000000000000000000000000000100000000000
- 00000000000000000000000001101011 | 000000000000000000000000000000000000000000000000000010000000000000
- 00000000000000000000000001101100 | 000000000000000000000000000000000000000000000000000100000000000000
- 00000000000000000000000001101101 | 000000000000000000000000000000000000000000000000001000000000000000
- 00000000000000000000000001101110 | 000000000000000000000000000000000000000000000000010000000000000000
- 00000000000000000000000001101111 | 000000000000000000000000000000000000000000000000100000000000000000
- 00000000000000000000000001110000 | 000000000000000000000000000000000000000000000001000000000000000000
- 00000000000000000000000001110001 | 000000000000000000000000000000000000000000000010000000000000000000
- 00000000000000000000000001110010 | 000000000000000000000000000000000000000000000100000000000000000000
- 00000000000000000000000001110011 | 000000000000000000000000000000000000000000001000000000000000000000
- 00000000000000000000000001110100 | 000000000000000000000000000000000000000000010000000000000000000000
- 00000000000000000000000001110101 | 000000000000000000000000000000000000000000000000000001000000000000
- 00000000000000000000000001110110 | 000000000000000000000000000000000000000000100000000000000000000000
- 00000000000000000000000001110111 | 000000000000000000000000000000000000000000000000000000000100000000
- 00000000000000000000000011001000 | 000000000000000000000000000000000000100000000000000000000000000000
- 00000000000000000000000011001001 | 000000000000000000000000000000000010000000000000000000000000000000
- 00000000000000000000000011001010 | 000000000000000000000000000000001000000000000000000000000000000000
- 00000000000000000000000011001011 | 000000000000000000000000000001000000000000000000000000000000000000
- 00000000000000000000000011001100 | 000000000000000000000000000010000000000000000000000000000000000000
- 00000000000000000000000011001101 | 000000000000000000000000000100000000000000000000000000000000000000
- 00000000000000000000000011001110 | 000000000000000000000001000000000000000000000000000000000000000000
- 00000000000000000000000011001111 | 000000000000000000000100000000000000000000000000000000000000000000
- 00000000000000000000000011010000 | 000000000000000000010000000000000000000000000000000000000000000000
- 00000000000000000000000011010001 | 000000000000000001000000000000000000000000000000000000000000000000
- 00000000000000000000000011010010 | 000000000000000010000000000000000000000000000000000000000000000000
- 00000000000000000000000011011100 | 000000000000000000000000000000000001000000000000000000000000000000
- 00000000000000000000000011011101 | 000000000000010000000000000000000000000000000000000000000000000000
- 00000000000000000000000011011110 | 000000000000100000000000000000000000000000000000000000000000000000
- 00000000000000000000000011011111 | 000000000001000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011100000 | 000000000010000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011100001 | 000000000100000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011100010 | 000000010000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011111010 | 000000000000001000000000000000000000000000000000000000000000000000
- 00000000000000000000000011111011 | 000001000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011111100 | 000100000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000011111101 | 000000100000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000100101110 | 000000000000000000000000000000000100000000000000000000000000000000
- 00000000000000000000000100101111 | 000000000000000000000000000000010000000000000000000000000000000000
- 00000000000000000000000100110000 | 000000000000000000000000000000100000000000000000000000000000000000
- 00000000000000000000000100110011 | 000000000000000000000000010000000000000000000000000000000000000000
- 00000000000000000000000101000001 | 000000000000000100000000000000000000000000000000000000000000000000
- 00000000000000000000000101100000 | 000010000000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000110010010 | 000000000000000000000000000000000000000000000000000000000000000100
- 00000000000000000000000110101010 | 000000001000000000000000000000000000000000000000000000000000000000
- 00000000000000000000000111000010 | 000000000000000000000000001000000000000000000000000000000000000000
- 00000000000000000000000111000011 | 000000000000000000000000100000000000000000000000000000000000000000
- 00000000000000000000000111000100 | 000000000000000000000010000000000000000000000000000000000000000000
- 00000000000000000000000111000101 | 000000000000000000001000000000000000000000000000000000000000000000
- 00000000000000000000000111000110 | 000000000000000000100000000000000000000000000000000000000000000000
---------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+ 00000000000000000000000000000000 | 00000000000000000000000000000000000000000000000000000000000000000000000001
+ 00000000000000000000000000000001 | 00000000000000000000000000000000000000000000000000000000000000000000000010
+ 00000000000000000000000000000010 | 00000000000000000000000000000000000000000000000000000000000000000000010000
+ 00000000000000000000000000000101 | 00100000000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000000110 | 01000000000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000000111 | 10000000000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000001000 | 00010000000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000110010 | 00000000000000000000000000000000000000000000000001000000000000000000000000
+ 00000000000000000000000000110011 | 00000000000000000000000000000000000000000000000010000000000000000000000000
+ 00000000000000000000000000110100 | 00000000000000000000000000000000000000000000000100000000000000000000000000
+ 00000000000000000000000000110101 | 00000000000000000000000000000000000000000000010000000000000000000000000000
+ 00000000000000000000000000110110 | 00000000000000000000000000000000000000000000001000000000000000000000000000
+ 00000000000000000000000001100100 | 00000000000000000000000000000000000000000000000000000000000000000000001000
+ 00000000000000000000000001100101 | 00000000000000000000000000000000000000000000000000000000000000000000100000
+ 00000000000000000000000001100110 | 00000000000000000000000000000000000000000000000000000000000000000001000000
+ 00000000000000000000000001100111 | 00000000000000000000000000000000000000000000000000000000000000000010000000
+ 00000000000000000000000001101000 | 00000000000000000000000000000000000000000000000000000000000000001000000000
+ 00000000000000000000000001101001 | 00000000000000000000000000000000000000000000000000000000000000010000000000
+ 00000000000000000000000001101010 | 00000000000000000000000000000000000000000000000000000000000000100000000000
+ 00000000000000000000000001101011 | 00000000000000000000000000000000000000000000000000000000000010000000000000
+ 00000000000000000000000001101100 | 00000000000000000000000000000000000000000000000000000000000100000000000000
+ 00000000000000000000000001101101 | 00000000000000000000000000000000000000000000000000000000001000000000000000
+ 00000000000000000000000001101110 | 00000000000000000000000000000000000000000000000000000000010000000000000000
+ 00000000000000000000000001101111 | 00000000000000000000000000000000000000000000000000000000100000000000000000
+ 00000000000000000000000001110000 | 00000000000000000000000000000000000000000000000000000001000000000000000000
+ 00000000000000000000000001110001 | 00000000000000000000000000000000000000000000000000000010000000000000000000
+ 00000000000000000000000001110010 | 00000000000000000000000000000000000000000000000000000100000000000000000000
+ 00000000000000000000000001110011 | 00000000000000000000000000000000000000000000000000001000000000000000000000
+ 00000000000000000000000001110100 | 00000000000000000000000000000000000000000000000000010000000000000000000000
+ 00000000000000000000000001110101 | 00000000000000000000000000000000000000000000000000000000000001000000000000
+ 00000000000000000000000001110110 | 00000000000000000000000000000000000000000000000000100000000000000000000000
+ 00000000000000000000000001110111 | 00000000000000000000000000000000000000000000000000000000000000000100000000
+ 00000000000000000000000010010110 | 00000000000000000001000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010010111 | 00000000000000000010000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011000 | 00000000000000000100000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011001 | 00000000000000001000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011010 | 00000000000000010000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011011 | 00000000000000100000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011100 | 00000000000001000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000010011101 | 00000000000010000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011001000 | 00000000000000000000000000000000000000000000100000000000000000000000000000
+ 00000000000000000000000011001001 | 00000000000000000000000000000000000000000100000000000000000000000000000000
+ 00000000000000000000000011001010 | 00000000000000000000000000000000000000010000000000000000000000000000000000
+ 00000000000000000000000011001011 | 00000000000000000000000000000000000010000000000000000000000000000000000000
+ 00000000000000000000000011001100 | 00000000000000000000000000000000000100000000000000000000000000000000000000
+ 00000000000000000000000011001101 | 00000000000000000000000000000000001000000000000000000000000000000000000000
+ 00000000000000000000000011001110 | 00000000000000000000000000000010000000000000000000000000000000000000000000
+ 00000000000000000000000011001111 | 00000000000000000000000000001000000000000000000000000000000000000000000000
+ 00000000000000000000000011010000 | 00000000000000000000000000100000000000000000000000000000000000000000000000
+ 00000000000000000000000011010001 | 00000000000000000000000010000000000000000000000000000000000000000000000000
+ 00000000000000000000000011010010 | 00000000000000000000000100000000000000000000000000000000000000000000000000
+ 00000000000000000000000011011100 | 00000000000000000000000000000000000000000001000000000000000000000000000000
+ 00000000000000000000000011011101 | 00000000000000000000100000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100000 | 00000000000100000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100001 | 00000000001000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100010 | 00000000100000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111010 | 00000000000000000000010000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111011 | 00000010000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111100 | 00001000000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111101 | 00000001000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000100101110 | 00000000000000000000000000000000000000001000000000000000000000000000000000
+ 00000000000000000000000100101111 | 00000000000000000000000000000000000000100000000000000000000000000000000000
+ 00000000000000000000000100110000 | 00000000000000000000000000000000000001000000000000000000000000000000000000
+ 00000000000000000000000100110011 | 00000000000000000000000000000000100000000000000000000000000000000000000000
+ 00000000000000000000000101000001 | 00000000000000000000001000000000000000000000000000000000000000000000000000
+ 00000000000000000000000101011110 | 00000000000000000000000000000000000000000010000000000000000000000000000000
+ 00000000000000000000000101100000 | 00000100000000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000110010010 | 00000000000000000000000000000000000000000000000000000000000000000000000100
+ 00000000000000000000000110101010 | 00000000010000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000111000010 | 00000000000000000000000000000000010000000000000000000000000000000000000000
+ 00000000000000000000000111000011 | 00000000000000000000000000000001000000000000000000000000000000000000000000
+ 00000000000000000000000111000100 | 00000000000000000000000000000100000000000000000000000000000000000000000000
+ 00000000000000000000000111000101 | 00000000000000000000000000010000000000000000000000000000000000000000000000
+ 00000000000000000000000111000110 | 00000000000000000000000001000000000000000000000000000000000000000000000000
+----------------------------------------------------------------------------------------------------------------
 Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <N2_FFT/state/FSM> on signal <state[1:12]> with one-hot encoding.
 --------------------------------------------------
@@ -576,6 +602,8 @@ Reading core <ipcore_dir/coef_coe.ngc>.
 Reading core <ipcore_dir/y_coe.ngc>.
 Reading core <ipcore_dir/ROM_MUL.ngc>.
 Reading core <ipcore_dir/FPAdder.ngc>.
+Reading core <ipcore_dir/FPDiv.ngc>.
+Reading core <ipcore_dir/Compare.ngc>.
 Reading core <ipcore_dir/SUB.ngc>.
 Loading core <F_RAM> for timing and area information for instance <F_RAM>.
 Loading core <O_RAM> for timing and area information for instance <O_ROM>.
@@ -588,15 +616,45 @@ Loading core <ROM_COS> for timing and area information for instance <cosT>.
 Loading core <coef_coe> for timing and area information for instance <coefficients>.
 Loading core <y_coe> for timing and area information for instance <ynoisy>.
 Loading core <ROM_MUL> for timing and area information for instance <mul_1>.
-Loading core <ROM_MUL> for timing and area information for instance <mul_2>.
 Loading core <FPAdder> for timing and area information for instance <addr_1>.
 Loading core <FPAdder> for timing and area information for instance <addr_2>.
+Loading core <FPDiv> for timing and area information for instance <div_1>.
+Loading core <Compare> for timing and area information for instance <Compare>.
 Loading core <ROM_MUL> for timing and area information for instance <mul_1>.
 Loading core <ROM_MUL> for timing and area information for instance <mul_2>.
 Loading core <FPAdder> for timing and area information for instance <addr_1>.
 Loading core <FPAdder> for timing and area information for instance <addr_2>.
 Loading core <SUB> for timing and area information for instance <SUB_1>.
 Loading core <SUB> for timing and area information for instance <SUB_2>.
+WARNING:Xst:1710 - FF/Latch <RegDivB_31> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_29> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_28> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_27> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_26> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_25> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_24> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_22> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_21> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_20> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_19> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_18> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_17> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_16> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_15> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_14> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_13> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_12> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_11> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_10> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_9> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_8> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_7> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_6> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_5> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_4> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_3> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_2> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_1> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <Main_Module>.
 	Found pipelined multiplier on signal <SINCOS_address>:
@@ -611,19 +669,19 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # FSMs                                                 : 2
 # Multipliers                                          : 1
- 32x8-bit registered multiplier                        : 1
+ 32x9-bit registered multiplier                        : 1
 # Adders/Subtractors                                   : 24
  10-bit subtractor                                     : 1
  32-bit adder                                          : 18
  32-bit addsub                                         : 1
- 7-bit adder                                           : 4
-# Registers                                            : 2027
- Flip-Flops                                            : 2027
-# Comparators                                          : 25
+ 8-bit adder                                           : 4
+# Registers                                            : 2222
+ Flip-Flops                                            : 2222
+# Comparators                                          : 26
  32-bit comparator equal                               : 1
  32-bit comparator greatequal                          : 1
- 32-bit comparator greater                             : 13
- 32-bit comparator less                                : 10
+ 32-bit comparator greater                             : 12
+ 32-bit comparator less                                : 12
 # Logic shifters                                       : 2
  32-bit shifter logical left                           : 1
  32-bit shifter logical right                          : 1
@@ -633,32 +691,35 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <I_address_7> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_8> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_9> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_10> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_11> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_12> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_13> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_14> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_15> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_16> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_17> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_18> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_19> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_20> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_21> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_22> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_23> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_24> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_25> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_26> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_27> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_28> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_29> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_30> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <I_address_31> of sequential type is unconnected in block <Main_Module>.
-WARNING:Xst:2677 - Node <addressX_6> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:1710 - FF/Latch <RegDivB_31> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_29> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_28> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_27> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_26> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_25> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_24> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_22> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_21> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_20> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_19> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_18> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_17> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_16> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_15> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_14> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_13> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_12> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_11> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_10> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_9> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_8> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_7> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_6> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_5> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_4> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_3> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_2> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_1> (without init value) has a constant value of 0 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <addressX_7> of sequential type is unconnected in block <Main_Module>.
 WARNING:Xst:2677 - Node <addressX_8> of sequential type is unconnected in block <Main_Module>.
 WARNING:Xst:2677 - Node <addressX_9> of sequential type is unconnected in block <Main_Module>.
@@ -684,16 +745,43 @@ WARNING:Xst:2677 - Node <addressX_28> of sequential type is unconnected in block
 WARNING:Xst:2677 - Node <addressX_29> of sequential type is unconnected in block <Main_Module>.
 WARNING:Xst:2677 - Node <addressX_30> of sequential type is unconnected in block <Main_Module>.
 WARNING:Xst:2677 - Node <addressX_31> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_8> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_9> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_10> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_11> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_12> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_13> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_14> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_15> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_16> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_17> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_18> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_19> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_20> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_21> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_22> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_23> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_24> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_25> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_26> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_27> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_28> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_29> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_30> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_31> of sequential type is unconnected in block <Main_Module>.
 
 Optimizing unit <Main_Module> ...
+WARNING:Xst:1710 - FF/Latch <RegDivB_0> (without init value) has a constant value of 1 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_23> (without init value) has a constant value of 1 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <RegDivB_30> (without init value) has a constant value of 1 in block <Main_Module>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <N2_FFT> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Main_Module, actual ratio is 120.
+Found area constraint ratio of 100 (+ 5) on block Main_Module, actual ratio is 130.
 Optimizing block <Main_Module> to meet ratio 100 (+ 5) of 4656 slices :
-WARNING:Xst:2254 - Area constraint could not be met for block <Main_Module>, final ratio is 119.
+WARNING:Xst:2254 - Area constraint could not be met for block <Main_Module>, final ratio is 129.
 
 Final Macro Processing ...
 
@@ -701,8 +789,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2052
- Flip-Flops                                            : 2052
+# Registers                                            : 2225
+ Flip-Flops                                            : 2225
 
 =========================================================================
 
@@ -731,42 +819,44 @@ Design Statistics
 # IOs                              : 66
 
 Cell Usage :
-# BELS                             : 17497
-#      GND                         : 21
-#      INV                         : 83
+# BELS                             : 17742
+#      GND                         : 22
+#      INV                         : 78
 #      LUT1                        : 565
-#      LUT2                        : 1652
-#      LUT2_L                      : 2
-#      LUT3                        : 2451
+#      LUT2                        : 1561
+#      LUT2_L                      : 3
+#      LUT3                        : 2918
 #      LUT3_D                      : 72
-#      LUT3_L                      : 80
-#      LUT4                        : 4005
-#      LUT4_L                      : 4
-#      MULT_AND                    : 900
-#      MUXCY                       : 3910
-#      MUXF5                       : 566
+#      LUT3_L                      : 81
+#      LUT4                        : 3645
+#      LUT4_L                      : 10
+#      MULT_AND                    : 675
+#      MUXCY                       : 4151
+#      MUXF5                       : 564
 #      MUXF6                       : 12
 #      MUXF7                       : 6
-#      VCC                         : 21
-#      XORCY                       : 3147
-# FlipFlops/Latches                : 3468
-#      FD                          : 424
-#      FDE                         : 2638
-#      FDR                         : 99
-#      FDRS                        : 293
-#      FDRSE                       : 8
-#      FDS                         : 6
+#      VCC                         : 22
+#      XORCY                       : 3357
+# FlipFlops/Latches                : 4969
+#      FD                          : 468
+#      FDE                         : 4078
+#      FDR                         : 108
+#      FDRS                        : 298
+#      FDRSE                       : 7
+#      FDS                         : 10
 # RAMS                             : 12
 #      RAMB16_S18_S18              : 4
 #      RAMB16_S36_S36              : 8
-# Shift Registers                  : 88
-#      SRL16                       : 76
-#      SRL16E                      : 12
+# Shift Registers                  : 145
+#      SRL16                       : 88
+#      SRL16E                      : 37
+#      SRLC16                      : 12
+#      SRLC16E                     : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 65
+# IO Buffers                       : 33
 #      IBUF                        : 1
-#      OBUF                        : 64
+#      OBUF                        : 32
 # MULTs                            : 1
 #      MULT18X18SIO                : 1
 =========================================================================
@@ -776,13 +866,13 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     5560  out of   4656   119% (*) 
- Number of Slice Flip Flops:           3468  out of   9312    37%  
- Number of 4 input LUTs:               9002  out of   9312    96%  
-    Number used as logic:              8914
-    Number used as Shift registers:      88
+ Number of Slices:                     6019  out of   4656   129% (*) 
+ Number of Slice Flip Flops:           4969  out of   9312    53%  
+ Number of 4 input LUTs:               9078  out of   9312    97%  
+    Number used as logic:              8933
+    Number used as Shift registers:     145
  Number of IOs:                          66
- Number of bonded IOBs:                  66  out of    232    28%  
+ Number of bonded IOBs:                  34  out of    232    14%  
  Number of BRAMs:                        12  out of     20    60%  
  Number of MULT18X18SIOs:                 1  out of     20     5%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -810,7 +900,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                                         | Load  |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
-clk                                | BUFGP                                                                                                                         | 3569  |
+clk                                | BUFGP                                                                                                                         | 5127  |
 F_RAM/N1                           | NONE(F_RAM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram)| 2     |
 ynoisy/N1                          | NONE(ynoisy/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp18x18.ram) | 2     |
 -----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
@@ -825,7 +915,7 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 35.637ns (Maximum Frequency: 28.060MHz)
-   Minimum input arrival time before clock: 5.344ns
+   Minimum input arrival time before clock: 5.347ns
    Maximum output required time after clock: 4.310ns
    Maximum combinational path delay: No path found
 
@@ -836,7 +926,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 35.637ns (frequency: 28.060MHz)
-  Total number of paths / destination ports: 1565837833073 / 5467
+  Total number of paths / destination ports: 1267274986049 / 7176
 -------------------------------------------------------------------------
 Delay:               35.637ns (Levels of Logic = 82)
   Source:            N2_FFT/RegAd2B_23 (FF)
@@ -938,9 +1028,9 @@ Delay:               35.637ns (Levels of Logic = 82)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1242 / 1242
+  Total number of paths / destination ports: 1415 / 1415
 -------------------------------------------------------------------------
-Offset:              5.344ns (Levels of Logic = 2)
+Offset:              5.347ns (Levels of Logic = 2)
   Source:            rst (PAD)
   Destination:       Mmult_SINCOS_address_mult0001 (MULT)
   Destination Clock: clk rising
@@ -949,16 +1039,16 @@ Offset:              5.344ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            78   1.218   1.277  rst_IBUF (rst_IBUF)
-     INV:I->O            750   0.704   1.410  rst_inv321_INV_0 (rst_inv)
+     IBUF:I->O            88   1.218   1.280  rst_IBUF (rst_IBUF)
+     INV:I->O            756   0.704   1.410  rst_inv351_INV_0 (rst_inv)
      MULT18X18SIO:CEA          0.735          Mmult_SINCOS_address_mult0001
     ----------------------------------------
-    Total                      5.344ns (2.657ns logic, 2.687ns route)
+    Total                      5.347ns (2.657ns logic, 2.690ns route)
                                        (49.7% logic, 50.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 64 / 64
+  Total number of paths / destination ports: 32 / 32
 -------------------------------------------------------------------------
 Offset:              4.310ns (Levels of Logic = 1)
   Source:            Magnitude_31 (FF)
@@ -978,12 +1068,14 @@ Offset:              4.310ns (Levels of Logic = 1)
 =========================================================================
 WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to mul_1.
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to mul_1.
-WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to mul_2.
-WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to mul_2.
 WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to addr_1.
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to addr_1.
 WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to addr_2.
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to addr_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to div_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to div_1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to Compare.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to Compare.
 WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/SUB_2.
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/SUB_2.
 WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/SUB_1.
@@ -998,14 +1090,14 @@ WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/m
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/mul_1.
 
 
-Total REAL time to Xst completion: 49.00 secs
-Total CPU time to Xst completion: 49.23 secs
+Total REAL time to Xst completion: 56.00 secs
+Total CPU time to Xst completion: 56.66 secs
  
 --> 
 
-Total memory usage is 435496 kilobytes
+Total memory usage is 449384 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  134 (   0 filtered)
+Number of warnings :  202 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

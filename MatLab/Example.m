@@ -57,8 +57,9 @@ coefficients = filt_mdl.Numerator;
 %%title('Spectral Analysis of Noisy Input Signal','FontSize',32,'FontWeight','Bold');
 
 %% Obtain spectral energy of filtered input
-NFFT = 128; 
-Y = fft(win_x(1:NFFT),NFFT);
+NFFT = 256; 
+nn = 1;
+Y = fft(win_x(nn:NFFT+nn),NFFT);
 
 %Y = fft(win_x,NFFT);
 f = Fs/2*linspace(0,1,NFFT/2+1);

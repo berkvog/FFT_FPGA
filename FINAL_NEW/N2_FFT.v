@@ -33,7 +33,6 @@ module N2_FFT #(parameter SIZE = 64)(
 	 output [31:0] wF1R
     );
 
-
 /////////////Register and wire declarations////////////////
 
 
@@ -139,6 +138,9 @@ SUB SUB_2 (
   .clk(clk), // input clk
   .result(sub2) // output [31 : 0] result
 );
+
+
+
 
 
 

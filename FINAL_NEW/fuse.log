@@ -6,8 +6,6 @@ Determining compilation order of HDL files
 Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPAdder.v" into library work
 Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_MUL.v" into library work
 WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module <glbl>.
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/SUB.v" into library work
-WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module <glbl>.
 Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPDiv.v" into library work
 WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPDiv.v" Line 28397: Illegal redeclaration of module <glbl>.
 Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/Compare.v" into library work
@@ -29,18 +27,18 @@ Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test.v
 Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
 WARNING:HDLCompiler:687 - "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
 Starting static elaboration
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 201: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 202: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 209: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 219: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 220: Size mismatch in connection of port <addra>. Formal port size is 7-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 228: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 229: Size mismatch in connection of port <addra>. Formal port size is 7-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 239: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 247: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 255: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 261: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 320: Size mismatch in connection of port <result>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 199: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 200: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 207: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 216: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 217: Size mismatch in connection of port <addra>. Formal port size is 8-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 225: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 226: Size mismatch in connection of port <addra>. Formal port size is 8-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 236: Size mismatch in connection of port <addra>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 244: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 252: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 258: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 310: Size mismatch in connection of port <result>. Formal port size is 1-bit while actual signal size is 32-bit.
 Completed static elaboration
 Compiling module GND
 Compiling module VCC
@@ -59,16 +57,6 @@ Compiling module MUXF7
 Compiling module MUXF6
 Compiling module FD
 Compiling module FPAdder
-Compiling module FDE
-Compiling module FDR
-Compiling module FDS(INIT=1'b0)
-Compiling module LUT4_L(INIT=16'b1000100010000000...
-Compiling module LUT3_D(INIT=8'b01011101)
-Compiling module LUT3_L(INIT=8'b011011)
-Compiling module LUT2_L(INIT=4'b01)
-Compiling module SRL16E
-Compiling module SRL16
-Compiling module SUB
 Compiling module N2_FFT
 Compiling module FlipBits
 Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
@@ -88,6 +76,10 @@ Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
 Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
 Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
 Compiling module SIN_RAM
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
 Compiling module COS_RAM
 Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
 Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
@@ -101,16 +93,24 @@ Compiling module coef_coe
 Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
 Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
 Compiling module y_coe
+Compiling module FDE
+Compiling module FDS(INIT=1'b0)
+Compiling module FDR
+Compiling module LUT3_L(INIT=8'b11111000)
+Compiling module LUT4_L(INIT=16'b1111111111111011...
+Compiling module LUT2_L(INIT=4'b1000)
 Compiling module SRLC16E
+Compiling module SRL16E
 Compiling module SRLC16
+Compiling module SRL16
 Compiling module FPDiv
 Compiling module Compare
 Compiling module Main_Module
 Compiling module Main_Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 45 sub-compilation(s) to finish...
-Compiled 215 Verilog Units
+Waiting for 51 sub-compilation(s) to finish...
+Compiled 187 Verilog Units
 Built simulation executable C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_isim_beh.exe
-Fuse Memory Usage: 55112 KB
-Fuse CPU Usage: 1684 ms
+Fuse Memory Usage: 52228 KB
+Fuse CPU Usage: 1669 ms

@@ -4,20 +4,20 @@
 //   ____  ____
 //  /   /\/   /
 // /___/  \  /    Vendor: Xilinx
-// \   \   \/     Version: P.20131013
+// \   \   \/     Version: P.68d
 //  \   \         Application: netgen
 //  /   /         Filename: SUB.v
-// /___/   /\     Timestamp: Sun Dec 04 22:57:59 2016
+// /___/   /\     Timestamp: Sat Dec 10 11:15:16 2016
 // \   \  /  \ 
 //  \___\/\___\
 //             
-// Command	: -w -sim -ofmt verilog C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/tmp/_cg/SUB.ngc C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/tmp/_cg/SUB.v 
+// Command	: -w -sim -ofmt verilog C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/tmp/_cg/SUB.ngc C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/tmp/_cg/SUB.v 
 // Device	: 3s500efg320-4
-// Input file	: C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/tmp/_cg/SUB.ngc
-// Output file	: C:/Xilinx/FFT_FPGA/FFT_FPGA/Final_FPGA/ipcore_dir/tmp/_cg/SUB.v
+// Input file	: C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/tmp/_cg/SUB.ngc
+// Output file	: C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/tmp/_cg/SUB.v
 // # of Modules	: 1
 // Design Name	: SUB
-// Xilinx        : C:\Xilinx\14.7\ISE_DS\ISE\
+// Xilinx        : C:\Xilinx\14.6\ISE_DS\ISE\
 //             
 // Purpose:    
 //     This verilog netlist is a verification model and uses simulation 
