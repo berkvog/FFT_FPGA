@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/evan/Documents/FIR filter/FIR/tb_filter_isim_beh.exe" -prj "C:/Users/evan/Documents/FIR filter/FIR/tb_filter_beh.prj" "work.tb_filter" "work.glbl" 

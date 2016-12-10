@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-12-09T00:51:04</DateModified>
+  <DateModified>2016-12-09T21:51:55</DateModified>
   <ModuleName>Main_Module</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/iseconfig/Main_Module.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/iseconfig/Main_Module.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW\</ImplementationReportsDirectory>
   <DateInitialized>2016-12-03T16:41:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
