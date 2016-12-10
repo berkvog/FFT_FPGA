@@ -1,41 +1,46 @@
-Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test_isim_beh.exe -prj C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test_beh.prj work.Main_Test work.glbl 
+Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_isim_beh.exe -prj C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_beh.prj work.Main_Test work.glbl 
 ISim P.68d (signature 0x7708f090)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/FPAdder.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/ROM_MUL.v" into library work
-WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module <glbl>.
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/SUB.v" into library work
-WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module <glbl>.
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/N2_FFT.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/y_coe.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/W_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/SIN_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/ROM_SIN.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/ROM_COS.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/O_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/I_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/F_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/COS_RAM.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/coef_coe.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/FlipBits.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" into library work
-Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPAdder.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_MUL.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_MUL.v" Line 15725: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/SUB.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/SUB.v" Line 12291: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPDiv.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/FPDiv.v" Line 28397: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/Compare.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/Compare.v" Line 1261: Illegal redeclaration of module <glbl>.
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/N2_FFT.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/y_coe.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/W_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/SIN_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_SIN.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_COS.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/O_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/I_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/F_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/COS_RAM.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/coef_coe.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/FlipBits.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" into library work
+Analyzing Verilog file "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
 WARNING:HDLCompiler:687 - "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" Line 5: Illegal redeclaration of module <glbl>.
 Starting static elaboration
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 691: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 692: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 699: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 709: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 710: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 718: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 719: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 729: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 737: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 745: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Module.v" Line 751: Size mismatch in connection of port <addra>. Formal port size is 5-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 201: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 202: Size mismatch in connection of port <addra>. Formal port size is 10-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 209: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 219: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 220: Size mismatch in connection of port <addra>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 228: Size mismatch in connection of port <wea>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 229: Size mismatch in connection of port <addra>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 239: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 247: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 255: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 261: Size mismatch in connection of port <addra>. Formal port size is 6-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Module.v" Line 320: Size mismatch in connection of port <result>. Formal port size is 1-bit while actual signal size is 32-bit.
 Completed static elaboration
 Compiling module GND
 Compiling module VCC
@@ -96,12 +101,16 @@ Compiling module coef_coe
 Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
 Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="spart...
 Compiling module y_coe
+Compiling module SRLC16E
+Compiling module SRLC16
+Compiling module FPDiv
+Compiling module Compare
 Compiling module Main_Module
 Compiling module Main_Test
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 25 sub-compilation(s) to finish...
-Compiled 192 Verilog Units
-Built simulation executable C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test_isim_beh.exe
-Fuse Memory Usage: 49368 KB
-Fuse CPU Usage: 1497 ms
+Waiting for 45 sub-compilation(s) to finish...
+Compiled 215 Verilog Units
+Built simulation executable C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_isim_beh.exe
+Fuse Memory Usage: 55112 KB
+Fuse CPU Usage: 1684 ms

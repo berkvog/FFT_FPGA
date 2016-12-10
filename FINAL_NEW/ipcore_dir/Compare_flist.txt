@@ -1,0 +1,15 @@
+# Output products list for <Compare>
+Compare.asy
+Compare.gise
+Compare.ngc
+Compare.sym
+Compare.v
+Compare.veo
+Compare.xco
+Compare.xise
+Compare\doc\floating_point_ds335.pdf
+Compare\doc\floating_point_v5_0_readme.txt
+Compare\doc\floating_point_v5_0_vinfo.html
+Compare_flist.txt
+Compare_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

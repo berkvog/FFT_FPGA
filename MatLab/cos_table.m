@@ -3,7 +3,7 @@ function [ w ] = cos_table( filename )
 %   Detailed explanation goes here
 
 i = 1;
-N = 32;
+N = 64;
 
 while i <= N
     cos_table(i) = cos(2*pi*(i-1)/N);

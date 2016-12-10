@@ -22,7 +22,7 @@
 #define alloca _alloca
 #endif
 static const char *ng0 = "%x";
-static const char *ng1 = "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test.v";
+static const char *ng1 = "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test.v";
 static int ng2[] = {1, 0};
 static int ng3[] = {0, 0};
 

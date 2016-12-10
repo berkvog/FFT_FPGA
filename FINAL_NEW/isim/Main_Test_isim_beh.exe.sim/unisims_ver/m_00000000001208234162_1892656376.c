@@ -2261,3 +2261,12 @@ extern void unisims_ver_m_00000000001208234162_1340620052_init()
 	xsi_register_executes(pe);
 	xsi_register_subprogram_executes(se);
 }
+
+extern void unisims_ver_m_00000000001208234162_2239136902_init()
+{
+	static char *pe[] = {(void *)Always_34_0};
+	static char *se[] = {(void *)sp_lut3_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001208234162_2239136902", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001208234162_2239136902.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}

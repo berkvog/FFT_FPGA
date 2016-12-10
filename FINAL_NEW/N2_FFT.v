@@ -34,6 +34,114 @@ module N2_FFT #(parameter SIZE = 64)(
     );
 
 
+/////////////Register and wire declarations////////////////
+
+
+//temporary registers for holding variables
+reg[31:0] reC,imS,reS,imC,REAL,IMAG;
+
+
+///Real registers
+reg[31:0] rx1,rx2,theSIN, theCOS;
+wire[31:0] wrX1, wrX2;
+assign wrX1 = rx1;
+assign wrX2 = rx2;
+//imag registers
+reg[31:0] ix1,ix2;
+wire[31:0] wiX1, wiX2;
+assign wiX1 = ix1;
+assign wiX2 = ix2;
+
+
+reg[31:0] F0I;
+reg[31:0] F0R;
+reg[31:0] F1I;
+reg[31:0] F1R;
+
+assign wF0R = F0R;
+assign wF0I = F0I;
+assign wF1R = F1R;
+assign wF1I = F1I;
+
+
+
+//MUL INPUT
+reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
+wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B;
+assign wMul1A = RegMul1A;
+assign wMul1B = RegMul1B;
+assign wMul2A = RegMul2A;
+assign wMul2B = RegMul2B;
+
+//ADDER/SUB INPUT
+reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B,RegSub1A, RegSub1B,RegSub2A, RegSub2B;
+wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B,wSub1A,wSub1B,wSub2A,wSub2B;
+assign wAd1A = RegAd1A;
+assign wAd1B = RegAd1B;
+assign wAd2A = RegAd2A;
+assign wAd2B = RegAd2B;
+assign wSub1A = RegSub1A;
+assign wSub1B = RegSub1B;
+assign wSub2A = RegSub2A;
+assign wSub2B = RegSub2B;
+
+wire[31:0] sub1,sub2,mul1,mul2,addr1,addr2;
+
+
+
+reg [31:0] state, dC1, dC2, dC3, dC4;
+
+
+
+/////////////////////////IP CORES/////////////////////////
+
+
+ROM_MUL mul_1 (
+  .a(wMul1A), // input [31 : 0] a
+  .b(wMul1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(mul1) // output [31 : 0] result
+);
+
+ROM_MUL mul_2 (
+  .a(wMul2A), // input [31 : 0] a
+  .b(wMul2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(mul2) // output [31 : 0] result
+);
+
+
+FPAdder addr_1 (
+  .a(wAd1A), // input [31 : 0] a
+  .b(wAd1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(addr1) // output [31 : 0] result
+);
+
+FPAdder addr_2 (
+  .a(wAd2A), // input [31 : 0] a
+  .b(wAd2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(addr2) // output [31 : 0] result
+);
+
+SUB SUB_1 (
+  .a(wSub1A), // input [31 : 0] a
+  .b(wSub1B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(sub1) // output [31 : 0] result
+);
+
+
+SUB SUB_2 (
+  .a(wSub2A), // input [31 : 0] a
+  .b(wSub2B), // input [31 : 0] b
+  .clk(clk), // input clk
+  .result(sub2) // output [31 : 0] result
+);
+
+
+
 /////////////////////////State Machine//////////////
 
 always @(posedge clk) begin
@@ -181,113 +289,6 @@ end
 
 
 
-
-
-/////////////Register and wire declarations////////////////
-
-
-//temporary registers for holding variables
-reg[31:0] reC,imS,reS,imC,REAL,IMAG;
-
-
-///Real registers
-reg[31:0] rx1,rx2,theSIN, theCOS;
-wire[31:0] wrX1, wrX2;
-assign wrX1 = rx1;
-assign wrX2 = rx2;
-//imag registers
-reg[31:0] ix1,ix2;
-wire[31:0] wiX1, wiX2;
-assign wiX1 = ix1;
-assign wiX2 = ix2;
-
-
-reg[31:0] F0I;
-reg[31:0] F0R;
-reg[31:0] F1I;
-reg[31:0] F1R;
-
-assign wF0R = F0R;
-assign wF0I = F0I;
-assign wF1R = F1R;
-assign wF1I = F1I;
-
-
-
-//MUL INPUT
-reg[31:0] RegMul1A, RegMul1B, RegMul2A, RegMul2B;
-wire[31:0] wMul1A,wMul1B, wMul2A, wMul2B;
-assign wMul1A = RegMul1A;
-assign wMul1B = RegMul1B;
-assign wMul2A = RegMul2A;
-assign wMul2B = RegMul2B;
-
-//ADDER/SUB INPUT
-reg[31:0] RegAd1A, RegAd1B, RegAd2A, RegAd2B,RegSub1A, RegSub1B,RegSub2A, RegSub2B;
-wire[31:0] wAd1A,wAd1B, wAd2A, wAd2B,wSub1A,wSub1B,wSub2A,wSub2B;
-assign wAd1A = RegAd1A;
-assign wAd1B = RegAd1B;
-assign wAd2A = RegAd2A;
-assign wAd2B = RegAd2B;
-assign wSub1A = RegSub1A;
-assign wSub1B = RegSub1B;
-assign wSub2A = RegSub2A;
-assign wSub2B = RegSub2B;
-
-wire[31:0] sub1,sub2,mul1,mul2,addr1,addr2;
-
-
-
-reg [31:0] state, dC1, dC2, dC3, dC4;
-
-
-
-/////////////////////////IP CORES/////////////////////////
-
-
-ROM_MUL mul_1 (
-  .a(wMul1A), // input [31 : 0] a
-  .b(wMul1B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(mul1) // output [31 : 0] result
-);
-
-ROM_MUL mul_2 (
-  .a(wMul2A), // input [31 : 0] a
-  .b(wMul2B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(mul2) // output [31 : 0] result
-);
-
-
-FPAdder addr_1 (
-  .a(wAd1A), // input [31 : 0] a
-  .b(wAd1B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(addr1) // output [31 : 0] result
-);
-
-FPAdder addr_2 (
-  .a(wAd2A), // input [31 : 0] a
-  .b(wAd2B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(addr2) // output [31 : 0] result
-);
-
-SUB SUB_1 (
-  .a(wSub1A), // input [31 : 0] a
-  .b(wSub1B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(sub1) // output [31 : 0] result
-);
-
-
-SUB SUB_2 (
-  .a(wSub2A), // input [31 : 0] a
-  .b(wSub2B), // input [31 : 0] b
-  .clk(clk), // input clk
-  .result(sub2) // output [31 : 0] result
-);
 
 
 endmodule

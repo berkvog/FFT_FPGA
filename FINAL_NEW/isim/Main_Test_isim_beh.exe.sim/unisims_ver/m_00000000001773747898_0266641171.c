@@ -1890,3 +1890,10 @@ extern void unisims_ver_m_00000000001773747898_2324208960_init()
 	xsi_register_didat("unisims_ver_m_00000000001773747898_2324208960", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001773747898_2324208960.didat");
 	xsi_register_executes(pe);
 }
+
+extern void unisims_ver_m_00000000001773747898_0395151587_init()
+{
+	static char *pe[] = {(void *)Cont_35_0,(void *)Always_37_1};
+	xsi_register_didat("unisims_ver_m_00000000001773747898_0395151587", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001773747898_0395151587.didat");
+	xsi_register_executes(pe);
+}

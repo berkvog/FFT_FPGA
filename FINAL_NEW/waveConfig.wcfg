@@ -3,17 +3,17 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/Main_Test_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/Main_Test_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="Main_Test" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="21" />
    <wave_markers>
-      <marker time="6604641668000" label="" />
-      <marker time="30050000000000" label="" />
+      <marker time="24450000000000" label="" />
+      <marker time="84400000000000" label="" />
    </wave_markers>
    <wvobject fp_name="/Main_Test/uut/state" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">state[31:0]</obj_property>
@@ -23,9 +23,29 @@
       <obj_property name="ElementShortName">p[31:0]</obj_property>
       <obj_property name="ObjectShortName">p[31:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/Main_Test/uut/RegAd1A" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RegAd1A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegAd1A[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/RegAd1B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RegAd1B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegAd1B[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/Main_Test/uut/addr1" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">addr1[31:0]</obj_property>
       <obj_property name="ObjectShortName">addr1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/RegDivA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RegDivA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegDivA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/RegDivB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RegDivB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegDivB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Main_Test/uut/div" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">div[31:0]</obj_property>
+      <obj_property name="ObjectShortName">div[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Main_Test/uut/mul1" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">mul1[31:0]</obj_property>
@@ -91,8 +111,8 @@
          <obj_property name="ObjectShortName">O_datain[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Main_Test/uut/O_address" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">O_address[5:0]</obj_property>
-         <obj_property name="ObjectShortName">O_address[5:0]</obj_property>
+         <obj_property name="ElementShortName">O_address[6:0]</obj_property>
+         <obj_property name="ObjectShortName">O_address[6:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group15" type="group">
@@ -152,23 +172,23 @@
       </wvobject>
    </wvobject>
    <wvobject fp_name="/Main_Test/uut/n" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">n[5:0]</obj_property>
-      <obj_property name="ObjectShortName">n[5:0]</obj_property>
+      <obj_property name="ElementShortName">n[6:0]</obj_property>
+      <obj_property name="ObjectShortName">n[6:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Main_Test/uut/temp2" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">temp2[6:0]</obj_property>
-      <obj_property name="ObjectShortName">temp2[6:0]</obj_property>
+      <obj_property name="ElementShortName">temp2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="group39" type="group">
       <obj_property name="label">N2Input</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/Main_Test/uut/N1" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">N1[5:0]</obj_property>
-         <obj_property name="ObjectShortName">N1[5:0]</obj_property>
+         <obj_property name="ElementShortName">N1[6:0]</obj_property>
+         <obj_property name="ObjectShortName">N1[6:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Main_Test/uut/N2" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">N2[5:0]</obj_property>
-         <obj_property name="ObjectShortName">N2[5:0]</obj_property>
+         <obj_property name="ElementShortName">N2[6:0]</obj_property>
+         <obj_property name="ObjectShortName">N2[6:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Main_Test/uut/tempSIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">tempSIN[31:0]</obj_property>
@@ -407,12 +427,12 @@
       <obj_property name="label">Flip(If it breaks its evan</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/Main_Test/uut/Flip/in" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">in[5:0]</obj_property>
-         <obj_property name="ObjectShortName">in[5:0]</obj_property>
+         <obj_property name="ElementShortName">in[6:0]</obj_property>
+         <obj_property name="ObjectShortName">in[6:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/Main_Test/uut/Flip/wout" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wout[5:0]</obj_property>
-         <obj_property name="ObjectShortName">wout[5:0]</obj_property>
+         <obj_property name="ElementShortName">wout[6:0]</obj_property>
+         <obj_property name="ObjectShortName">wout[6:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

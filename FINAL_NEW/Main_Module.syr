@@ -1,0 +1,1011 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: Main_Module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main_Module.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main_Module"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Main_Module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ipcore_dir/SUB.v" in library work
+Compiling verilog file "ipcore_dir/ROM_MUL.v" in library work
+Module <SUB> compiled
+Compiling verilog file "ipcore_dir/FPAdder.v" in library work
+Module <ROM_MUL> compiled
+Compiling verilog file "N2_FFT.v" in library work
+Module <FPAdder> compiled
+Compiling verilog file "ipcore_dir/y_coe.v" in library work
+Module <N2_FFT> compiled
+Compiling verilog file "ipcore_dir/W_RAM.v" in library work
+Module <y_coe> compiled
+Compiling verilog file "ipcore_dir/SIN_RAM.v" in library work
+Module <W_RAM> compiled
+Compiling verilog file "ipcore_dir/ROM_SIN.v" in library work
+Module <SIN_RAM> compiled
+Compiling verilog file "ipcore_dir/ROM_COS.v" in library work
+Module <ROM_SIN> compiled
+Compiling verilog file "ipcore_dir/O_RAM.v" in library work
+Module <ROM_COS> compiled
+Compiling verilog file "ipcore_dir/I_RAM.v" in library work
+Module <O_RAM> compiled
+Compiling verilog file "ipcore_dir/F_RAM.v" in library work
+Module <I_RAM> compiled
+Compiling verilog file "ipcore_dir/COS_RAM.v" in library work
+Module <F_RAM> compiled
+Compiling verilog file "ipcore_dir/coef_coe.v" in library work
+Module <COS_RAM> compiled
+Compiling verilog file "FlipBits.v" in library work
+Module <coef_coe> compiled
+Compiling verilog file "Main_Module.v" in library work
+Module <FlipBits> compiled
+Module <Main_Module> compiled
+No errors in compilation
+Analysis of file <"Main_Module.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Main_Module> in library <work> with parameters.
+	SIZE = "00000000000000000000000010000000"
+
+Analyzing hierarchy for module <N2_FFT> in library <work> with parameters.
+	SIZE = "00000000000000000000000001000000"
+
+Analyzing hierarchy for module <FlipBits> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Main_Module>.
+	SIZE = 32'sb00000000000000000000000010000000
+WARNING:Xst:2211 - "ipcore_dir/F_RAM.v" line 190: Instantiating black box module <F_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/O_RAM.v" line 198: Instantiating black box module <O_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/W_RAM.v" line 208: Instantiating black box module <W_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/I_RAM.v" line 217: Instantiating black box module <I_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/SIN_RAM.v" line 227: Instantiating black box module <SIN_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/COS_RAM.v" line 235: Instantiating black box module <COS_RAM>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_SIN.v" line 244: Instantiating black box module <ROM_SIN>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_COS.v" line 250: Instantiating black box module <ROM_COS>.
+WARNING:Xst:2211 - "ipcore_dir/coef_coe.v" line 256: Instantiating black box module <coef_coe>.
+WARNING:Xst:2211 - "ipcore_dir/y_coe.v" line 262: Instantiating black box module <y_coe>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 271: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 278: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 286: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 293: Instantiating black box module <FPAdder>.
+Module <Main_Module> is correct for synthesis.
+ 
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_1> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_1> in unit <Main_Module>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_2> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_2> in unit <Main_Module>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_1> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_1> in unit <Main_Module>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_2> in unit <Main_Module>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_2> in unit <Main_Module>.
+Analyzing module <N2_FFT> in library <work>.
+	SIZE = 32'sb00000000000000000000000001000000
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 99: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/ROM_MUL.v" line 106: Instantiating black box module <ROM_MUL>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 114: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/FPAdder.v" line 121: Instantiating black box module <FPAdder>.
+WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 128: Instantiating black box module <SUB>.
+WARNING:Xst:2211 - "ipcore_dir/SUB.v" line 136: Instantiating black box module <SUB>.
+Module <N2_FFT> is correct for synthesis.
+ 
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <mul_2> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <mul_2> in unit <N2_FFT>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <addr_2> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <addr_2> in unit <N2_FFT>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <SUB_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <SUB_1> in unit <N2_FFT>.
+    Set user-defined property "SYN_BLACK_BOX =  1" for instance <SUB_2> in unit <N2_FFT>.
+    Set user-defined property "SYN_NOPRUNE =  1" for instance <SUB_2> in unit <N2_FFT>.
+    Set property "SYN_NOPRUNE = 1" for unit <SUB>.
+    Set property "SYN_NOPRUNE = 1" for unit <SUB>.
+Analyzing module <FlipBits> in library <work>.
+Module <FlipBits> is correct for synthesis.
+ 
+    Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
+    Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
+    Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
+    Set property "SYN_NOPRUNE = 1" for unit <ROM_MUL>.
+    Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
+    Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
+    Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
+    Set property "SYN_NOPRUNE = 1" for unit <FPAdder>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <dC4> in unit <Main_Module> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <dC6> in unit <Main_Module> has a constant value of 00000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <flipReset> in unit <Main_Module> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <FlipBits>.
+    Related source file is "FlipBits.v".
+Unit <FlipBits> synthesized.
+
+
+Synthesizing Unit <N2_FFT>.
+    Related source file is "N2_FFT.v".
+WARNING:Xst:646 - Signal <wrX2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <wrX1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <wiX2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <wiX1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <reS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <reC> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <imS> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <imC> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <IMAG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <RegSub2B> equivalent to <RegAd2A> has been removed
+    Register <RegSub2A> equivalent to <RegAd2B> has been removed
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 12                                             |
+    | Transitions        | 16                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 13                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000000000000000000000000000000               |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit register for signal <dC1>.
+    Found 32-bit adder for signal <dC1$addsub0000> created at line 193.
+    Found 32-bit register for signal <dC2>.
+    Found 32-bit adder for signal <dC2$addsub0000> created at line 217.
+    Found 32-bit register for signal <dC3>.
+    Found 32-bit adder for signal <dC3$addsub0000> created at line 236.
+    Found 32-bit register for signal <dC4>.
+    Found 32-bit adder for signal <dC4$addsub0000> created at line 259.
+    Found 32-bit register for signal <F0I>.
+    Found 32-bit register for signal <F0R>.
+    Found 32-bit register for signal <F1I>.
+    Found 32-bit register for signal <F1R>.
+    Found 32-bit register for signal <ix1>.
+    Found 32-bit register for signal <ix2>.
+    Found 32-bit register for signal <REAL>.
+    Found 32-bit register for signal <RegAd1A>.
+    Found 32-bit register for signal <RegAd1B>.
+    Found 32-bit register for signal <RegAd2A>.
+    Found 32-bit register for signal <RegAd2B>.
+    Found 32-bit register for signal <RegMul1A>.
+    Found 32-bit register for signal <RegMul1B>.
+    Found 32-bit register for signal <RegMul2A>.
+    Found 32-bit register for signal <RegMul2B>.
+    Found 32-bit register for signal <RegSub1A>.
+    Found 32-bit register for signal <RegSub1B>.
+    Found 32-bit register for signal <rx1>.
+    Found 32-bit register for signal <rx2>.
+    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 188.
+    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 212.
+    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 231.
+    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 254.
+    Found 32-bit register for signal <theCOS>.
+    Found 32-bit register for signal <theSIN>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 800 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+Unit <N2_FFT> synthesized.
+
+
+Synthesizing Unit <Main_Module>.
+    Related source file is "Main_Module.v".
+WARNING:Xst:1780 - Signal <temp1> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <flipReset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dC9> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dC8> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dC7> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dC6> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <dC4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <addr2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <W_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <W_addr<31:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <SIN_addra<31:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <RegAd2B> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <RegAd2A> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:646 - Signal <O_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <I_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <I_addr<31:7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <F_wea<31:1>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <F1R> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <F1I> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <COS_addra<31:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <test> equivalent to <F_datain> has been removed
+    Register <RegMul2B> equivalent to <RegMul2A> has been removed
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 66                                             |
+    | Transitions        | 90                                             |
+    | Inputs             | 20                                             |
+    | Outputs            | 62                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000000000000000000000000000000               |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:643 - "Main_Module.v" line 68: The result of a 32x8-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 32-bit register for signal <Magnitude>.
+    Found 32-bit register for signal <addressX>.
+    Found 32-bit adder for signal <addressX$addsub0000> created at line 363.
+    Found 32-bit register for signal <COS_in>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count$addsub0000> created at line 645.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit comparator equal for signal <counter$cmp_eq0000> created at line 651.
+    Found 32-bit adder for signal <counter$share0000> created at line 320.
+    Found 32-bit register for signal <dC1>.
+    Found 32-bit adder for signal <dC1$share0000> created at line 320.
+    Found 32-bit register for signal <dC2>.
+    Found 32-bit adder for signal <dC2$share0000> created at line 320.
+    Found 32-bit register for signal <dC3>.
+    Found 32-bit adder for signal <dC3$addsub0000> created at line 364.
+    Found 32-bit register for signal <dC5>.
+    Found 32-bit adder for signal <dC5$share0000> created at line 320.
+    Found 32-bit register for signal <F0I>.
+    Found 32-bit register for signal <F0R>.
+    Found 32-bit register for signal <F_address>.
+    Found 32-bit register for signal <F_datain>.
+    Found 1-bit register for signal <F_enable>.
+    Found 32-bit register for signal <I_address>.
+    Found 32-bit adder for signal <I_address$addsub0000> created at line 744.
+    Found 32-bit register for signal <I_datain>.
+    Found 1-bit register for signal <I_enable>.
+    Found 32-bit register for signal <im1>.
+    Found 32-bit register for signal <im2>.
+    Found 10-bit register for signal <j>.
+    Found 10-bit subtractor for signal <j$addsub0000> created at line 412.
+    Found 6-bit register for signal <k>.
+    Found 32-bit register for signal <kcount>.
+    Found 32-bit adder for signal <kcount$addsub0000> created at line 442.
+    Found 7-bit register for signal <n>.
+    Found 7-bit adder for signal <n$addsub0000>.
+    Found 7-bit adder for signal <N2>.
+    Found 32-bit shifter logical right for signal <N2$shift0001> created at line 67.
+    Found 1-bit register for signal <N2_reset>.
+    Found 32-bit register for signal <ncount>.
+    Found 32-bit adder for signal <ncount$addsub0000>.
+    Found 7-bit adder for signal <ninc>.
+    Found 7-bit register for signal <O_address>.
+    Found 7-bit adder for signal <O_address$addsub0000>.
+    Found 32-bit register for signal <O_datain>.
+    Found 1-bit register for signal <O_enable>.
+    Found 32-bit register for signal <p>.
+    Found 32-bit adder for signal <p$addsub0000> created at line 641.
+    Found 32-bit register for signal <re1>.
+    Found 32-bit register for signal <re2>.
+    Found 32-bit register for signal <RegAd1A>.
+    Found 32-bit register for signal <RegAd1B>.
+    Found 32-bit register for signal <RegMul1A>.
+    Found 32-bit register for signal <RegMul1B>.
+    Found 32-bit register for signal <RegMul2A>.
+    Found 32-bit register for signal <SIN_in>.
+    Found 32x8-bit multiplier for signal <SINCOS_address$mult0001> created at line 68.
+    Found 1-bit register for signal <SINCOS_en>.
+    Found 32-bit comparator greatequal for signal <state$cmp_ge0000> created at line 409.
+    Found 32-bit comparator greater for signal <state$cmp_gt0000> created at line 531.
+    Found 32-bit comparator greater for signal <state$cmp_gt0001> created at line 640.
+    Found 32-bit comparator greater for signal <state$cmp_gt0002> created at line 685.
+    Found 32-bit comparator greater for signal <state$cmp_gt0003> created at line 704.
+    Found 32-bit comparator greater for signal <state$cmp_gt0004> created at line 718.
+    Found 32-bit comparator greater for signal <state$cmp_gt0005> created at line 732.
+    Found 32-bit comparator greater for signal <state$cmp_gt0006> created at line 766.
+    Found 32-bit comparator greater for signal <state$cmp_gt0007> created at line 805.
+    Found 32-bit comparator greater for signal <state$cmp_gt0008> created at line 816.
+    Found 32-bit comparator less for signal <state$cmp_lt0000> created at line 344.
+    Found 32-bit comparator less for signal <state$cmp_lt0001> created at line 353.
+    Found 32-bit comparator less for signal <state$cmp_lt0002> created at line 388.
+    Found 32-bit comparator less for signal <state$cmp_lt0003> created at line 399.
+    Found 32-bit comparator less for signal <state$cmp_lt0004> created at line 427.
+    Found 32-bit comparator less for signal <state$cmp_lt0005> created at line 437.
+    Found 32-bit comparator less for signal <state$cmp_lt0006> created at line 489.
+    Found 32-bit comparator less for signal <state$cmp_lt0007> created at line 566.
+    Found 32-bit comparator less for signal <state$cmp_lt0008> created at line 577.
+    Found 32-bit comparator less for signal <state$cmp_lt0009> created at line 597.
+    Found 32-bit shifter logical left for signal <temp2$shift0001> created at line 66.
+    Found 32-bit register for signal <tempCOS>.
+    Found 32-bit register for signal <tempSIN>.
+    Found 32-bit register for signal <theMagCount>.
+    Found 32-bit adder for signal <theMagCount$addsub0000> created at line 743.
+    Found 7-bit register for signal <toFlip>.
+    Found 32-bit register for signal <total>.
+    Found 32-bit register for signal <W_address>.
+    Found 32-bit adder for signal <W_address$share0000> created at line 320.
+    Found 32-bit register for signal <W_datain>.
+    Found 1-bit register for signal <W_enable>.
+    Found 32-bit register for signal <wicount>.
+    Found 32-bit adder for signal <wicount$addsub0000> created at line 502.
+    Found 32-bit register for signal <windowCounter>.
+    Found 32-bit addsub for signal <windowCounter$share0000> created at line 320.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 1227 D-type flip-flop(s).
+	inferred  20 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+	inferred  21 Comparator(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <Main_Module> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 32x8-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 24
+ 10-bit subtractor                                     : 1
+ 32-bit adder                                          : 18
+ 32-bit addsub                                         : 1
+ 7-bit adder                                           : 4
+# Registers                                            : 73
+ 1-bit register                                        : 6
+ 10-bit register                                       : 1
+ 32-bit register                                       : 62
+ 6-bit register                                        : 1
+ 7-bit register                                        : 3
+# Comparators                                          : 25
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 13
+ 32-bit comparator less                                : 10
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:66]> with one-hot encoding.
+--------------------------------------------------------------------------------------------------------
+ State                            | Encoding
+--------------------------------------------------------------------------------------------------------
+ 00000000000000000000000000000000 | 000000000000000000000000000000000000000000000000000000000000000001
+ 00000000000000000000000000000001 | 000000000000000000000000000000000000000000000000000000000000000010
+ 00000000000000000000000000000010 | 000000000000000000000000000000000000000000000000000000000000010000
+ 00000000000000000000000000000101 | 001000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000000110 | 010000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000000111 | 100000000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000000110010 | 000000000000000000000000000000000000000001000000000000000000000000
+ 00000000000000000000000000110011 | 000000000000000000000000000000000000000010000000000000000000000000
+ 00000000000000000000000000110100 | 000000000000000000000000000000000000000100000000000000000000000000
+ 00000000000000000000000000110101 | 000000000000000000000000000000000000010000000000000000000000000000
+ 00000000000000000000000000110110 | 000000000000000000000000000000000000001000000000000000000000000000
+ 00000000000000000000000001100100 | 000000000000000000000000000000000000000000000000000000000000001000
+ 00000000000000000000000001100101 | 000000000000000000000000000000000000000000000000000000000000100000
+ 00000000000000000000000001100110 | 000000000000000000000000000000000000000000000000000000000001000000
+ 00000000000000000000000001100111 | 000000000000000000000000000000000000000000000000000000000010000000
+ 00000000000000000000000001101000 | 000000000000000000000000000000000000000000000000000000001000000000
+ 00000000000000000000000001101001 | 000000000000000000000000000000000000000000000000000000010000000000
+ 00000000000000000000000001101010 | 000000000000000000000000000000000000000000000000000000100000000000
+ 00000000000000000000000001101011 | 000000000000000000000000000000000000000000000000000010000000000000
+ 00000000000000000000000001101100 | 000000000000000000000000000000000000000000000000000100000000000000
+ 00000000000000000000000001101101 | 000000000000000000000000000000000000000000000000001000000000000000
+ 00000000000000000000000001101110 | 000000000000000000000000000000000000000000000000010000000000000000
+ 00000000000000000000000001101111 | 000000000000000000000000000000000000000000000000100000000000000000
+ 00000000000000000000000001110000 | 000000000000000000000000000000000000000000000001000000000000000000
+ 00000000000000000000000001110001 | 000000000000000000000000000000000000000000000010000000000000000000
+ 00000000000000000000000001110010 | 000000000000000000000000000000000000000000000100000000000000000000
+ 00000000000000000000000001110011 | 000000000000000000000000000000000000000000001000000000000000000000
+ 00000000000000000000000001110100 | 000000000000000000000000000000000000000000010000000000000000000000
+ 00000000000000000000000001110101 | 000000000000000000000000000000000000000000000000000001000000000000
+ 00000000000000000000000001110110 | 000000000000000000000000000000000000000000100000000000000000000000
+ 00000000000000000000000001110111 | 000000000000000000000000000000000000000000000000000000000100000000
+ 00000000000000000000000011001000 | 000000000000000000000000000000000000100000000000000000000000000000
+ 00000000000000000000000011001001 | 000000000000000000000000000000000010000000000000000000000000000000
+ 00000000000000000000000011001010 | 000000000000000000000000000000001000000000000000000000000000000000
+ 00000000000000000000000011001011 | 000000000000000000000000000001000000000000000000000000000000000000
+ 00000000000000000000000011001100 | 000000000000000000000000000010000000000000000000000000000000000000
+ 00000000000000000000000011001101 | 000000000000000000000000000100000000000000000000000000000000000000
+ 00000000000000000000000011001110 | 000000000000000000000001000000000000000000000000000000000000000000
+ 00000000000000000000000011001111 | 000000000000000000000100000000000000000000000000000000000000000000
+ 00000000000000000000000011010000 | 000000000000000000010000000000000000000000000000000000000000000000
+ 00000000000000000000000011010001 | 000000000000000001000000000000000000000000000000000000000000000000
+ 00000000000000000000000011010010 | 000000000000000010000000000000000000000000000000000000000000000000
+ 00000000000000000000000011011100 | 000000000000000000000000000000000001000000000000000000000000000000
+ 00000000000000000000000011011101 | 000000000000010000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011011110 | 000000000000100000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011011111 | 000000000001000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100000 | 000000000010000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100001 | 000000000100000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011100010 | 000000010000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111010 | 000000000000001000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111011 | 000001000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111100 | 000100000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000011111101 | 000000100000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000100101110 | 000000000000000000000000000000000100000000000000000000000000000000
+ 00000000000000000000000100101111 | 000000000000000000000000000000010000000000000000000000000000000000
+ 00000000000000000000000100110000 | 000000000000000000000000000000100000000000000000000000000000000000
+ 00000000000000000000000100110011 | 000000000000000000000000010000000000000000000000000000000000000000
+ 00000000000000000000000101000001 | 000000000000000100000000000000000000000000000000000000000000000000
+ 00000000000000000000000101100000 | 000010000000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000110010010 | 000000000000000000000000000000000000000000000000000000000000000100
+ 00000000000000000000000110101010 | 000000001000000000000000000000000000000000000000000000000000000000
+ 00000000000000000000000111000010 | 000000000000000000000000001000000000000000000000000000000000000000
+ 00000000000000000000000111000011 | 000000000000000000000000100000000000000000000000000000000000000000
+ 00000000000000000000000111000100 | 000000000000000000000010000000000000000000000000000000000000000000
+ 00000000000000000000000111000101 | 000000000000000000001000000000000000000000000000000000000000000000
+ 00000000000000000000000111000110 | 000000000000000000100000000000000000000000000000000000000000000000
+--------------------------------------------------------------------------------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <N2_FFT/state/FSM> on signal <state[1:12]> with one-hot encoding.
+--------------------------------------------------
+ State                            | Encoding
+--------------------------------------------------
+ 00000000000000000000000000000000 | 000000000001
+ 00000000000000000000000000000001 | 000000000010
+ 00000000000000000000000000000100 | 000000000100
+ 00000000000000000000000000000101 | 000000001000
+ 00000000000000000000000000000110 | 000000010000
+ 00000000000000000000000000000111 | 000000100000
+ 00000000000000000000000000001000 | 000001000000
+ 00000000000000000000000000001001 | 000010000000
+ 00000000000000000000000000001010 | 000100000000
+ 00000000000000000000000000001011 | 001000000000
+ 00000000000000000000000000001100 | 010000000000
+ 00000000000000000000000000001110 | 100000000000
+--------------------------------------------------
+Reading core <ipcore_dir/F_RAM.ngc>.
+Reading core <ipcore_dir/O_RAM.ngc>.
+Reading core <ipcore_dir/W_RAM.ngc>.
+Reading core <ipcore_dir/I_RAM.ngc>.
+Reading core <ipcore_dir/SIN_RAM.ngc>.
+Reading core <ipcore_dir/COS_RAM.ngc>.
+Reading core <ipcore_dir/ROM_SIN.ngc>.
+Reading core <ipcore_dir/ROM_COS.ngc>.
+Reading core <ipcore_dir/coef_coe.ngc>.
+Reading core <ipcore_dir/y_coe.ngc>.
+Reading core <ipcore_dir/ROM_MUL.ngc>.
+Reading core <ipcore_dir/FPAdder.ngc>.
+Reading core <ipcore_dir/SUB.ngc>.
+Loading core <F_RAM> for timing and area information for instance <F_RAM>.
+Loading core <O_RAM> for timing and area information for instance <O_ROM>.
+Loading core <W_RAM> for timing and area information for instance <W_RAM>.
+Loading core <I_RAM> for timing and area information for instance <I_RAM>.
+Loading core <SIN_RAM> for timing and area information for instance <SIN_RAM>.
+Loading core <COS_RAM> for timing and area information for instance <COS_RAM>.
+Loading core <ROM_SIN> for timing and area information for instance <sinT>.
+Loading core <ROM_COS> for timing and area information for instance <cosT>.
+Loading core <coef_coe> for timing and area information for instance <coefficients>.
+Loading core <y_coe> for timing and area information for instance <ynoisy>.
+Loading core <ROM_MUL> for timing and area information for instance <mul_1>.
+Loading core <ROM_MUL> for timing and area information for instance <mul_2>.
+Loading core <FPAdder> for timing and area information for instance <addr_1>.
+Loading core <FPAdder> for timing and area information for instance <addr_2>.
+Loading core <ROM_MUL> for timing and area information for instance <mul_1>.
+Loading core <ROM_MUL> for timing and area information for instance <mul_2>.
+Loading core <FPAdder> for timing and area information for instance <addr_1>.
+Loading core <FPAdder> for timing and area information for instance <addr_2>.
+Loading core <SUB> for timing and area information for instance <SUB_1>.
+Loading core <SUB> for timing and area information for instance <SUB_2>.
+
+Synthesizing (advanced) Unit <Main_Module>.
+	Found pipelined multiplier on signal <SINCOS_address>:
+		- 1 pipeline level(s) found in a register on signal <counter>.
+		Pushing register(s) into the multiplier macro.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_SINCOS_address_mult0001 by adding 2 register level(s).
+Unit <Main_Module> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Multipliers                                          : 1
+ 32x8-bit registered multiplier                        : 1
+# Adders/Subtractors                                   : 24
+ 10-bit subtractor                                     : 1
+ 32-bit adder                                          : 18
+ 32-bit addsub                                         : 1
+ 7-bit adder                                           : 4
+# Registers                                            : 2027
+ Flip-Flops                                            : 2027
+# Comparators                                          : 25
+ 32-bit comparator equal                               : 1
+ 32-bit comparator greatequal                          : 1
+ 32-bit comparator greater                             : 13
+ 32-bit comparator less                                : 10
+# Logic shifters                                       : 2
+ 32-bit shifter logical left                           : 1
+ 32-bit shifter logical right                          : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <I_address_7> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_8> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_9> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_10> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_11> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_12> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_13> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_14> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_15> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_16> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_17> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_18> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_19> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_20> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_21> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_22> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_23> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_24> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_25> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_26> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_27> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_28> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_29> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_30> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <I_address_31> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_6> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_7> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_8> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_9> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_10> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_11> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_12> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_13> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_14> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_15> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_16> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_17> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_18> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_19> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_20> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_21> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_22> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_23> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_24> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_25> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_26> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_27> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_28> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_29> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_30> of sequential type is unconnected in block <Main_Module>.
+WARNING:Xst:2677 - Node <addressX_31> of sequential type is unconnected in block <Main_Module>.
+
+Optimizing unit <Main_Module> ...
+
+Optimizing unit <N2_FFT> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main_Module, actual ratio is 120.
+Optimizing block <Main_Module> to meet ratio 100 (+ 5) of 4656 slices :
+WARNING:Xst:2254 - Area constraint could not be met for block <Main_Module>, final ratio is 119.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2052
+ Flip-Flops                                            : 2052
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Main_Module.ngr
+Top Level Output File Name         : Main_Module
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 66
+
+Cell Usage :
+# BELS                             : 17497
+#      GND                         : 21
+#      INV                         : 83
+#      LUT1                        : 565
+#      LUT2                        : 1652
+#      LUT2_L                      : 2
+#      LUT3                        : 2451
+#      LUT3_D                      : 72
+#      LUT3_L                      : 80
+#      LUT4                        : 4005
+#      LUT4_L                      : 4
+#      MULT_AND                    : 900
+#      MUXCY                       : 3910
+#      MUXF5                       : 566
+#      MUXF6                       : 12
+#      MUXF7                       : 6
+#      VCC                         : 21
+#      XORCY                       : 3147
+# FlipFlops/Latches                : 3468
+#      FD                          : 424
+#      FDE                         : 2638
+#      FDR                         : 99
+#      FDRS                        : 293
+#      FDRSE                       : 8
+#      FDS                         : 6
+# RAMS                             : 12
+#      RAMB16_S18_S18              : 4
+#      RAMB16_S36_S36              : 8
+# Shift Registers                  : 88
+#      SRL16                       : 76
+#      SRL16E                      : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 65
+#      IBUF                        : 1
+#      OBUF                        : 64
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     5560  out of   4656   119% (*) 
+ Number of Slice Flip Flops:           3468  out of   9312    37%  
+ Number of 4 input LUTs:               9002  out of   9312    96%  
+    Number used as logic:              8914
+    Number used as Shift registers:      88
+ Number of IOs:                          66
+ Number of bonded IOBs:                  66  out of    232    28%  
+ Number of BRAMs:                        12  out of     20    60%  
+ Number of MULT18X18SIOs:                 1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                         | Load  |
+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+clk                                | BUFGP                                                                                                                         | 3569  |
+F_RAM/N1                           | NONE(F_RAM/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram)| 2     |
+ynoisy/N1                          | NONE(ynoisy/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_init.ram/dpram.dp18x18.ram) | 2     |
+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 35.637ns (Maximum Frequency: 28.060MHz)
+   Minimum input arrival time before clock: 5.344ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 35.637ns (frequency: 28.060MHz)
+  Total number of paths / destination ports: 1565837833073 / 5467
+-------------------------------------------------------------------------
+Delay:               35.637ns (Levels of Logic = 82)
+  Source:            N2_FFT/RegAd2B_23 (FF)
+  Destination:       N2_FFT/addr_2/blk0000014b (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: N2_FFT/RegAd2B_23 to N2_FFT/addr_2/blk0000014b
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             12   0.591   1.136  N2_FFT/RegAd2B_23 (N2_FFT/RegAd2B_23)
+     begin scope: 'N2_FFT/addr_2'
+     LUT2:I0->O            1   0.704   0.000  blk00000059 (sig00000181)
+     MUXCY:S->O            1   0.464   0.000  blk0000005a (sig00000179)
+     MUXCY:CI->O           1   0.059   0.000  blk0000005d (sig0000017a)
+     MUXCY:CI->O           1   0.059   0.000  blk00000060 (sig0000017b)
+     MUXCY:CI->O           1   0.059   0.000  blk00000063 (sig0000017c)
+     MUXCY:CI->O           1   0.059   0.000  blk00000066 (sig0000017d)
+     MUXCY:CI->O           1   0.059   0.000  blk00000069 (sig0000017e)
+     MUXCY:CI->O           1   0.059   0.000  blk0000006c (sig0000017f)
+     MUXCY:CI->O           0   0.059   0.000  blk0000006f (sig00000180)
+     XORCY:CI->O          15   0.804   1.192  blk00000071 (sig0000030e)
+     LUT2:I0->O            1   0.704   0.000  blk00000232 (sig0000010b)
+     MUXCY:S->O            1   0.464   0.000  blk00000005 (sig00000105)
+     MUXCY:CI->O           1   0.059   0.000  blk00000007 (sig00000106)
+     MUXCY:CI->O           1   0.059   0.000  blk00000009 (sig00000107)
+     XORCY:CI->O          51   0.804   1.443  blk0000000c (sig00000116)
+     LUT4:I0->O            1   0.704   0.000  blk00000315 (sig0000003a)
+     MUXF5:I0->O           1   0.321   0.595  blk00000314 (sig0000007c)
+     LUT3:I0->O            3   0.704   0.566  blk00000296 (sig0000007e)
+     LUT3:I2->O            1   0.704   0.000  blk0000034f (sig0000007a)
+     MUXF5:I1->O           2   0.321   0.526  blk00000351 (sig0000007d)
+     LUT4:I1->O            1   0.704   0.424  blk000002dd (sig00000018)
+     LUT4:I3->O            1   0.704   0.000  blk000002de (sig000000ef)
+     MUXCY:S->O            1   0.464   0.000  blk00000031 (sig000000d1)
+     MUXCY:CI->O           1   0.059   0.000  blk00000033 (sig000000d2)
+     MUXCY:CI->O           1   0.059   0.000  blk00000035 (sig000000d3)
+     MUXCY:CI->O           1   0.059   0.000  blk00000037 (sig000000d4)
+     MUXCY:CI->O           1   0.059   0.000  blk00000039 (sig000000d5)
+     MUXCY:CI->O           1   0.059   0.000  blk0000003b (sig000000d6)
+     MUXCY:CI->O           1   0.059   0.000  blk0000003d (sig000000d7)
+     MUXCY:CI->O           1   0.059   0.000  blk0000003f (sig000000cc)
+     MUXCY:CI->O           1   0.059   0.000  blk00000041 (sig000000cd)
+     MUXCY:CI->O           1   0.059   0.000  blk00000043 (sig000000ce)
+     MUXCY:CI->O           1   0.059   0.000  blk00000045 (sig000000e8)
+     MUXCY:CI->O           1   0.059   0.000  blk00000012 (sig000000dd)
+     MUXCY:CI->O           1   0.059   0.000  blk00000014 (sig000000de)
+     MUXCY:CI->O           1   0.059   0.000  blk00000016 (sig000000df)
+     MUXCY:CI->O           1   0.059   0.000  blk00000018 (sig000000e0)
+     MUXCY:CI->O           1   0.059   0.000  blk0000001a (sig000000e1)
+     MUXCY:CI->O           1   0.059   0.000  blk0000001c (sig000000e2)
+     MUXCY:CI->O           1   0.059   0.000  blk0000001e (sig000000e3)
+     MUXCY:CI->O           1   0.059   0.000  blk00000020 (sig000000e4)
+     MUXCY:CI->O           1   0.059   0.000  blk00000022 (sig000000e5)
+     MUXCY:CI->O           1   0.059   0.000  blk00000024 (sig000000d9)
+     MUXCY:CI->O           1   0.059   0.000  blk00000026 (sig000000da)
+     MUXCY:CI->O           1   0.059   0.000  blk00000028 (sig000000db)
+     MUXCY:CI->O           0   0.059   0.000  blk0000002a (sig000000dc)
+     XORCY:CI->O           3   0.804   0.706  blk0000002c (sig000002fd)
+     LUT2:I0->O            1   0.704   0.000  blk00000283 (sig00000231)
+     MUXCY:S->O            2   0.464   0.000  blk00000123 (sig00000224)
+     MUXCY:CI->O           2   0.059   0.000  blk00000122 (sig00000229)
+     MUXCY:CI->O           2   0.059   0.000  blk00000121 (sig0000022a)
+     MUXCY:CI->O          36   0.059   0.000  blk00000120 (sig0000022b)
+     MUXCY:CI->O           2   0.059   0.000  blk0000011f (sig0000022c)
+     MUXCY:CI->O           2   0.059   0.000  blk0000011e (sig0000022d)
+     MUXCY:CI->O           2   0.059   0.000  blk0000011d (sig0000022e)
+     MUXCY:CI->O          48   0.459   1.267  blk0000011c (sig0000028a)
+     MUXF5:S->O           13   0.739   1.158  blk00000127 (sig00000244)
+     LUT3:I0->O            1   0.704   0.000  blk0000027f (sig00000220)
+     MUXF5:I0->O          28   0.321   1.340  blk0000011b (sig00000243)
+     LUT2:I1->O            1   0.704   0.000  blk00000292 (sig00000191)
+     MUXCY:S->O            1   0.464   0.000  blk00000072 (sig00000189)
+     MUXCY:CI->O           1   0.059   0.000  blk00000074 (sig0000018a)
+     MUXCY:CI->O           1   0.059   0.000  blk00000077 (sig0000018b)
+     MUXCY:CI->O           1   0.059   0.000  blk00000079 (sig0000018c)
+     MUXCY:CI->O           1   0.059   0.000  blk0000007c (sig0000018d)
+     MUXCY:CI->O           1   0.059   0.000  blk0000007e (sig0000018e)
+     MUXCY:CI->O           1   0.059   0.000  blk00000080 (sig0000018f)
+     MUXCY:CI->O           0   0.059   0.000  blk00000082 (sig00000190)
+     XORCY:CI->O           2   0.804   0.451  blk00000084 (sig00000207)
+     LUT4:I3->O            3   0.704   0.610  blk000002e2 (sig0000019b)
+     LUT4:I1->O            9   0.704   0.899  blk00000287 (sig0000031b)
+     LUT3:I1->O            1   0.704   0.595  blk00000284 (sig000002db)
+     LUT4:I0->O            1   0.704   0.000  blk00000293 (sig000002da)
+     MUXCY:S->O            1   0.464   0.000  blk0000014c (sig000002d3)
+     MUXCY:CI->O           1   0.059   0.000  blk0000014e (sig000002d4)
+     MUXCY:CI->O           1   0.059   0.000  blk00000150 (sig000002d5)
+     MUXCY:CI->O           1   0.059   0.000  blk00000152 (sig000002d6)
+     MUXCY:CI->O           1   0.059   0.000  blk00000154 (sig000002d7)
+     MUXCY:CI->O           1   0.059   0.000  blk00000156 (sig000002d8)
+     MUXCY:CI->O           0   0.059   0.000  blk00000158 (sig000002d9)
+     XORCY:CI->O           1   0.804   0.000  blk0000015a (sig000002ea)
+     FD:D                      0.308          blk0000014b
+    ----------------------------------------
+    Total                     35.637ns (22.729ns logic, 12.908ns route)
+                                       (63.8% logic, 36.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1242 / 1242
+-------------------------------------------------------------------------
+Offset:              5.344ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Mmult_SINCOS_address_mult0001 (MULT)
+  Destination Clock: clk rising
+
+  Data Path: rst to Mmult_SINCOS_address_mult0001
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            78   1.218   1.277  rst_IBUF (rst_IBUF)
+     INV:I->O            750   0.704   1.410  rst_inv321_INV_0 (rst_inv)
+     MULT18X18SIO:CEA          0.735          Mmult_SINCOS_address_mult0001
+    ----------------------------------------
+    Total                      5.344ns (2.657ns logic, 2.687ns route)
+                                       (49.7% logic, 50.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            Magnitude_31 (FF)
+  Destination:       Magnitude<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: Magnitude_31 to Magnitude<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.591   0.447  Magnitude_31 (Magnitude_31)
+     OBUF:I->O                 3.272          Magnitude_31_OBUF (Magnitude<31>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to mul_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to mul_1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to mul_2.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to mul_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to addr_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to addr_1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to addr_2.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to addr_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/SUB_2.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/SUB_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/SUB_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/SUB_1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/addr_2.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/addr_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/addr_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/addr_1.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/mul_2.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/mul_2.
+WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to N2_FFT/mul_1.
+WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to N2_FFT/mul_1.
+
+
+Total REAL time to Xst completion: 49.00 secs
+Total CPU time to Xst completion: 49.23 secs
+ 
+--> 
+
+Total memory usage is 435496 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  134 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/bvogelhe/Desktop/FFT_FPGA-master/FFT_FPGA-master/Final_FPGA/ipcore_dir/ROM_MUL.v";
+static const char *ng0 = "C:/Users/bvogelhe/Desktop/FFT_FPGA/FINAL_NEW/ipcore_dir/ROM_MUL.v";
 
 
 

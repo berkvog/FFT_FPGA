@@ -3167,3 +3167,66 @@ extern void unisims_ver_m_00000000001784029001_0041595647_init()
 	xsi_register_executes(pe);
 	xsi_register_subprogram_executes(se);
 }
+
+extern void unisims_ver_m_00000000001784029001_2756624250_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_2756624250", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_2756624250.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_2362710119_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_2362710119", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_2362710119.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_1675468211_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_1675468211", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_1675468211.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_1894017219_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_1894017219", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_1894017219.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_3964188331_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_3964188331", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_3964188331.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_2047689240_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_2047689240", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_2047689240.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
+
+extern void unisims_ver_m_00000000001784029001_0994619342_init()
+{
+	static char *pe[] = {(void *)Always_35_0};
+	static char *se[] = {(void *)sp_lut4_mux4};
+	xsi_register_didat("unisims_ver_m_00000000001784029001_0994619342", "isim/Main_Test_isim_beh.exe.sim/unisims_ver/m_00000000001784029001_0994619342.didat");
+	xsi_register_executes(pe);
+	xsi_register_subprogram_executes(se);
+}
